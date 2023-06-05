@@ -10,14 +10,14 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinformFamilyTree.TreeClasses;
 
 namespace WinformFamilyTree
 {
     public partial class SignInPage : UserControl
     {
         public static SignInPage instance;
-        static string myConnectionString = ConfigurationManager.ConnectionStrings["connstrngAccount"].ConnectionString;
-
+        
         public SignInPage()
         {
             InitializeComponent();
@@ -30,36 +30,20 @@ namespace WinformFamilyTree
         {
             string email = SignInEmailTextBox.Text;
             string password = SignInPasswordTextBox.Text;
-            SqlConnection conn = new SqlConnection(myConnectionString);
-            try
+
+            AccountClass c = new AccountClass();
+            bool isSuccess = c.Check(email, password);
+            if (isSuccess)
             {
-                conn.Open();
-                string sql = "SELECT * FROM UserData WHERE Email = '" +email+ "' AND UserPassword = '"+password+"'";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dTable = new DataTable();
-                sda.Fill(dTable);
-                // exist accout in database
-                if(dTable.Rows.Count > 0) 
-                {
-                    // load to next page
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Sai email hoặc mật khẩu!");
-                    SignInEmailTextBox.Clear();
-                    SignInPasswordTextBox.Clear();
-                }
-            }
-            catch 
+                // load to next page
+                MessageBox.Show("Đăng nhập thành công!");
+                this.Hide();
+            } else
             {
-                MessageBox.Show("Lỗi, hãy thử lại!");
+                MessageBox.Show("Sai email hoặc mật khẩu!");
+                SignInEmailTextBox.Clear();
+                SignInPasswordTextBox.Clear();
             }
-            finally { conn.Close(); }
-
-
-
         }
 
         private void SignInEmailTextBox_TextChanged(object sender, EventArgs e)

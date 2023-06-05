@@ -21,7 +21,6 @@ namespace WinformFamilyTree
         public TextBox firstNameTextBox;
         public TextBox emailTextBox;
         public TextBox passwordTextBox;
-        static string myConnectionString = ConfigurationManager.ConnectionStrings["connstrngAccount"].ConnectionString;
         string lastNamePlaceholder = "Vd: Nguyễn Văn";
         string firstNamePlaceholder = "Vd: An";
         public SignUpPage()
