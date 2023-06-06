@@ -42,16 +42,17 @@ namespace WinformFamilyTree
             this.memberListButton = new System.Windows.Forms.Button();
             this.sharedButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.sharedScreen = new WinformFamilyTree.SharedScreen();
-            this.homeScreen = new WinformFamilyTree.HomeScreen();
-            this.memberListScreen = new WinformFamilyTree.MemberListScreen();
-            this.biographyScreen = new WinformFamilyTree.BiographyViewScreen();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Nutchinhsua = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.firstTimeUserPage = new WinformFamilyTree.UI.FirstTimeUserPage();
+            this.sharedScreen = new WinformFamilyTree.SharedScreen();
+            this.homeScreen = new WinformFamilyTree.HomeScreen();
+            this.memberListScreen = new WinformFamilyTree.MemberListScreen();
+            this.biographyScreen = new WinformFamilyTree.BiographyViewScreen();
             this.signUpPage = new WinformFamilyTree.SignUpPage();
             this.firstPage = new WinformFamilyTree.FirstPage();
             this.signInPage = new WinformFamilyTree.SignInPage();
@@ -239,38 +240,6 @@ namespace WinformFamilyTree
             this.flowLayoutPanel2.Size = new System.Drawing.Size(750, 600);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
-            // sharedScreen
-            // 
-            this.sharedScreen.Location = new System.Drawing.Point(0, 0);
-            this.sharedScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.sharedScreen.Name = "sharedScreen";
-            this.sharedScreen.Size = new System.Drawing.Size(953, 600);
-            this.sharedScreen.TabIndex = 3;
-            // 
-            // homeScreen
-            // 
-            this.homeScreen.Location = new System.Drawing.Point(0, 600);
-            this.homeScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.homeScreen.Name = "homeScreen";
-            this.homeScreen.Size = new System.Drawing.Size(953, 600);
-            this.homeScreen.TabIndex = 0;
-            // 
-            // memberListScreen
-            // 
-            this.memberListScreen.Location = new System.Drawing.Point(0, 1200);
-            this.memberListScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.memberListScreen.Name = "memberListScreen";
-            this.memberListScreen.Size = new System.Drawing.Size(784, 1016);
-            this.memberListScreen.TabIndex = 2;
-            // 
-            // biographyScreen
-            // 
-            this.biographyScreen.Location = new System.Drawing.Point(0, 2216);
-            this.biographyScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.biographyScreen.Name = "biographyScreen";
-            this.biographyScreen.Size = new System.Drawing.Size(784, 1016);
-            this.biographyScreen.TabIndex = 1;
-            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
@@ -309,10 +278,10 @@ namespace WinformFamilyTree
             this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.searchBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBox.ForeColor = System.Drawing.Color.White;
-            this.searchBox.Location = new System.Drawing.Point(38, 3);
+            this.searchBox.Location = new System.Drawing.Point(38, 6);
             this.searchBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(149, 27);
+            this.searchBox.Size = new System.Drawing.Size(149, 22);
             this.searchBox.TabIndex = 4;
             this.searchBox.Text = "Nhập tên thành viên";
             this.searchBox.Click += new System.EventHandler(this.searchBox_Click);
@@ -348,6 +317,7 @@ namespace WinformFamilyTree
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.firstTimeUserPage);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.signUpPage);
             this.panel1.Controls.Add(this.firstPage);
@@ -359,11 +329,51 @@ namespace WinformFamilyTree
             this.panel1.Size = new System.Drawing.Size(1311, 681);
             this.panel1.TabIndex = 10;
             // 
+            // firstTimeUserPage
+            // 
+            this.firstTimeUserPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.firstTimeUserPage.Location = new System.Drawing.Point(0, 0);
+            this.firstTimeUserPage.Name = "firstTimeUserPage";
+            this.firstTimeUserPage.Size = new System.Drawing.Size(1311, 681);
+            this.firstTimeUserPage.TabIndex = 4;
+            // 
+            // sharedScreen
+            // 
+            this.sharedScreen.Location = new System.Drawing.Point(0, 0);
+            this.sharedScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.sharedScreen.Name = "sharedScreen";
+            this.sharedScreen.Size = new System.Drawing.Size(953, 600);
+            this.sharedScreen.TabIndex = 3;
+            // 
+            // homeScreen
+            // 
+            this.homeScreen.Location = new System.Drawing.Point(0, 600);
+            this.homeScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.homeScreen.Name = "homeScreen";
+            this.homeScreen.Size = new System.Drawing.Size(953, 600);
+            this.homeScreen.TabIndex = 0;
+            // 
+            // memberListScreen
+            // 
+            this.memberListScreen.Location = new System.Drawing.Point(0, 1200);
+            this.memberListScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.memberListScreen.Name = "memberListScreen";
+            this.memberListScreen.Size = new System.Drawing.Size(784, 1016);
+            this.memberListScreen.TabIndex = 2;
+            // 
+            // biographyScreen
+            // 
+            this.biographyScreen.Location = new System.Drawing.Point(0, 2216);
+            this.biographyScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.biographyScreen.Name = "biographyScreen";
+            this.biographyScreen.Size = new System.Drawing.Size(784, 1016);
+            this.biographyScreen.TabIndex = 1;
+            // 
             // signUpPage
             // 
             this.signUpPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.signUpPage.Location = new System.Drawing.Point(0, 0);
-            this.signUpPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.signUpPage.Margin = new System.Windows.Forms.Padding(4);
             this.signUpPage.Name = "signUpPage";
             this.signUpPage.Size = new System.Drawing.Size(1311, 681);
             this.signUpPage.TabIndex = 12;
@@ -388,7 +398,7 @@ namespace WinformFamilyTree
             // 
             // familyTree
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1311, 681);
@@ -439,6 +449,7 @@ namespace WinformFamilyTree
         private HomeScreen homeScreen;
         private TableLayoutPanel tableLayoutPanel4;
         private Button Nutchinhsua;
+        private UI.FirstTimeUserPage firstTimeUserPage;
     }
 }
 
