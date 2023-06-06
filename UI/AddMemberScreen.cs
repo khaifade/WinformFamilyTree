@@ -38,5 +38,21 @@ namespace WinformFamilyTree.UI
         {
 
         }
+
+        private void aliveCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (aliveCheckBox.Checked == true)
+            {
+                dateOfDeathBox.Enabled = false;
+                DateTime dateOfDeath = new DateTime(3000,01,02);
+                string day = dateOfDeath.ToString("dd/MM/yyyy");
+                MessageBox.Show(day);
+                dateOfDeathBox.Value = dateOfDeath;
+            } else
+            {
+                dateOfDeathBox.Enabled = true;
+            
+            }
+        }
     }
 }

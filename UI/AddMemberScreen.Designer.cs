@@ -31,9 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMemberScreen));
             this.backgroundLayout = new System.Windows.Forms.TableLayoutPanel();
             this.mainLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
+            this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.biographyRichTextBox = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.attachImage = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonDateTimePicker1 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.dateOfDeathBox = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.dateOfBirthLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.dateOfBirthBox = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
@@ -54,18 +60,16 @@
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.relationshipLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.relationshipComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
-            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
-            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.attachImage = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
-            this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.biographyRichTextBox = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
             this.saveFormButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.cancelFormButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
+            this.aliveCheckBox = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
             this.backgroundLayout.SuspendLayout();
             this.mainLayout.SuspendLayout();
+            this.flowLayoutPanel9.SuspendLayout();
+            this.flowLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.attachImage)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -76,9 +80,6 @@
             this.flowLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.relationshipComboBox)).BeginInit();
-            this.flowLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.attachImage)).BeginInit();
-            this.flowLayoutPanel9.SuspendLayout();
             this.flowLayoutPanel10.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,18 +132,112 @@
             this.mainLayout.Size = new System.Drawing.Size(658, 648);
             this.mainLayout.TabIndex = 0;
             // 
+            // flowLayoutPanel9
+            // 
+            this.flowLayoutPanel9.AutoSize = true;
+            this.mainLayout.SetColumnSpan(this.flowLayoutPanel9, 2);
+            this.flowLayoutPanel9.Controls.Add(this.kryptonLabel3);
+            this.flowLayoutPanel9.Controls.Add(this.biographyRichTextBox);
+            this.flowLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel9.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(0, 322);
+            this.flowLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel9.Name = "flowLayoutPanel9";
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(658, 260);
+            this.flowLayoutPanel9.TabIndex = 15;
+            // 
+            // kryptonLabel3
+            // 
+            this.kryptonLabel3.Location = new System.Drawing.Point(0, 0);
+            this.kryptonLabel3.Margin = new System.Windows.Forms.Padding(0);
+            this.kryptonLabel3.Name = "kryptonLabel3";
+            this.kryptonLabel3.Size = new System.Drawing.Size(56, 22);
+            this.kryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
+            this.kryptonLabel3.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
+            this.kryptonLabel3.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
+            this.kryptonLabel3.StateCommon.ShortText.ColorAngle = 0F;
+            this.kryptonLabel3.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonLabel3.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
+            this.kryptonLabel3.StateCommon.ShortText.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
+            this.kryptonLabel3.StateCommon.ShortText.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.kryptonLabel3.TabIndex = 9;
+            this.kryptonLabel3.Values.Text = "Tiểu sử";
+            // 
+            // biographyRichTextBox
+            // 
+            this.biographyRichTextBox.Location = new System.Drawing.Point(0, 22);
+            this.biographyRichTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this.biographyRichTextBox.Name = "biographyRichTextBox";
+            this.biographyRichTextBox.Size = new System.Drawing.Size(655, 218);
+            this.biographyRichTextBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.biographyRichTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.biographyRichTextBox.StateCommon.Border.Rounding = 20;
+            this.biographyRichTextBox.StateCommon.Border.Width = 2;
+            this.biographyRichTextBox.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.biographyRichTextBox.TabIndex = 10;
+            this.biographyRichTextBox.Text = "Thêm tiểu sử";
+            // 
+            // flowLayoutPanel8
+            // 
+            this.flowLayoutPanel8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.flowLayoutPanel8.AutoSize = true;
+            this.flowLayoutPanel8.Controls.Add(this.kryptonLabel2);
+            this.flowLayoutPanel8.Controls.Add(this.attachImage);
+            this.flowLayoutPanel8.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(339, 263);
+            this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(152, 53);
+            this.flowLayoutPanel8.TabIndex = 14;
+            // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.Location = new System.Drawing.Point(0, 0);
+            this.kryptonLabel2.Margin = new System.Windows.Forms.Padding(0);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(152, 22);
+            this.kryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
+            this.kryptonLabel2.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
+            this.kryptonLabel2.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
+            this.kryptonLabel2.StateCommon.ShortText.ColorAngle = 0F;
+            this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonLabel2.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
+            this.kryptonLabel2.StateCommon.ShortText.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
+            this.kryptonLabel2.StateCommon.ShortText.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.kryptonLabel2.TabIndex = 9;
+            this.kryptonLabel2.Values.Text = "Đính kèm ảnh đại diện";
+            // 
+            // attachImage
+            // 
+            this.attachImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.attachImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.attachImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("attachImage.ErrorImage")));
+            this.attachImage.Image = global::WinformFamilyTree.Properties.Resources.attach_image_icon;
+            this.attachImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("attachImage.InitialImage")));
+            this.attachImage.Location = new System.Drawing.Point(0, 22);
+            this.attachImage.Margin = new System.Windows.Forms.Padding(0);
+            this.attachImage.Name = "attachImage";
+            this.attachImage.Size = new System.Drawing.Size(36, 31);
+            this.attachImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.attachImage.TabIndex = 10;
+            this.attachImage.TabStop = false;
+            this.attachImage.Click += new System.EventHandler(this.attachImage_Click);
+            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel2.Controls.Add(this.kryptonLabel1);
-            this.flowLayoutPanel2.Controls.Add(this.kryptonDateTimePicker1);
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.Controls.Add(this.aliveCheckBox);
+            this.flowLayoutPanel2.Controls.Add(this.dateOfDeathBox);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(339, 130);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.flowLayoutPanel2.MaximumSize = new System.Drawing.Size(250, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(198, 59);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(218, 59);
             this.flowLayoutPanel2.TabIndex = 11;
             // 
             // kryptonLabel1
@@ -162,22 +257,23 @@
             this.kryptonLabel1.TabIndex = 9;
             this.kryptonLabel1.Values.Text = "Ngày tháng năm mất (nếu có)";
             // 
-            // kryptonDateTimePicker1
+            // dateOfDeathBox
             // 
-            this.kryptonDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.kryptonDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(0, 22);
-            this.kryptonDateTimePicker1.Margin = new System.Windows.Forms.Padding(0);
-            this.kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
-            this.kryptonDateTimePicker1.Size = new System.Drawing.Size(127, 37);
-            this.kryptonDateTimePicker1.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.kryptonDateTimePicker1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.dateOfDeathBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateOfDeathBox.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateOfDeathBox.Location = new System.Drawing.Point(91, 22);
+            this.dateOfDeathBox.Margin = new System.Windows.Forms.Padding(0);
+            this.dateOfDeathBox.Name = "dateOfDeathBox";
+            this.dateOfDeathBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dateOfDeathBox.Size = new System.Drawing.Size(127, 37);
+            this.dateOfDeathBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.dateOfDeathBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonDateTimePicker1.StateCommon.Border.Rounding = 20;
-            this.kryptonDateTimePicker1.StateCommon.Border.Width = 2;
-            this.kryptonDateTimePicker1.TabIndex = 11;
-            this.kryptonDateTimePicker1.ValueNullable = new System.DateTime(3000, 1, 1, 0, 0, 0, 0);
+            this.dateOfDeathBox.StateCommon.Border.Rounding = 20;
+            this.dateOfDeathBox.StateCommon.Border.Width = 2;
+            this.dateOfDeathBox.TabIndex = 11;
+            this.dateOfDeathBox.ValueNullable = new System.DateTime(3000, 1, 1, 0, 0, 0, 0);
             // 
             // flowLayoutPanel5
             // 
@@ -320,7 +416,7 @@
             this.flowLayoutPanel4.Location = new System.Drawing.Point(174, 3);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(155, 59);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(105, 59);
             this.flowLayoutPanel4.TabIndex = 10;
             // 
             // genderLabel
@@ -352,7 +448,7 @@
             this.genderComboBox.Location = new System.Drawing.Point(0, 22);
             this.genderComboBox.Margin = new System.Windows.Forms.Padding(0);
             this.genderComboBox.Name = "genderComboBox";
-            this.genderComboBox.Size = new System.Drawing.Size(155, 37);
+            this.genderComboBox.Size = new System.Drawing.Size(105, 37);
             this.genderComboBox.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.genderComboBox.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -514,105 +610,6 @@
             this.relationshipComboBox.TabIndex = 10;
             this.relationshipComboBox.Text = "Không có (dành cho thành viên đầu tiên)";
             // 
-            // openImageDialog
-            // 
-            this.openImageDialog.FileName = "openImageDialog";
-            this.openImageDialog.Filter = "JPEG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|All file" +
-    "s (*.*)|*.*";
-            // 
-            // flowLayoutPanel8
-            // 
-            this.flowLayoutPanel8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.flowLayoutPanel8.AutoSize = true;
-            this.flowLayoutPanel8.Controls.Add(this.kryptonLabel2);
-            this.flowLayoutPanel8.Controls.Add(this.attachImage);
-            this.flowLayoutPanel8.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(339, 263);
-            this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(152, 53);
-            this.flowLayoutPanel8.TabIndex = 14;
-            // 
-            // kryptonLabel2
-            // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(0, 0);
-            this.kryptonLabel2.Margin = new System.Windows.Forms.Padding(0);
-            this.kryptonLabel2.Name = "kryptonLabel2";
-            this.kryptonLabel2.Size = new System.Drawing.Size(152, 22);
-            this.kryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
-            this.kryptonLabel2.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
-            this.kryptonLabel2.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
-            this.kryptonLabel2.StateCommon.ShortText.ColorAngle = 0F;
-            this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel2.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
-            this.kryptonLabel2.StateCommon.ShortText.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
-            this.kryptonLabel2.StateCommon.ShortText.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonLabel2.TabIndex = 9;
-            this.kryptonLabel2.Values.Text = "Đính kèm ảnh đại diện";
-            // 
-            // attachImage
-            // 
-            this.attachImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.attachImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.attachImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("attachImage.ErrorImage")));
-            this.attachImage.Image = global::WinformFamilyTree.Properties.Resources.attach_image_icon;
-            this.attachImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("attachImage.InitialImage")));
-            this.attachImage.Location = new System.Drawing.Point(0, 22);
-            this.attachImage.Margin = new System.Windows.Forms.Padding(0);
-            this.attachImage.Name = "attachImage";
-            this.attachImage.Size = new System.Drawing.Size(36, 31);
-            this.attachImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.attachImage.TabIndex = 10;
-            this.attachImage.TabStop = false;
-            this.attachImage.Click += new System.EventHandler(this.attachImage_Click);
-            // 
-            // flowLayoutPanel9
-            // 
-            this.flowLayoutPanel9.AutoSize = true;
-            this.mainLayout.SetColumnSpan(this.flowLayoutPanel9, 2);
-            this.flowLayoutPanel9.Controls.Add(this.kryptonLabel3);
-            this.flowLayoutPanel9.Controls.Add(this.biographyRichTextBox);
-            this.flowLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel9.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel9.Location = new System.Drawing.Point(0, 322);
-            this.flowLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(658, 260);
-            this.flowLayoutPanel9.TabIndex = 15;
-            // 
-            // kryptonLabel3
-            // 
-            this.kryptonLabel3.Location = new System.Drawing.Point(0, 0);
-            this.kryptonLabel3.Margin = new System.Windows.Forms.Padding(0);
-            this.kryptonLabel3.Name = "kryptonLabel3";
-            this.kryptonLabel3.Size = new System.Drawing.Size(63, 22);
-            this.kryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
-            this.kryptonLabel3.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
-            this.kryptonLabel3.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
-            this.kryptonLabel3.StateCommon.ShortText.ColorAngle = 0F;
-            this.kryptonLabel3.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel3.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
-            this.kryptonLabel3.StateCommon.ShortText.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
-            this.kryptonLabel3.StateCommon.ShortText.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonLabel3.TabIndex = 9;
-            this.kryptonLabel3.Values.Text = "Nơi sinh";
-            // 
-            // biographyRichTextBox
-            // 
-            this.biographyRichTextBox.Location = new System.Drawing.Point(0, 22);
-            this.biographyRichTextBox.Margin = new System.Windows.Forms.Padding(0);
-            this.biographyRichTextBox.Name = "biographyRichTextBox";
-            this.biographyRichTextBox.Size = new System.Drawing.Size(655, 218);
-            this.biographyRichTextBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.biographyRichTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.biographyRichTextBox.StateCommon.Border.Rounding = 20;
-            this.biographyRichTextBox.StateCommon.Border.Width = 2;
-            this.biographyRichTextBox.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.biographyRichTextBox.TabIndex = 10;
-            this.biographyRichTextBox.Text = "Thêm tiểu sử";
-            // 
             // flowLayoutPanel10
             // 
             this.flowLayoutPanel10.Controls.Add(this.saveFormButton);
@@ -737,6 +734,24 @@
             this.cancelFormButton.Values.Text = "Huỷ";
             this.cancelFormButton.Click += new System.EventHandler(this.cancelFormButton_Click);
             // 
+            // openImageDialog
+            // 
+            this.openImageDialog.FileName = "openImageDialog";
+            this.openImageDialog.Filter = "JPEG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|All file" +
+    "s (*.*)|*.*";
+            // 
+            // aliveCheckBox
+            // 
+            this.aliveCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.aliveCheckBox.Location = new System.Drawing.Point(0, 30);
+            this.aliveCheckBox.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.aliveCheckBox.Name = "aliveCheckBox";
+            this.aliveCheckBox.Size = new System.Drawing.Size(81, 21);
+            this.aliveCheckBox.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aliveCheckBox.TabIndex = 12;
+            this.aliveCheckBox.Values.Text = "Còn sống";
+            this.aliveCheckBox.CheckedChanged += new System.EventHandler(this.aliveCheckBox_CheckedChanged);
+            // 
             // AddMemberScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -747,6 +762,11 @@
             this.backgroundLayout.ResumeLayout(false);
             this.mainLayout.ResumeLayout(false);
             this.mainLayout.PerformLayout();
+            this.flowLayoutPanel9.ResumeLayout(false);
+            this.flowLayoutPanel9.PerformLayout();
+            this.flowLayoutPanel8.ResumeLayout(false);
+            this.flowLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.attachImage)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
@@ -765,11 +785,6 @@
             this.flowLayoutPanel7.ResumeLayout(false);
             this.flowLayoutPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.relationshipComboBox)).EndInit();
-            this.flowLayoutPanel8.ResumeLayout(false);
-            this.flowLayoutPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.attachImage)).EndInit();
-            this.flowLayoutPanel9.ResumeLayout(false);
-            this.flowLayoutPanel9.PerformLayout();
             this.flowLayoutPanel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -795,7 +810,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dateOfBirthBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker kryptonDateTimePicker1;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dateOfDeathBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel placeOfOriginLabel;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox placeOfOriginTextBox;
@@ -812,5 +827,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel10;
         private ComponentFactory.Krypton.Toolkit.KryptonButton saveFormButton;
         private ComponentFactory.Krypton.Toolkit.KryptonButton cancelFormButton;
+        private ComponentFactory.Krypton.Toolkit.KryptonCheckBox aliveCheckBox;
     }
 }
