@@ -17,27 +17,27 @@ namespace WinformFamilyTree
         {
             InitializeComponent();
             //---------panel------------
-            Panelchandung1.Paint += Panelchandung1_Paint;
-            Panelchandung2.Paint += Panelchandung2_Paint;
-            Panelchandung3.Paint += Panelchandung3_Paint;
-            Panelchandung4.Paint += Panelchandung4_Paint;
-            Panelchandung5.Paint += Panelchandung5_Paint;
+            Panelavatar1.Paint += Panelavatar1_Paint;
+            Panelavatar2.Paint += Panelavatar2_Paint;
+            Panelavatar3.Paint += Panelavatar3_Paint;
+            Panelavatar4.Paint += Panelavatar4_Paint;
+            Panelavatar5.Paint += Panelavatar5_Paint;
             //-----tableLayoutPanel-----
-            Panelthanhvien1.Paint += Panelthanhvien1_Paint;
-            Panelthanhvien2.Paint += Panelthanhvien2_Paint;
-            Panelthanhvien3.Paint += Panelthanhvien3_Paint;
-            Panelthanhvien4.Paint += Panelthanhvien4_Paint;
-            Panelthanhvien5.Paint += Panelthanhvien5_Paint;
-            Panelthem.Paint += Panelthem_Paint;
+            Panelmember1.Paint += Panelmember1_Paint;
+            Panelmember2.Paint += Panelmember2_Paint;
+            Panelmember3.Paint += Panelmember3_Paint;
+            Panelmember4.Paint += Panelmember4_Paint;
+            Panelmember5.Paint += Panelmember5_Paint;
+            Paneltools.Paint += Paneltools_Paint;
             //--------picturebox---------
-            anhchandung1.Paint += anhchandung1_Paint;
-            anhchandung2.Paint += anhchandung2_Paint;
-            anhchandung3.Paint += anhchandung3_Paint;
-            anhchandung4.Paint += anhchandung4_Paint;
-            anhchandung5.Paint += anhchandung5_Paint;    
+            avatar1.Paint += avatar1_Paint;
+            avatar2.Paint += avatar2_Paint;
+            avatar3.Paint += avatar3_Paint;
+            avatar4.Paint += avatar4_Paint;
+            avatar5.Paint += avatar5_Paint;    
             //----------button-----------
-            Buttonmo.Paint += Buttonmo_Paint;
-            buttontat.Paint += Buttontat_Paint;
+            Buttonon.Paint += Buttonon_Paint;
+            buttonoff.Paint += Buttonoff_Paint;
         }
 
        
@@ -137,110 +137,110 @@ namespace WinformFamilyTree
 
         //-----------------sửa panel-----------------
 
-        private void Panelchandung1_Paint(object sender, PaintEventArgs e)
+        private void Panelavatar1_Paint(object sender, PaintEventArgs e)
         {
-            lamtronpanel(Panelchandung1);
+            lamtronpanel(Panelavatar1);
         }
-        private void Panelchandung2_Paint(object sender, PaintEventArgs e)
+        private void Panelavatar2_Paint(object sender, PaintEventArgs e)
         {
-            lamtronpanel(Panelchandung2);
+            lamtronpanel(Panelavatar2);
         }
-        private void Panelchandung3_Paint(object sender, PaintEventArgs e)
+        private void Panelavatar3_Paint(object sender, PaintEventArgs e)
         {
-            lamtronpanel(Panelchandung3);
+            lamtronpanel(Panelavatar3);
         }
-        private void Panelchandung4_Paint(object sender, PaintEventArgs e)
+        private void Panelavatar4_Paint(object sender, PaintEventArgs e)
         {
-            lamtronpanel(Panelchandung4);        
+            lamtronpanel(Panelavatar4);        
         }
-        private void Panelchandung5_Paint(object sender, PaintEventArgs e)
+        private void Panelavatar5_Paint(object sender, PaintEventArgs e)
         {
-            lamtronpanel(Panelchandung5);
+            lamtronpanel(Panelavatar5);
         }
 
 
         //--------------------sửa tableLayoutPanel-----------------
 
-        private void Panelthanhvien1_Paint(object sender, PaintEventArgs e)
+        private void Panelmember1_Paint(object sender, PaintEventArgs e)
         {
-            botronpanel(Panelthanhvien1);
-            vochong(Panelthanhvien1, Panelthanhvien2);
+            botronpanel(Panelmember1);
+            vochong(Panelmember1, Panelmember2);
         }
-        private void Panelthanhvien2_Paint(object sender, PaintEventArgs e)
+        private void Panelmember2_Paint(object sender, PaintEventArgs e)
         {
-            botronpanel(Panelthanhvien2);
+            botronpanel(Panelmember2);
         }
-        private void Panelthanhvien3_Paint(object sender, PaintEventArgs e)
+        private void Panelmember3_Paint(object sender, PaintEventArgs e)
         {
-            botronpanel(Panelthanhvien3);
-            concai(Panelthanhvien1, Panelthanhvien2, Panelthanhvien3);
+            botronpanel(Panelmember3);
+            concai(Panelmember1, Panelmember2, Panelmember3);
         }
-        private void Panelthanhvien4_Paint(object sender, PaintEventArgs e)
+        private void Panelmember4_Paint(object sender, PaintEventArgs e)
         {
-            botronpanel(Panelthanhvien4);
-            concai(Panelthanhvien1, Panelthanhvien2, Panelthanhvien4);
+            botronpanel(Panelmember4);
+            concai(Panelmember1, Panelmember2, Panelmember4);
         }
-        private void Panelthanhvien5_Paint(object sender, PaintEventArgs e)
+        private void Panelmember5_Paint(object sender, PaintEventArgs e)
         {
-            botronpanel(Panelthanhvien5);
-            concai(Panelthanhvien1, Panelthanhvien2, Panelthanhvien5);
+            botronpanel(Panelmember5);
+            concai(Panelmember1, Panelmember2, Panelmember5);
         }
 
-        private void Panelthem_Paint(object sender, PaintEventArgs e)
+        private void Paneltools_Paint(object sender, PaintEventArgs e)
         {
-            botronpanel(Panelthem);
+            botronpanel(Paneltools);
         }
 
         //-----------------sửa picturebox---------------------
-        private void anhchandung1_Paint (object sender, PaintEventArgs e)
+        private void avatar1_Paint (object sender, PaintEventArgs e)
         {
-            lamtronanh(anhchandung1);
+            lamtronanh(avatar1);
         }
-        private void anhchandung2_Paint (object sender, PaintEventArgs e)
+        private void avatar2_Paint (object sender, PaintEventArgs e)
         {
-            lamtronanh(anhchandung2);
+            lamtronanh(avatar2);
         }
-        private void anhchandung3_Paint(object sender, PaintEventArgs e)
+        private void avatar3_Paint(object sender, PaintEventArgs e)
         {
-            lamtronanh(anhchandung3);
+            lamtronanh(avatar3);
         }
-        private void anhchandung4_Paint(object sender, PaintEventArgs e)
+        private void avatar4_Paint(object sender, PaintEventArgs e)
         {
-            lamtronanh(anhchandung4);
+            lamtronanh(avatar4);
         }
-        private void anhchandung5_Paint(object sender, PaintEventArgs e)
+        private void avatar5_Paint(object sender, PaintEventArgs e)
         {
-            lamtronanh(anhchandung5);
+            lamtronanh(avatar5);
         }
 
         //----------------------sửa nút------------------------
 
-        private void Buttonmo_Paint(object sender, EventArgs e)
+        private void Buttonon_Paint(object sender, EventArgs e)
         {
-            lamtronnut(Buttonmo);
+            lamtronnut(Buttonon);
         }
-        private void Buttontat_Paint(object sender, PaintEventArgs e)
+        private void Buttonoff_Paint(object sender, PaintEventArgs e)
         {
-            lamtronnut(buttontat);
+            lamtronnut(buttonoff);
         }
 
         //---------------------click----------------------------
-        private void anhchandung1_Click(object sender, EventArgs e)
+        private void avatar1_Click(object sender, EventArgs e)
         {
-            Buttonmo.Visible = true;
+            Buttonon.Visible = true;
         }
 
-        private void Buttonmo_Click(object sender, EventArgs e)
+        private void Buttonon_Click(object sender, EventArgs e)
         {
-            buttontat.Visible = true;
-            Panelthem.Visible = true;
+            buttonoff.Visible = true;
+            Paneltools.Visible = true;
         }
 
-        private void buttontat_Click(object sender, EventArgs e)
+        private void buttonoff_Click(object sender, EventArgs e)
         {
-            buttontat.Visible = false;
-            Panelthem.Visible = false;
-            Buttonmo.Visible = false;
+            buttonoff.Visible = false;
+            Paneltools.Visible = false;
+            Buttonon.Visible = false;
         }
 
         

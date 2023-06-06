@@ -28,43 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Panelthanhvien1 = new System.Windows.Forms.TableLayoutPanel();
+            this.Panelmember1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.userNameLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Panelchandung1 = new System.Windows.Forms.Panel();
-            this.anhchandung1 = new System.Windows.Forms.PictureBox();
-            this.Panelchandung2 = new System.Windows.Forms.Panel();
-            this.anhchandung2 = new System.Windows.Forms.PictureBox();
-            this.Panelthanhvien2 = new System.Windows.Forms.TableLayoutPanel();
+            this.Panelavatar1 = new System.Windows.Forms.Panel();
+            this.avatar1 = new System.Windows.Forms.PictureBox();
+            this.Panelavatar2 = new System.Windows.Forms.Panel();
+            this.avatar2 = new System.Windows.Forms.PictureBox();
+            this.Panelmember2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.Panelchandung3 = new System.Windows.Forms.Panel();
-            this.anhchandung3 = new System.Windows.Forms.PictureBox();
-            this.Panelthanhvien3 = new System.Windows.Forms.TableLayoutPanel();
+            this.Panelavatar3 = new System.Windows.Forms.Panel();
+            this.avatar3 = new System.Windows.Forms.PictureBox();
+            this.Panelmember3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.Panelchandung4 = new System.Windows.Forms.Panel();
-            this.anhchandung4 = new System.Windows.Forms.PictureBox();
-            this.Panelthanhvien4 = new System.Windows.Forms.TableLayoutPanel();
+            this.Panelavatar4 = new System.Windows.Forms.Panel();
+            this.avatar4 = new System.Windows.Forms.PictureBox();
+            this.Panelmember4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.Panelchandung5 = new System.Windows.Forms.Panel();
-            this.anhchandung5 = new System.Windows.Forms.PictureBox();
-            this.Panelthanhvien5 = new System.Windows.Forms.TableLayoutPanel();
+            this.Panelavatar5 = new System.Windows.Forms.Panel();
+            this.avatar5 = new System.Windows.Forms.PictureBox();
+            this.Panelmember5 = new System.Windows.Forms.TableLayoutPanel();
             this.label16 = new System.Windows.Forms.Label();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.Panelthem = new System.Windows.Forms.TableLayoutPanel();
+            this.Paneltools = new System.Windows.Forms.TableLayoutPanel();
             this.timmoilienhe = new System.Windows.Forms.Label();
             this.xoakhoigiatoc = new System.Windows.Forms.Label();
             this.themconcai = new System.Windows.Forms.Label();
@@ -77,29 +77,29 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.buttontat = new System.Windows.Forms.Button();
-            this.Buttonmo = new System.Windows.Forms.Button();
-            this.Panelthanhvien1.SuspendLayout();
+            this.buttonoff = new System.Windows.Forms.Button();
+            this.Buttonon = new System.Windows.Forms.Button();
+            this.Panelmember1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.Panelchandung1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.anhchandung1)).BeginInit();
-            this.Panelchandung2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.anhchandung2)).BeginInit();
-            this.Panelthanhvien2.SuspendLayout();
+            this.Panelavatar1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar1)).BeginInit();
+            this.Panelavatar2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar2)).BeginInit();
+            this.Panelmember2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.Panelchandung3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.anhchandung3)).BeginInit();
-            this.Panelthanhvien3.SuspendLayout();
+            this.Panelavatar3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar3)).BeginInit();
+            this.Panelmember3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.Panelchandung4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.anhchandung4)).BeginInit();
-            this.Panelthanhvien4.SuspendLayout();
+            this.Panelavatar4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar4)).BeginInit();
+            this.Panelmember4.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            this.Panelchandung5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.anhchandung5)).BeginInit();
-            this.Panelthanhvien5.SuspendLayout();
+            this.Panelavatar5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar5)).BeginInit();
+            this.Panelmember5.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
-            this.Panelthem.SuspendLayout();
+            this.Paneltools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -108,21 +108,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
             // 
-            // Panelthanhvien1
+            // Panelmember1
             // 
-            this.Panelthanhvien1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.Panelthanhvien1.ColumnCount = 1;
-            this.Panelthanhvien1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.76166F));
-            this.Panelthanhvien1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.Panelthanhvien1.Controls.Add(this.label2, 0, 1);
-            this.Panelthanhvien1.Location = new System.Drawing.Point(173, 375);
-            this.Panelthanhvien1.Name = "Panelthanhvien1";
-            this.Panelthanhvien1.RowCount = 2;
-            this.Panelthanhvien1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.23809F));
-            this.Panelthanhvien1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.76191F));
-            this.Panelthanhvien1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.Panelthanhvien1.Size = new System.Drawing.Size(235, 90);
-            this.Panelthanhvien1.TabIndex = 0;
+            this.Panelmember1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.Panelmember1.ColumnCount = 1;
+            this.Panelmember1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.76166F));
+            this.Panelmember1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.Panelmember1.Controls.Add(this.label2, 0, 1);
+            this.Panelmember1.Location = new System.Drawing.Point(173, 375);
+            this.Panelmember1.Name = "Panelmember1";
+            this.Panelmember1.RowCount = 2;
+            this.Panelmember1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.23809F));
+            this.Panelmember1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.76191F));
+            this.Panelmember1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.Panelmember1.Size = new System.Drawing.Size(235, 90);
+            this.Panelmember1.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
@@ -185,59 +185,59 @@
             this.label2.Text = "Lê Quý Gia";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Panelchandung1
+            // Panelavatar1
             // 
-            this.Panelchandung1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Panelchandung1.Controls.Add(this.anhchandung1);
-            this.Panelchandung1.Location = new System.Drawing.Point(228, 302);
-            this.Panelchandung1.Name = "Panelchandung1";
-            this.Panelchandung1.Size = new System.Drawing.Size(120, 120);
-            this.Panelchandung1.TabIndex = 1;
+            this.Panelavatar1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Panelavatar1.Controls.Add(this.avatar1);
+            this.Panelavatar1.Location = new System.Drawing.Point(228, 302);
+            this.Panelavatar1.Name = "Panelavatar1";
+            this.Panelavatar1.Size = new System.Drawing.Size(120, 120);
+            this.Panelavatar1.TabIndex = 1;
             // 
-            // anhchandung1
+            // avatar1
             // 
-            this.anhchandung1.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
-            this.anhchandung1.Location = new System.Drawing.Point(3, 3);
-            this.anhchandung1.Name = "anhchandung1";
-            this.anhchandung1.Size = new System.Drawing.Size(114, 114);
-            this.anhchandung1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.anhchandung1.TabIndex = 0;
-            this.anhchandung1.TabStop = false;
-            this.anhchandung1.Click += new System.EventHandler(this.anhchandung1_Click);
+            this.avatar1.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
+            this.avatar1.Location = new System.Drawing.Point(3, 3);
+            this.avatar1.Name = "avatar1";
+            this.avatar1.Size = new System.Drawing.Size(114, 114);
+            this.avatar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatar1.TabIndex = 0;
+            this.avatar1.TabStop = false;
+            this.avatar1.Click += new System.EventHandler(this.avatar1_Click);
             // 
-            // Panelchandung2
+            // Panelavatar2
             // 
-            this.Panelchandung2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Panelchandung2.Controls.Add(this.anhchandung2);
-            this.Panelchandung2.Location = new System.Drawing.Point(649, 302);
-            this.Panelchandung2.Name = "Panelchandung2";
-            this.Panelchandung2.Size = new System.Drawing.Size(120, 120);
-            this.Panelchandung2.TabIndex = 3;
+            this.Panelavatar2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Panelavatar2.Controls.Add(this.avatar2);
+            this.Panelavatar2.Location = new System.Drawing.Point(649, 302);
+            this.Panelavatar2.Name = "Panelavatar2";
+            this.Panelavatar2.Size = new System.Drawing.Size(120, 120);
+            this.Panelavatar2.TabIndex = 3;
             // 
-            // anhchandung2
+            // avatar2
             // 
-            this.anhchandung2.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
-            this.anhchandung2.Location = new System.Drawing.Point(3, 3);
-            this.anhchandung2.Name = "anhchandung2";
-            this.anhchandung2.Size = new System.Drawing.Size(114, 114);
-            this.anhchandung2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.anhchandung2.TabIndex = 0;
-            this.anhchandung2.TabStop = false;
+            this.avatar2.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
+            this.avatar2.Location = new System.Drawing.Point(3, 3);
+            this.avatar2.Name = "avatar2";
+            this.avatar2.Size = new System.Drawing.Size(114, 114);
+            this.avatar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatar2.TabIndex = 0;
+            this.avatar2.TabStop = false;
             // 
-            // Panelthanhvien2
+            // Panelmember2
             // 
-            this.Panelthanhvien2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.Panelthanhvien2.ColumnCount = 1;
-            this.Panelthanhvien2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.76166F));
-            this.Panelthanhvien2.Controls.Add(this.tableLayoutPanel4, 0, 0);
-            this.Panelthanhvien2.Controls.Add(this.label13, 0, 1);
-            this.Panelthanhvien2.Location = new System.Drawing.Point(594, 375);
-            this.Panelthanhvien2.Name = "Panelthanhvien2";
-            this.Panelthanhvien2.RowCount = 2;
-            this.Panelthanhvien2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.23809F));
-            this.Panelthanhvien2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.76191F));
-            this.Panelthanhvien2.Size = new System.Drawing.Size(235, 90);
-            this.Panelthanhvien2.TabIndex = 2;
+            this.Panelmember2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.Panelmember2.ColumnCount = 1;
+            this.Panelmember2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.76166F));
+            this.Panelmember2.Controls.Add(this.tableLayoutPanel4, 0, 0);
+            this.Panelmember2.Controls.Add(this.label13, 0, 1);
+            this.Panelmember2.Location = new System.Drawing.Point(594, 375);
+            this.Panelmember2.Name = "Panelmember2";
+            this.Panelmember2.RowCount = 2;
+            this.Panelmember2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.23809F));
+            this.Panelmember2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.76191F));
+            this.Panelmember2.Size = new System.Drawing.Size(235, 90);
+            this.Panelmember2.TabIndex = 2;
             // 
             // tableLayoutPanel4
             // 
@@ -300,39 +300,39 @@
             this.label13.Text = "Nguyễn Thị Ngọc";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Panelchandung3
+            // Panelavatar3
             // 
-            this.Panelchandung3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Panelchandung3.Controls.Add(this.anhchandung3);
-            this.Panelchandung3.Location = new System.Drawing.Point(107, 598);
-            this.Panelchandung3.Name = "Panelchandung3";
-            this.Panelchandung3.Size = new System.Drawing.Size(120, 120);
-            this.Panelchandung3.TabIndex = 3;
+            this.Panelavatar3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Panelavatar3.Controls.Add(this.avatar3);
+            this.Panelavatar3.Location = new System.Drawing.Point(107, 598);
+            this.Panelavatar3.Name = "Panelavatar3";
+            this.Panelavatar3.Size = new System.Drawing.Size(120, 120);
+            this.Panelavatar3.TabIndex = 3;
             // 
-            // anhchandung3
+            // avatar3
             // 
-            this.anhchandung3.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
-            this.anhchandung3.Location = new System.Drawing.Point(3, 3);
-            this.anhchandung3.Name = "anhchandung3";
-            this.anhchandung3.Size = new System.Drawing.Size(114, 114);
-            this.anhchandung3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.anhchandung3.TabIndex = 0;
-            this.anhchandung3.TabStop = false;
+            this.avatar3.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
+            this.avatar3.Location = new System.Drawing.Point(3, 3);
+            this.avatar3.Name = "avatar3";
+            this.avatar3.Size = new System.Drawing.Size(114, 114);
+            this.avatar3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatar3.TabIndex = 0;
+            this.avatar3.TabStop = false;
             // 
-            // Panelthanhvien3
+            // Panelmember3
             // 
-            this.Panelthanhvien3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.Panelthanhvien3.ColumnCount = 1;
-            this.Panelthanhvien3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.76166F));
-            this.Panelthanhvien3.Controls.Add(this.tableLayoutPanel6, 0, 0);
-            this.Panelthanhvien3.Controls.Add(this.label14, 0, 1);
-            this.Panelthanhvien3.Location = new System.Drawing.Point(52, 671);
-            this.Panelthanhvien3.Name = "Panelthanhvien3";
-            this.Panelthanhvien3.RowCount = 2;
-            this.Panelthanhvien3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.23809F));
-            this.Panelthanhvien3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.76191F));
-            this.Panelthanhvien3.Size = new System.Drawing.Size(235, 90);
-            this.Panelthanhvien3.TabIndex = 2;
+            this.Panelmember3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.Panelmember3.ColumnCount = 1;
+            this.Panelmember3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.76166F));
+            this.Panelmember3.Controls.Add(this.tableLayoutPanel6, 0, 0);
+            this.Panelmember3.Controls.Add(this.label14, 0, 1);
+            this.Panelmember3.Location = new System.Drawing.Point(52, 671);
+            this.Panelmember3.Name = "Panelmember3";
+            this.Panelmember3.RowCount = 2;
+            this.Panelmember3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.23809F));
+            this.Panelmember3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.76191F));
+            this.Panelmember3.Size = new System.Drawing.Size(235, 90);
+            this.Panelmember3.TabIndex = 2;
             // 
             // tableLayoutPanel6
             // 
@@ -395,39 +395,39 @@
             this.label14.Text = "Lê Hồng Khắc";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Panelchandung4
+            // Panelavatar4
             // 
-            this.Panelchandung4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Panelchandung4.Controls.Add(this.anhchandung4);
-            this.Panelchandung4.Location = new System.Drawing.Point(439, 598);
-            this.Panelchandung4.Name = "Panelchandung4";
-            this.Panelchandung4.Size = new System.Drawing.Size(120, 120);
-            this.Panelchandung4.TabIndex = 5;
+            this.Panelavatar4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Panelavatar4.Controls.Add(this.avatar4);
+            this.Panelavatar4.Location = new System.Drawing.Point(439, 598);
+            this.Panelavatar4.Name = "Panelavatar4";
+            this.Panelavatar4.Size = new System.Drawing.Size(120, 120);
+            this.Panelavatar4.TabIndex = 5;
             // 
-            // anhchandung4
+            // avatar4
             // 
-            this.anhchandung4.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
-            this.anhchandung4.Location = new System.Drawing.Point(3, 3);
-            this.anhchandung4.Name = "anhchandung4";
-            this.anhchandung4.Size = new System.Drawing.Size(114, 114);
-            this.anhchandung4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.anhchandung4.TabIndex = 0;
-            this.anhchandung4.TabStop = false;
+            this.avatar4.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
+            this.avatar4.Location = new System.Drawing.Point(3, 3);
+            this.avatar4.Name = "avatar4";
+            this.avatar4.Size = new System.Drawing.Size(114, 114);
+            this.avatar4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatar4.TabIndex = 0;
+            this.avatar4.TabStop = false;
             // 
-            // Panelthanhvien4
+            // Panelmember4
             // 
-            this.Panelthanhvien4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.Panelthanhvien4.ColumnCount = 1;
-            this.Panelthanhvien4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.76166F));
-            this.Panelthanhvien4.Controls.Add(this.tableLayoutPanel8, 0, 0);
-            this.Panelthanhvien4.Controls.Add(this.label15, 0, 1);
-            this.Panelthanhvien4.Location = new System.Drawing.Point(384, 671);
-            this.Panelthanhvien4.Name = "Panelthanhvien4";
-            this.Panelthanhvien4.RowCount = 2;
-            this.Panelthanhvien4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.23809F));
-            this.Panelthanhvien4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.76191F));
-            this.Panelthanhvien4.Size = new System.Drawing.Size(235, 90);
-            this.Panelthanhvien4.TabIndex = 4;
+            this.Panelmember4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.Panelmember4.ColumnCount = 1;
+            this.Panelmember4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.76166F));
+            this.Panelmember4.Controls.Add(this.tableLayoutPanel8, 0, 0);
+            this.Panelmember4.Controls.Add(this.label15, 0, 1);
+            this.Panelmember4.Location = new System.Drawing.Point(384, 671);
+            this.Panelmember4.Name = "Panelmember4";
+            this.Panelmember4.RowCount = 2;
+            this.Panelmember4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.23809F));
+            this.Panelmember4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.76191F));
+            this.Panelmember4.Size = new System.Drawing.Size(235, 90);
+            this.Panelmember4.TabIndex = 4;
             // 
             // tableLayoutPanel8
             // 
@@ -506,39 +506,39 @@
             this.label15.Text = "Nguyễn Gia Nam";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Panelchandung5
+            // Panelavatar5
             // 
-            this.Panelchandung5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Panelchandung5.Controls.Add(this.anhchandung5);
-            this.Panelchandung5.Location = new System.Drawing.Point(776, 598);
-            this.Panelchandung5.Name = "Panelchandung5";
-            this.Panelchandung5.Size = new System.Drawing.Size(120, 120);
-            this.Panelchandung5.TabIndex = 5;
+            this.Panelavatar5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Panelavatar5.Controls.Add(this.avatar5);
+            this.Panelavatar5.Location = new System.Drawing.Point(776, 598);
+            this.Panelavatar5.Name = "Panelavatar5";
+            this.Panelavatar5.Size = new System.Drawing.Size(120, 120);
+            this.Panelavatar5.TabIndex = 5;
             // 
-            // anhchandung5
+            // avatar5
             // 
-            this.anhchandung5.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
-            this.anhchandung5.Location = new System.Drawing.Point(3, 3);
-            this.anhchandung5.Name = "anhchandung5";
-            this.anhchandung5.Size = new System.Drawing.Size(114, 114);
-            this.anhchandung5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.anhchandung5.TabIndex = 0;
-            this.anhchandung5.TabStop = false;
+            this.avatar5.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
+            this.avatar5.Location = new System.Drawing.Point(3, 3);
+            this.avatar5.Name = "avatar5";
+            this.avatar5.Size = new System.Drawing.Size(114, 114);
+            this.avatar5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatar5.TabIndex = 0;
+            this.avatar5.TabStop = false;
             // 
-            // Panelthanhvien5
+            // Panelmember5
             // 
-            this.Panelthanhvien5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.Panelthanhvien5.ColumnCount = 1;
-            this.Panelthanhvien5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.76166F));
-            this.Panelthanhvien5.Controls.Add(this.label16, 0, 1);
-            this.Panelthanhvien5.Controls.Add(this.tableLayoutPanel10, 0, 0);
-            this.Panelthanhvien5.Location = new System.Drawing.Point(721, 671);
-            this.Panelthanhvien5.Name = "Panelthanhvien5";
-            this.Panelthanhvien5.RowCount = 2;
-            this.Panelthanhvien5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.23809F));
-            this.Panelthanhvien5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.76191F));
-            this.Panelthanhvien5.Size = new System.Drawing.Size(235, 90);
-            this.Panelthanhvien5.TabIndex = 4;
+            this.Panelmember5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.Panelmember5.ColumnCount = 1;
+            this.Panelmember5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.76166F));
+            this.Panelmember5.Controls.Add(this.label16, 0, 1);
+            this.Panelmember5.Controls.Add(this.tableLayoutPanel10, 0, 0);
+            this.Panelmember5.Location = new System.Drawing.Point(721, 671);
+            this.Panelmember5.Name = "Panelmember5";
+            this.Panelmember5.RowCount = 2;
+            this.Panelmember5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.23809F));
+            this.Panelmember5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.76191F));
+            this.Panelmember5.Size = new System.Drawing.Size(235, 90);
+            this.Panelmember5.TabIndex = 4;
             // 
             // label16
             // 
@@ -601,37 +601,37 @@
             this.label10.Text = "1925";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Panelthem
+            // Paneltools
             // 
-            this.Panelthem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.Panelthem.ColumnCount = 2;
-            this.Panelthem.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.46154F));
-            this.Panelthem.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.53846F));
-            this.Panelthem.Controls.Add(this.timmoilienhe, 1, 5);
-            this.Panelthem.Controls.Add(this.xoakhoigiatoc, 1, 4);
-            this.Panelthem.Controls.Add(this.themconcai, 1, 3);
-            this.Panelthem.Controls.Add(this.thembome, 1, 2);
-            this.Panelthem.Controls.Add(this.themvochong, 1, 1);
-            this.Panelthem.Controls.Add(this.xemtieuxu, 1, 0);
-            this.Panelthem.Controls.Add(this.pictureBox8, 0, 1);
-            this.Panelthem.Controls.Add(this.pictureBox7, 0, 0);
-            this.Panelthem.Controls.Add(this.pictureBox9, 0, 2);
-            this.Panelthem.Controls.Add(this.pictureBox10, 0, 3);
-            this.Panelthem.Controls.Add(this.pictureBox11, 0, 4);
-            this.Panelthem.Controls.Add(this.pictureBox12, 0, 5);
-            this.Panelthem.Location = new System.Drawing.Point(321, 35);
-            this.Panelthem.Name = "Panelthem";
-            this.Panelthem.RowCount = 6;
-            this.Panelthem.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.Panelthem.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.Panelthem.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.Panelthem.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.Panelthem.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.Panelthem.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.Panelthem.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.Panelthem.Size = new System.Drawing.Size(234, 230);
-            this.Panelthem.TabIndex = 6;
-            this.Panelthem.Visible = false;
+            this.Paneltools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.Paneltools.ColumnCount = 2;
+            this.Paneltools.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.46154F));
+            this.Paneltools.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.53846F));
+            this.Paneltools.Controls.Add(this.timmoilienhe, 1, 5);
+            this.Paneltools.Controls.Add(this.xoakhoigiatoc, 1, 4);
+            this.Paneltools.Controls.Add(this.themconcai, 1, 3);
+            this.Paneltools.Controls.Add(this.thembome, 1, 2);
+            this.Paneltools.Controls.Add(this.themvochong, 1, 1);
+            this.Paneltools.Controls.Add(this.xemtieuxu, 1, 0);
+            this.Paneltools.Controls.Add(this.pictureBox8, 0, 1);
+            this.Paneltools.Controls.Add(this.pictureBox7, 0, 0);
+            this.Paneltools.Controls.Add(this.pictureBox9, 0, 2);
+            this.Paneltools.Controls.Add(this.pictureBox10, 0, 3);
+            this.Paneltools.Controls.Add(this.pictureBox11, 0, 4);
+            this.Paneltools.Controls.Add(this.pictureBox12, 0, 5);
+            this.Paneltools.Location = new System.Drawing.Point(321, 35);
+            this.Paneltools.Name = "Paneltools";
+            this.Paneltools.RowCount = 6;
+            this.Paneltools.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.Paneltools.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.Paneltools.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.Paneltools.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.Paneltools.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.Paneltools.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.Paneltools.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.Paneltools.Size = new System.Drawing.Size(234, 230);
+            this.Paneltools.TabIndex = 6;
+            this.Paneltools.Visible = false;
             // 
             // timmoilienhe
             // 
@@ -777,88 +777,88 @@
             this.pictureBox12.TabIndex = 6;
             this.pictureBox12.TabStop = false;
             // 
-            // buttontat
+            // buttonoff
             // 
-            this.buttontat.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.buttontat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.buttontat.BackgroundImage = global::WinformFamilyTree.Properties.Resources.cross;
-            this.buttontat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttontat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.buttontat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttontat.Location = new System.Drawing.Point(534, 23);
-            this.buttontat.Name = "buttontat";
-            this.buttontat.Size = new System.Drawing.Size(30, 30);
-            this.buttontat.TabIndex = 9;
-            this.buttontat.UseVisualStyleBackColor = false;
-            this.buttontat.Visible = false;
-            this.buttontat.Click += new System.EventHandler(this.buttontat_Click);
+            this.buttonoff.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.buttonoff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.buttonoff.BackgroundImage = global::WinformFamilyTree.Properties.Resources.cross;
+            this.buttonoff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonoff.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.buttonoff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonoff.Location = new System.Drawing.Point(534, 23);
+            this.buttonoff.Name = "buttonoff";
+            this.buttonoff.Size = new System.Drawing.Size(30, 30);
+            this.buttonoff.TabIndex = 9;
+            this.buttonoff.UseVisualStyleBackColor = false;
+            this.buttonoff.Visible = false;
+            this.buttonoff.Click += new System.EventHandler(this.buttonoff_Click);
             // 
-            // Buttonmo
+            // Buttonon
             // 
-            this.Buttonmo.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Buttonmo.BackgroundImage = global::WinformFamilyTree.Properties.Resources.plus;
-            this.Buttonmo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Buttonmo.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Buttonmo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buttonmo.Location = new System.Drawing.Point(264, 263);
-            this.Buttonmo.Name = "Buttonmo";
-            this.Buttonmo.Size = new System.Drawing.Size(51, 51);
-            this.Buttonmo.TabIndex = 8;
-            this.Buttonmo.UseVisualStyleBackColor = false;
-            this.Buttonmo.Visible = false;
-            this.Buttonmo.Click += new System.EventHandler(this.Buttonmo_Click);
+            this.Buttonon.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Buttonon.BackgroundImage = global::WinformFamilyTree.Properties.Resources.plus;
+            this.Buttonon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Buttonon.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Buttonon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buttonon.Location = new System.Drawing.Point(264, 263);
+            this.Buttonon.Name = "Buttonon";
+            this.Buttonon.Size = new System.Drawing.Size(51, 51);
+            this.Buttonon.TabIndex = 8;
+            this.Buttonon.UseVisualStyleBackColor = false;
+            this.Buttonon.Visible = false;
+            this.Buttonon.Click += new System.EventHandler(this.Buttonon_Click);
             // 
             // HomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.buttontat);
-            this.Controls.Add(this.Buttonmo);
-            this.Controls.Add(this.Panelthem);
-            this.Controls.Add(this.Panelchandung5);
-            this.Controls.Add(this.Panelthanhvien5);
-            this.Controls.Add(this.Panelchandung4);
-            this.Controls.Add(this.Panelthanhvien4);
-            this.Controls.Add(this.Panelchandung3);
-            this.Controls.Add(this.Panelthanhvien3);
-            this.Controls.Add(this.Panelchandung2);
-            this.Controls.Add(this.Panelthanhvien2);
-            this.Controls.Add(this.Panelchandung1);
-            this.Controls.Add(this.Panelthanhvien1);
+            this.Controls.Add(this.buttonoff);
+            this.Controls.Add(this.Buttonon);
+            this.Controls.Add(this.Paneltools);
+            this.Controls.Add(this.Panelavatar5);
+            this.Controls.Add(this.Panelmember5);
+            this.Controls.Add(this.Panelavatar4);
+            this.Controls.Add(this.Panelmember4);
+            this.Controls.Add(this.Panelavatar3);
+            this.Controls.Add(this.Panelmember3);
+            this.Controls.Add(this.Panelavatar2);
+            this.Controls.Add(this.Panelmember2);
+            this.Controls.Add(this.Panelavatar1);
+            this.Controls.Add(this.Panelmember1);
             this.Name = "HomeScreen";
             this.Size = new System.Drawing.Size(1000, 900);
-            this.Panelthanhvien1.ResumeLayout(false);
-            this.Panelthanhvien1.PerformLayout();
+            this.Panelmember1.ResumeLayout(false);
+            this.Panelmember1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.Panelchandung1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.anhchandung1)).EndInit();
-            this.Panelchandung2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.anhchandung2)).EndInit();
-            this.Panelthanhvien2.ResumeLayout(false);
-            this.Panelthanhvien2.PerformLayout();
+            this.Panelavatar1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.avatar1)).EndInit();
+            this.Panelavatar2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.avatar2)).EndInit();
+            this.Panelmember2.ResumeLayout(false);
+            this.Panelmember2.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.Panelchandung3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.anhchandung3)).EndInit();
-            this.Panelthanhvien3.ResumeLayout(false);
-            this.Panelthanhvien3.PerformLayout();
+            this.Panelavatar3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.avatar3)).EndInit();
+            this.Panelmember3.ResumeLayout(false);
+            this.Panelmember3.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            this.Panelchandung4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.anhchandung4)).EndInit();
-            this.Panelthanhvien4.ResumeLayout(false);
-            this.Panelthanhvien4.PerformLayout();
+            this.Panelavatar4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.avatar4)).EndInit();
+            this.Panelmember4.ResumeLayout(false);
+            this.Panelmember4.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
-            this.Panelchandung5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.anhchandung5)).EndInit();
-            this.Panelthanhvien5.ResumeLayout(false);
-            this.Panelthanhvien5.PerformLayout();
+            this.Panelavatar5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.avatar5)).EndInit();
+            this.Panelmember5.ResumeLayout(false);
+            this.Panelmember5.PerformLayout();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
-            this.Panelthem.ResumeLayout(false);
-            this.Panelthem.PerformLayout();
+            this.Paneltools.ResumeLayout(false);
+            this.Paneltools.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -871,25 +871,25 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel Panelthanhvien1;
+        private System.Windows.Forms.TableLayoutPanel Panelmember1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Panel Panelchandung1;
-        private System.Windows.Forms.PictureBox anhchandung1;
-        private System.Windows.Forms.Panel Panelchandung2;
-        private System.Windows.Forms.PictureBox anhchandung2;
-        private System.Windows.Forms.TableLayoutPanel Panelthanhvien2;
+        private System.Windows.Forms.Panel Panelavatar1;
+        private System.Windows.Forms.PictureBox avatar1;
+        private System.Windows.Forms.Panel Panelavatar2;
+        private System.Windows.Forms.PictureBox avatar2;
+        private System.Windows.Forms.TableLayoutPanel Panelmember2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Panel Panelchandung3;
-        private System.Windows.Forms.PictureBox anhchandung3;
-        private System.Windows.Forms.TableLayoutPanel Panelthanhvien3;
+        private System.Windows.Forms.Panel Panelavatar3;
+        private System.Windows.Forms.PictureBox avatar3;
+        private System.Windows.Forms.TableLayoutPanel Panelmember3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Panel Panelchandung4;
-        private System.Windows.Forms.PictureBox anhchandung4;
-        private System.Windows.Forms.TableLayoutPanel Panelthanhvien4;
+        private System.Windows.Forms.Panel Panelavatar4;
+        private System.Windows.Forms.PictureBox avatar4;
+        private System.Windows.Forms.TableLayoutPanel Panelmember4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.Panel Panelchandung5;
-        private System.Windows.Forms.PictureBox anhchandung5;
-        private System.Windows.Forms.TableLayoutPanel Panelthanhvien5;
+        private System.Windows.Forms.Panel Panelavatar5;
+        private System.Windows.Forms.PictureBox avatar5;
+        private System.Windows.Forms.TableLayoutPanel Panelmember5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox11;
@@ -897,9 +897,9 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.TableLayoutPanel Panelthem;
-        private System.Windows.Forms.Button Buttonmo;
-        private System.Windows.Forms.Button buttontat;
+        private System.Windows.Forms.TableLayoutPanel Paneltools;
+        private System.Windows.Forms.Button Buttonon;
+        private System.Windows.Forms.Button buttonoff;
         private System.Windows.Forms.Label userNameLabel;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label2;
