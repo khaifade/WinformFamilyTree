@@ -31,7 +31,7 @@ namespace WinformFamilyTree.TreeClasses
             {
                 conn.Open();
                 // Creating SQL Command using sql and connection
-                string sql = "SELECT * FROM tbl_user";
+                string sql = "SELECT * FROM USERDATA";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 // Creating Adapter using cmd
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -120,6 +120,34 @@ namespace WinformFamilyTree.TreeClasses
                 int rows = cmd.ExecuteNonQuery();
                 // If the query run sucessfully, the value of rows will be greater than 0 else its value will be 0
                 if (rows > 0) { isSuccess = true; }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+            return isSuccess;
+        }
+        public bool Check(string email, string password)
+        {
+            // Step 1: Database connection
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            DataTable dt = new DataTable();
+            bool isSuccess = false;
+            try
+            {
+                conn.Open();
+                // Creating SQL Command using sql and connection
+                string sql = "SELECT * FROM UserData WHERE Email = '" + email + "' AND UserPassword = '" + password + "'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                // Creating Adapter using cmd
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    isSuccess = true;
+                }
+
             }
             catch (Exception ex)
             {
