@@ -63,6 +63,16 @@ namespace WinformFamilyTree.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap attach_image_icon {
+            get {
+                object obj = ResourceManager.GetObject("attach-image-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382 {
             get {
                 object obj = ResourceManager.GetObject("chu-chim-canh-cut-con-nhin-cute-de-thuong_113124382", resourceCulture);

@@ -39,10 +39,6 @@ namespace WinformFamilyTree
             this.searchBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.sharedScreen = new WinformFamilyTree.SharedScreen();
-            this.memberListScreen = new WinformFamilyTree.MemberListScreen();
-            this.biographyScreen = new WinformFamilyTree.BiographyViewScreen();
-            this.homeScreen = new WinformFamilyTree.HomeScreen();
             this.SearchIconPictureBox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.AvatarPictureBox = new System.Windows.Forms.PictureBox();
@@ -52,6 +48,11 @@ namespace WinformFamilyTree
             this.signUpPage = new WinformFamilyTree.SignUpPage();
             this.firstPage = new WinformFamilyTree.FirstPage();
             this.signInPage = new WinformFamilyTree.SignInPage();
+            this.sharedScreen = new WinformFamilyTree.SharedScreen();
+            this.memberListScreen = new WinformFamilyTree.MemberListScreen();
+            this.biographyScreen = new WinformFamilyTree.BiographyViewScreen();
+            this.homeScreen = new WinformFamilyTree.HomeScreen();
+            this.addMemberScreen1 = new WinformFamilyTree.UI.AddMemberScreen();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchIconPictureBox)).BeginInit();
@@ -188,38 +189,6 @@ namespace WinformFamilyTree
             this.flowLayoutPanel2.Size = new System.Drawing.Size(872, 550);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
-            // sharedScreen
-            // 
-            this.sharedScreen.Location = new System.Drawing.Point(0, 0);
-            this.sharedScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.sharedScreen.Name = "sharedScreen";
-            this.sharedScreen.Size = new System.Drawing.Size(1024, 900);
-            this.sharedScreen.TabIndex = 3;
-            // 
-            // memberListScreen
-            // 
-            this.memberListScreen.Location = new System.Drawing.Point(0, 900);
-            this.memberListScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.memberListScreen.Name = "memberListScreen";
-            this.memberListScreen.Size = new System.Drawing.Size(1024, 900);
-            this.memberListScreen.TabIndex = 2;
-            // 
-            // biographyScreen
-            // 
-            this.biographyScreen.Location = new System.Drawing.Point(0, 1800);
-            this.biographyScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.biographyScreen.Name = "biographyScreen";
-            this.biographyScreen.Size = new System.Drawing.Size(1024, 900);
-            this.biographyScreen.TabIndex = 1;
-            // 
-            // homeScreen
-            // 
-            this.homeScreen.Location = new System.Drawing.Point(0, 2700);
-            this.homeScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.homeScreen.Name = "homeScreen";
-            this.homeScreen.Size = new System.Drawing.Size(1024, 900);
-            this.homeScreen.TabIndex = 0;
-            // 
             // SearchIconPictureBox
             // 
             this.SearchIconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -303,6 +272,7 @@ namespace WinformFamilyTree
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.addMemberScreen1);
             this.panel1.Controls.Add(this.signUpPage);
             this.panel1.Controls.Add(this.firstPage);
             this.panel1.Controls.Add(this.signInPage);
@@ -338,6 +308,45 @@ namespace WinformFamilyTree
             this.signInPage.Name = "signInPage";
             this.signInPage.Size = new System.Drawing.Size(1264, 681);
             this.signInPage.TabIndex = 10;
+            // 
+            // sharedScreen
+            // 
+            this.sharedScreen.Location = new System.Drawing.Point(0, 0);
+            this.sharedScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.sharedScreen.Name = "sharedScreen";
+            this.sharedScreen.Size = new System.Drawing.Size(1024, 900);
+            this.sharedScreen.TabIndex = 3;
+            // 
+            // memberListScreen
+            // 
+            this.memberListScreen.Location = new System.Drawing.Point(0, 900);
+            this.memberListScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.memberListScreen.Name = "memberListScreen";
+            this.memberListScreen.Size = new System.Drawing.Size(1024, 900);
+            this.memberListScreen.TabIndex = 2;
+            // 
+            // biographyScreen
+            // 
+            this.biographyScreen.Location = new System.Drawing.Point(0, 1800);
+            this.biographyScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.biographyScreen.Name = "biographyScreen";
+            this.biographyScreen.Size = new System.Drawing.Size(1024, 900);
+            this.biographyScreen.TabIndex = 1;
+            // 
+            // homeScreen
+            // 
+            this.homeScreen.Location = new System.Drawing.Point(0, 2700);
+            this.homeScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.homeScreen.Name = "homeScreen";
+            this.homeScreen.Size = new System.Drawing.Size(1024, 900);
+            this.homeScreen.TabIndex = 0;
+            // 
+            // addMemberScreen1
+            // 
+            this.addMemberScreen1.Location = new System.Drawing.Point(255, 0);
+            this.addMemberScreen1.Name = "addMemberScreen1";
+            this.addMemberScreen1.Size = new System.Drawing.Size(732, 678);
+            this.addMemberScreen1.TabIndex = 13;
             // 
             // familyTree
             // 
@@ -389,6 +398,7 @@ namespace WinformFamilyTree
         private FirstPage firstPage;
         private SignUpPage signUpPage;
         private Panel panel1;
+        private UI.AddMemberScreen addMemberScreen1;
     }
 }
 
