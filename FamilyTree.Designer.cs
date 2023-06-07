@@ -32,91 +32,39 @@ namespace WinformFamilyTree
         /// </summary>
         private void InitializeComponent()
         {
-            this.homeScreenButton = new System.Windows.Forms.Button();
-            this.viewBiographyButton = new System.Windows.Forms.Button();
-            this.memberListButton = new System.Windows.Forms.Button();
-            this.sharedButton = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
             this.searchBox = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.containerLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.mainLayout = new System.Windows.Forms.FlowLayoutPanel();
+            this.SearchIconPictureBox = new System.Windows.Forms.PictureBox();
             this.sharedScreen = new WinformFamilyTree.SharedScreen();
             this.memberListScreen = new WinformFamilyTree.MemberListScreen();
             this.biographyScreen = new WinformFamilyTree.BiographyViewScreen();
             this.homeScreen = new WinformFamilyTree.HomeScreen();
-            this.SearchIconPictureBox = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.AvatarPictureBox = new System.Windows.Forms.PictureBox();
-            this.userNameLabel = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.signUpPage = new WinformFamilyTree.SignUpPage();
-            this.firstPage = new WinformFamilyTree.FirstPage();
-            this.signInPage = new WinformFamilyTree.SignInPage();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
+            this.navGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.wrappedNavLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.AvatarProfilePicture = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.wrappedUserLayout = new System.Windows.Forms.FlowLayoutPanel();
+            this.userNameLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.customFont = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
+            this.customButton = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
+            this.wrappedNavButtonLayout = new System.Windows.Forms.FlowLayoutPanel();
+            this.homeScreenButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.borderEdge = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
+            this.viewBiographyButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.memberListButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.sharedButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.containerLayout.SuspendLayout();
+            this.mainLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchIconPictureBox)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.navGroupBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navGroupBox.Panel)).BeginInit();
+            this.navGroupBox.Panel.SuspendLayout();
+            this.navGroupBox.SuspendLayout();
+            this.wrappedNavLayout.SuspendLayout();
+            this.wrappedUserLayout.SuspendLayout();
+            this.wrappedNavButtonLayout.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // homeScreenButton
-            // 
-            this.homeScreenButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.homeScreenButton.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeScreenButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.homeScreenButton.Location = new System.Drawing.Point(0, 0);
-            this.homeScreenButton.Margin = new System.Windows.Forms.Padding(0);
-            this.homeScreenButton.Name = "homeScreenButton";
-            this.homeScreenButton.Size = new System.Drawing.Size(290, 49);
-            this.homeScreenButton.TabIndex = 0;
-            this.homeScreenButton.Text = "Màn hình chính";
-            this.homeScreenButton.UseVisualStyleBackColor = false;
-            this.homeScreenButton.Click += new System.EventHandler(this.homeScreenButton_Click);
-            this.homeScreenButton.MouseCaptureChanged += new System.EventHandler(this.homeScreenButton_onClick);
-            // 
-            // viewBiographyButton
-            // 
-            this.viewBiographyButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.viewBiographyButton.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewBiographyButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.viewBiographyButton.Location = new System.Drawing.Point(0, 49);
-            this.viewBiographyButton.Margin = new System.Windows.Forms.Padding(0);
-            this.viewBiographyButton.Name = "viewBiographyButton";
-            this.viewBiographyButton.Size = new System.Drawing.Size(290, 49);
-            this.viewBiographyButton.TabIndex = 1;
-            this.viewBiographyButton.Text = "Xem tiểu sử";
-            this.viewBiographyButton.UseVisualStyleBackColor = false;
-            this.viewBiographyButton.Click += new System.EventHandler(this.viewBiographyButton_Click);
-            // 
-            // memberListButton
-            // 
-            this.memberListButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.memberListButton.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memberListButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.memberListButton.Location = new System.Drawing.Point(0, 98);
-            this.memberListButton.Margin = new System.Windows.Forms.Padding(0);
-            this.memberListButton.Name = "memberListButton";
-            this.memberListButton.Size = new System.Drawing.Size(290, 49);
-            this.memberListButton.TabIndex = 2;
-            this.memberListButton.Text = "Danh sách thành viên";
-            this.memberListButton.UseVisualStyleBackColor = false;
-            this.memberListButton.Click += new System.EventHandler(this.memberListButton_Click);
-            // 
-            // sharedButton
-            // 
-            this.sharedButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.sharedButton.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sharedButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.sharedButton.Location = new System.Drawing.Point(0, 147);
-            this.sharedButton.Margin = new System.Windows.Forms.Padding(0);
-            this.sharedButton.Name = "sharedButton";
-            this.sharedButton.Size = new System.Drawing.Size(290, 49);
-            this.sharedButton.TabIndex = 3;
-            this.sharedButton.Text = "Chia sẻ cây";
-            this.sharedButton.UseVisualStyleBackColor = false;
-            this.sharedButton.Click += new System.EventHandler(this.shareButton_Click);
             // 
             // searchBox
             // 
@@ -133,60 +81,73 @@ namespace WinformFamilyTree
             this.searchBox.DoubleClick += new System.EventHandler(this.searchBox_DoubleClick);
             this.searchBox.Leave += new System.EventHandler(this.searchBox_LostFocus);
             // 
-            // tableLayoutPanel1
+            // containerLayout
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 9;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 6, 3);
-            this.tableLayoutPanel1.Controls.Add(this.searchBox, 7, 2);
-            this.tableLayoutPanel1.Controls.Add(this.SearchIconPictureBox, 6, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 9;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 681);
-            this.tableLayoutPanel1.TabIndex = 9;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.containerLayout.BackColor = System.Drawing.Color.Transparent;
+            this.containerLayout.ColumnCount = 9;
+            this.containerLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.containerLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.containerLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.containerLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.containerLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.containerLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.containerLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.containerLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.containerLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.containerLayout.Controls.Add(this.mainLayout, 6, 3);
+            this.containerLayout.Controls.Add(this.searchBox, 7, 2);
+            this.containerLayout.Controls.Add(this.SearchIconPictureBox, 6, 2);
+            this.containerLayout.Controls.Add(this.navGroupBox, 1, 2);
+            this.containerLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.containerLayout.Location = new System.Drawing.Point(0, 0);
+            this.containerLayout.Margin = new System.Windows.Forms.Padding(0);
+            this.containerLayout.Name = "containerLayout";
+            this.containerLayout.RowCount = 9;
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.containerLayout.Size = new System.Drawing.Size(1264, 681);
+            this.containerLayout.TabIndex = 9;
+            this.containerLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // flowLayoutPanel2
+            // mainLayout
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.flowLayoutPanel2, 2);
-            this.flowLayoutPanel2.Controls.Add(this.sharedScreen);
-            this.flowLayoutPanel2.Controls.Add(this.memberListScreen);
-            this.flowLayoutPanel2.Controls.Add(this.biographyScreen);
-            this.flowLayoutPanel2.Controls.Add(this.homeScreen);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(370, 100);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.tableLayoutPanel1.SetRowSpan(this.flowLayoutPanel2, 5);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(872, 550);
-            this.flowLayoutPanel2.TabIndex = 3;
+            this.containerLayout.SetColumnSpan(this.mainLayout, 2);
+            this.mainLayout.Controls.Add(this.sharedScreen);
+            this.mainLayout.Controls.Add(this.memberListScreen);
+            this.mainLayout.Controls.Add(this.biographyScreen);
+            this.mainLayout.Controls.Add(this.homeScreen);
+            this.mainLayout.Location = new System.Drawing.Point(370, 100);
+            this.mainLayout.Margin = new System.Windows.Forms.Padding(0);
+            this.mainLayout.Name = "mainLayout";
+            this.containerLayout.SetRowSpan(this.mainLayout, 5);
+            this.mainLayout.Size = new System.Drawing.Size(872, 530);
+            this.mainLayout.TabIndex = 3;
+            // 
+            // SearchIconPictureBox
+            // 
+            this.SearchIconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SearchIconPictureBox.ErrorImage = global::WinformFamilyTree.Properties.Resources.search;
+            this.SearchIconPictureBox.Image = global::WinformFamilyTree.Properties.Resources.search;
+            this.SearchIconPictureBox.Location = new System.Drawing.Point(994, 57);
+            this.SearchIconPictureBox.Margin = new System.Windows.Forms.Padding(4, 7, 4, 3);
+            this.SearchIconPictureBox.Name = "SearchIconPictureBox";
+            this.SearchIconPictureBox.Size = new System.Drawing.Size(26, 26);
+            this.SearchIconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SearchIconPictureBox.TabIndex = 8;
+            this.SearchIconPictureBox.TabStop = false;
             // 
             // sharedScreen
             // 
@@ -220,124 +181,274 @@ namespace WinformFamilyTree
             this.homeScreen.Size = new System.Drawing.Size(1024, 900);
             this.homeScreen.TabIndex = 0;
             // 
-            // SearchIconPictureBox
+            // navGroupBox
             // 
-            this.SearchIconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchIconPictureBox.ErrorImage = global::WinformFamilyTree.Properties.Resources.search;
-            this.SearchIconPictureBox.Image = global::WinformFamilyTree.Properties.Resources.search;
-            this.SearchIconPictureBox.Location = new System.Drawing.Point(994, 57);
-            this.SearchIconPictureBox.Margin = new System.Windows.Forms.Padding(4, 7, 4, 3);
-            this.SearchIconPictureBox.Name = "SearchIconPictureBox";
-            this.SearchIconPictureBox.Size = new System.Drawing.Size(26, 26);
-            this.SearchIconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.SearchIconPictureBox.TabIndex = 8;
-            this.SearchIconPictureBox.TabStop = false;
+            this.containerLayout.SetColumnSpan(this.navGroupBox, 5);
+            this.navGroupBox.Location = new System.Drawing.Point(30, 50);
+            this.navGroupBox.Margin = new System.Windows.Forms.Padding(0);
+            this.navGroupBox.Name = "navGroupBox";
             // 
-            // tableLayoutPanel2
+            // navGroupBox.Panel
             // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.tableLayoutPanel2.ColumnCount = 5;
-            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel2, 5);
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel2.Controls.Add(this.AvatarPictureBox, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.userNameLabel, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 1, 4);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(30, 50);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel1.SetRowSpan(this.tableLayoutPanel2, 6);
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(340, 600);
-            this.tableLayoutPanel2.TabIndex = 9;
+            this.navGroupBox.Panel.Controls.Add(this.wrappedNavLayout);
+            this.containerLayout.SetRowSpan(this.navGroupBox, 5);
+            this.navGroupBox.Size = new System.Drawing.Size(340, 580);
+            this.navGroupBox.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.navGroupBox.StateCommon.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.navGroupBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
+            this.navGroupBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.navGroupBox.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.navGroupBox.StateCommon.Border.Rounding = 20;
+            this.navGroupBox.StateCommon.Border.Width = 2;
+            this.navGroupBox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(-1, -1, -1, 10);
+            this.navGroupBox.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(186)))), ((int)(((byte)(239)))));
+            this.navGroupBox.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(85)))));
+            this.navGroupBox.StateCommon.Content.ShortText.ColorAngle = 225F;
+            this.navGroupBox.StateCommon.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
+            this.navGroupBox.StateCommon.Content.ShortText.Font = new System.Drawing.Font("UTM Hanzel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navGroupBox.StateCommon.Content.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
+            this.navGroupBox.TabIndex = 9;
+            this.navGroupBox.Values.Heading = "Phần mềm quản lý cây gia phả";
             // 
-            // AvatarPictureBox
+            // wrappedNavLayout
             // 
-            this.AvatarPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AvatarPictureBox.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
-            this.AvatarPictureBox.Location = new System.Drawing.Point(67, 47);
-            this.AvatarPictureBox.Margin = new System.Windows.Forms.Padding(0);
-            this.AvatarPictureBox.Name = "AvatarPictureBox";
-            this.AvatarPictureBox.Size = new System.Drawing.Size(200, 200);
-            this.AvatarPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.AvatarPictureBox.TabIndex = 0;
-            this.AvatarPictureBox.TabStop = false;
+            this.wrappedNavLayout.BackColor = System.Drawing.Color.Transparent;
+            this.wrappedNavLayout.ColumnCount = 1;
+            this.wrappedNavLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.wrappedNavLayout.Controls.Add(this.wrappedNavButtonLayout, 0, 1);
+            this.wrappedNavLayout.Controls.Add(this.wrappedUserLayout, 0, 0);
+            this.wrappedNavLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wrappedNavLayout.Location = new System.Drawing.Point(0, 0);
+            this.wrappedNavLayout.Name = "wrappedNavLayout";
+            this.wrappedNavLayout.RowCount = 2;
+            this.wrappedNavLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.wrappedNavLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.wrappedNavLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.wrappedNavLayout.Size = new System.Drawing.Size(322, 533);
+            this.wrappedNavLayout.TabIndex = 0;
+            // 
+            // AvatarProfilePicture
+            // 
+            this.AvatarProfilePicture.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.AvatarProfilePicture.Location = new System.Drawing.Point(4, 20);
+            this.AvatarProfilePicture.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.AvatarProfilePicture.Name = "AvatarProfilePicture";
+            this.AvatarProfilePicture.Size = new System.Drawing.Size(150, 150);
+            this.AvatarProfilePicture.StateCommon.Back.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
+            this.AvatarProfilePicture.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
+            this.AvatarProfilePicture.StateCommon.Border.Color1 = System.Drawing.Color.White;
+            this.AvatarProfilePicture.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.AvatarProfilePicture.StateCommon.Border.Rounding = 100;
+            this.AvatarProfilePicture.StateCommon.Border.Width = 3;
+            this.AvatarProfilePicture.TabIndex = 1;
+            this.AvatarProfilePicture.Values.Text = "";
+            // 
+            // wrappedUserLayout
+            // 
+            this.wrappedUserLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.wrappedUserLayout.AutoSize = true;
+            this.wrappedUserLayout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.wrappedUserLayout.Controls.Add(this.AvatarProfilePicture);
+            this.wrappedUserLayout.Controls.Add(this.userNameLabel);
+            this.wrappedUserLayout.Controls.Add(this.borderEdge);
+            this.wrappedUserLayout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.wrappedUserLayout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wrappedUserLayout.Location = new System.Drawing.Point(82, 0);
+            this.wrappedUserLayout.Margin = new System.Windows.Forms.Padding(0);
+            this.wrappedUserLayout.Name = "wrappedUserLayout";
+            this.wrappedUserLayout.Size = new System.Drawing.Size(158, 218);
+            this.wrappedUserLayout.TabIndex = 2;
             // 
             // userNameLabel
             // 
-            this.userNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.userNameLabel.AutoSize = true;
-            this.userNameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel2.SetColumnSpan(this.userNameLabel, 3);
-            this.userNameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameLabel.Location = new System.Drawing.Point(20, 247);
+            this.userNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.userNameLabel.Location = new System.Drawing.Point(0, 180);
+            this.userNameLabel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.userNameLabel.Name = "userNameLabel";
-            this.userNameLabel.Size = new System.Drawing.Size(294, 50);
-            this.userNameLabel.TabIndex = 1;
-            this.userNameLabel.Text = "Ricardo Penguin";
-            this.userNameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.userNameLabel.Palette = this.customFont;
+            this.userNameLabel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
+            this.userNameLabel.Size = new System.Drawing.Size(158, 24);
+            this.userNameLabel.TabIndex = 2;
+            this.userNameLabel.Values.Text = "Người dùng khách";
             // 
-            // flowLayoutPanel1
+            // customFont
             // 
-            this.tableLayoutPanel2.SetColumnSpan(this.flowLayoutPanel1, 3);
-            this.flowLayoutPanel1.Controls.Add(this.homeScreenButton);
-            this.flowLayoutPanel1.Controls.Add(this.viewBiographyButton);
-            this.flowLayoutPanel1.Controls.Add(this.memberListButton);
-            this.flowLayoutPanel1.Controls.Add(this.sharedButton);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 327);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(300, 273);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.customFont.Common.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.customFont.Common.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // panel1
+            // customButton
             // 
-            this.panel1.Controls.Add(this.signUpPage);
-            this.panel1.Controls.Add(this.firstPage);
-            this.panel1.Controls.Add(this.signInPage);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1264, 681);
-            this.panel1.TabIndex = 10;
+            this.customButton.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.customButton.Common.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.customButton.Common.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
+            this.customButton.Common.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.customButton.Common.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.customButton.Common.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.customButton.Common.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.customButton.Common.StateCommon.Border.Rounding = 20;
+            this.customButton.Common.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.customButton.Common.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // signUpPage
+            // wrappedNavButtonLayout
             // 
-            this.signUpPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.signUpPage.Location = new System.Drawing.Point(0, 0);
-            this.signUpPage.Name = "signUpPage";
-            this.signUpPage.Size = new System.Drawing.Size(1264, 681);
-            this.signUpPage.TabIndex = 12;
+            this.wrappedNavButtonLayout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.wrappedNavButtonLayout.AutoSize = true;
+            this.wrappedNavButtonLayout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.wrappedNavButtonLayout.Controls.Add(this.sharedButton);
+            this.wrappedNavButtonLayout.Controls.Add(this.memberListButton);
+            this.wrappedNavButtonLayout.Controls.Add(this.viewBiographyButton);
+            this.wrappedNavButtonLayout.Controls.Add(this.homeScreenButton);
+            this.wrappedNavButtonLayout.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.wrappedNavButtonLayout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wrappedNavButtonLayout.Location = new System.Drawing.Point(18, 218);
+            this.wrappedNavButtonLayout.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
+            this.wrappedNavButtonLayout.Name = "wrappedNavButtonLayout";
+            this.wrappedNavButtonLayout.Size = new System.Drawing.Size(285, 327);
+            this.wrappedNavButtonLayout.TabIndex = 3;
             // 
-            // firstPage
+            // homeScreenButton
             // 
-            this.firstPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.firstPage.Location = new System.Drawing.Point(0, 0);
-            this.firstPage.Margin = new System.Windows.Forms.Padding(2);
-            this.firstPage.Name = "firstPage";
-            this.firstPage.Size = new System.Drawing.Size(1264, 681);
-            this.firstPage.TabIndex = 11;
+            this.homeScreenButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.homeScreenButton.Location = new System.Drawing.Point(0, 101);
+            this.homeScreenButton.Margin = new System.Windows.Forms.Padding(0);
+            this.homeScreenButton.Name = "homeScreenButton";
+            this.homeScreenButton.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.homeScreenButton.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.homeScreenButton.OverrideDefault.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.homeScreenButton.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.homeScreenButton.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.homeScreenButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeScreenButton.Palette = this.customButton;
+            this.homeScreenButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
+            this.homeScreenButton.Size = new System.Drawing.Size(285, 49);
+            this.homeScreenButton.StatePressed.Back.Color1 = System.Drawing.Color.White;
+            this.homeScreenButton.StatePressed.Back.Color2 = System.Drawing.Color.White;
+            this.homeScreenButton.StatePressed.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.homeScreenButton.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
+            this.homeScreenButton.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
+            this.homeScreenButton.StatePressed.Content.ShortText.ColorAngle = 90F;
+            this.homeScreenButton.StatePressed.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
+            this.homeScreenButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeScreenButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
+            this.homeScreenButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
+            this.homeScreenButton.StateTracking.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.homeScreenButton.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.homeScreenButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeScreenButton.TabIndex = 3;
+            this.homeScreenButton.Values.Text = "Màn hình chính";
             // 
-            // signInPage
+            // borderEdge
             // 
-            this.signInPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.signInPage.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signInPage.Location = new System.Drawing.Point(0, 0);
-            this.signInPage.Name = "signInPage";
-            this.signInPage.Size = new System.Drawing.Size(1264, 681);
-            this.signInPage.TabIndex = 10;
+            this.borderEdge.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.borderEdge.Location = new System.Drawing.Point(29, 204);
+            this.borderEdge.Margin = new System.Windows.Forms.Padding(0);
+            this.borderEdge.Name = "borderEdge";
+            this.borderEdge.Size = new System.Drawing.Size(100, 5);
+            this.borderEdge.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
+            this.borderEdge.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
+            this.borderEdge.StateCommon.ColorAngle = 180F;
+            this.borderEdge.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
+            this.borderEdge.StateCommon.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.borderEdge.StateCommon.Width = 5;
+            // 
+            // viewBiographyButton
+            // 
+            this.viewBiographyButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.viewBiographyButton.Location = new System.Drawing.Point(0, 160);
+            this.viewBiographyButton.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.viewBiographyButton.Name = "viewBiographyButton";
+            this.viewBiographyButton.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.viewBiographyButton.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.viewBiographyButton.OverrideDefault.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.viewBiographyButton.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.viewBiographyButton.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.viewBiographyButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewBiographyButton.Palette = this.customButton;
+            this.viewBiographyButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
+            this.viewBiographyButton.Size = new System.Drawing.Size(285, 49);
+            this.viewBiographyButton.StatePressed.Back.Color1 = System.Drawing.Color.White;
+            this.viewBiographyButton.StatePressed.Back.Color2 = System.Drawing.Color.White;
+            this.viewBiographyButton.StatePressed.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.viewBiographyButton.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
+            this.viewBiographyButton.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
+            this.viewBiographyButton.StatePressed.Content.ShortText.ColorAngle = 90F;
+            this.viewBiographyButton.StatePressed.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
+            this.viewBiographyButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewBiographyButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
+            this.viewBiographyButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
+            this.viewBiographyButton.StateTracking.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.viewBiographyButton.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.viewBiographyButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewBiographyButton.TabIndex = 4;
+            this.viewBiographyButton.Values.Text = "Xem tiểu sử";
+            // 
+            // memberListButton
+            // 
+            this.memberListButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.memberListButton.Location = new System.Drawing.Point(0, 219);
+            this.memberListButton.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.memberListButton.Name = "memberListButton";
+            this.memberListButton.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.memberListButton.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.memberListButton.OverrideDefault.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.memberListButton.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.memberListButton.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.memberListButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberListButton.Palette = this.customButton;
+            this.memberListButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
+            this.memberListButton.Size = new System.Drawing.Size(285, 49);
+            this.memberListButton.StatePressed.Back.Color1 = System.Drawing.Color.White;
+            this.memberListButton.StatePressed.Back.Color2 = System.Drawing.Color.White;
+            this.memberListButton.StatePressed.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.memberListButton.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
+            this.memberListButton.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
+            this.memberListButton.StatePressed.Content.ShortText.ColorAngle = 90F;
+            this.memberListButton.StatePressed.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
+            this.memberListButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberListButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
+            this.memberListButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
+            this.memberListButton.StateTracking.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.memberListButton.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.memberListButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberListButton.TabIndex = 5;
+            this.memberListButton.Values.Text = "Danh sách thành viên";
+            // 
+            // sharedButton
+            // 
+            this.sharedButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.sharedButton.Location = new System.Drawing.Point(0, 278);
+            this.sharedButton.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.sharedButton.Name = "sharedButton";
+            this.sharedButton.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.sharedButton.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.sharedButton.OverrideDefault.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.sharedButton.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.sharedButton.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.sharedButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sharedButton.Palette = this.customButton;
+            this.sharedButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
+            this.sharedButton.Size = new System.Drawing.Size(285, 49);
+            this.sharedButton.StatePressed.Back.Color1 = System.Drawing.Color.White;
+            this.sharedButton.StatePressed.Back.Color2 = System.Drawing.Color.White;
+            this.sharedButton.StatePressed.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.sharedButton.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
+            this.sharedButton.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
+            this.sharedButton.StatePressed.Content.ShortText.ColorAngle = 90F;
+            this.sharedButton.StatePressed.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
+            this.sharedButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sharedButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
+            this.sharedButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
+            this.sharedButton.StateTracking.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.sharedButton.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.sharedButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sharedButton.TabIndex = 6;
+            this.sharedButton.Values.Text = "Chia sẻ cây";
             // 
             // familyTree
             // 
@@ -345,8 +456,7 @@ namespace WinformFamilyTree
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.containerLayout);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -354,41 +464,45 @@ namespace WinformFamilyTree
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Family Tree";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
+            this.containerLayout.ResumeLayout(false);
+            this.containerLayout.PerformLayout();
+            this.mainLayout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SearchIconPictureBox)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.navGroupBox.Panel)).EndInit();
+            this.navGroupBox.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.navGroupBox)).EndInit();
+            this.navGroupBox.ResumeLayout(false);
+            this.wrappedNavLayout.ResumeLayout(false);
+            this.wrappedNavLayout.PerformLayout();
+            this.wrappedUserLayout.ResumeLayout(false);
+            this.wrappedUserLayout.PerformLayout();
+            this.wrappedNavButtonLayout.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Button homeScreenButton;
-        private Button viewBiographyButton;
-        private Button memberListButton;
-        private Button sharedButton;
         private TextBox searchBox;
         private PictureBox SearchIconPictureBox;
-        private TableLayoutPanel tableLayoutPanel1;
-        private PictureBox AvatarPictureBox;
-        private Label userNameLabel;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private FlowLayoutPanel flowLayoutPanel2;
+        private TableLayoutPanel containerLayout;
+        private FlowLayoutPanel mainLayout;
         private SharedScreen sharedScreen;
         private MemberListScreen memberListScreen;
         private BiographyViewScreen biographyScreen;
         private HomeScreen homeScreen;
-        private TableLayoutPanel tableLayoutPanel2;
-        private SignInPage signInPage;
-        private FirstPage firstPage;
-        private SignUpPage signUpPage;
-        private Panel panel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox navGroupBox;
+        private TableLayoutPanel wrappedNavLayout;
+        private FlowLayoutPanel wrappedNavButtonLayout;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton homeScreenButton;
+        private ComponentFactory.Krypton.Toolkit.KryptonPalette customButton;
+        private FlowLayoutPanel wrappedUserLayout;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton AvatarProfilePicture;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel userNameLabel;
+        private ComponentFactory.Krypton.Toolkit.KryptonPalette customFont;
+        private ComponentFactory.Krypton.Toolkit.KryptonBorderEdge borderEdge;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton sharedButton;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton memberListButton;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton viewBiographyButton;
     }
 }
 

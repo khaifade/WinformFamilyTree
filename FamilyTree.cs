@@ -19,6 +19,7 @@ namespace WinformFamilyTree
         public UserControl ucFirstPage;
         public UserControl ucSignUpPage;
         public UserControl ucSignInPage;
+        public Panel pLoginLayout;
 
         // Declaring a variable to submit a sign up form to database
         public void formSubmit_SignUp(object sender, EventArgs e)
@@ -43,27 +44,28 @@ namespace WinformFamilyTree
         public familyTree()
         {
             InitializeComponent();
-            ucSignInPage = signInPage;
-            ucFirstPage = firstPage; 
-            ucSignUpPage = signUpPage;
+            //ucSignInPage = signInPage;
+            //ucFirstPage = firstPage; 
+            //ucSignUpPage = signUpPage;
+            //pLoginLayout = loginLayout;
             instance = this;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // Inital View is Home Screen 
-            tableLayoutPanel1.BackColor = Color.FromArgb(0, 0, 0, 0);
-            viewBiographyButton.FlatStyle = FlatStyle.Flat; 
-            viewBiographyButton.FlatAppearance.BorderSize = 0;
-            homeScreenButton.FlatStyle = FlatStyle.Flat;
-            homeScreenButton.FlatAppearance.BorderSize= 0;
-            memberListButton.FlatStyle = FlatStyle.Flat;
-            memberListButton.FlatAppearance.BorderSize = 0;
-            sharedButton.FlatStyle = FlatStyle.Flat;
-            sharedButton.FlatAppearance.BorderSize = 0;
-            firstPage.Show();
-            signUpPage.Hide();
-            signInPage.Hide();
+            containerLayout.BackColor = Color.FromArgb(0, 0, 0, 0);
+            //viewBiographyButton.FlatStyle = FlatStyle.Flat; 
+            //viewBiographyButton.FlatAppearance.BorderSize = 0;
+            //homeScreenButton.FlatStyle = FlatStyle.Flat;
+            //homeScreenButton.FlatAppearance.BorderSize= 0;
+            //memberListButton.FlatStyle = FlatStyle.Flat;
+            //memberListButton.FlatAppearance.BorderSize = 0;
+            //sharedButton.FlatStyle = FlatStyle.Flat;
+            //sharedButton.FlatAppearance.BorderSize = 0;
+            //firstPage.Show();
+            //signUpPage.Hide();
+            //signInPage.Hide();
             homeScreen.Hide();
             biographyScreen.Hide();
             memberListScreen.Hide();
@@ -176,9 +178,5 @@ namespace WinformFamilyTree
 
         }
 
-        private void signUpPage2_Load(object sender, EventArgs e)
-        {
-       
-        }
     }
 }
