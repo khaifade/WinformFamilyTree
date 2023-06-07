@@ -178,5 +178,9 @@ namespace WinformFamilyTree
 
         }
 
+        private void sharedScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

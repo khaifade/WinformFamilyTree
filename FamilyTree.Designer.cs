@@ -156,6 +156,7 @@ namespace WinformFamilyTree
             this.sharedScreen.Name = "sharedScreen";
             this.sharedScreen.Size = new System.Drawing.Size(1024, 900);
             this.sharedScreen.TabIndex = 3;
+            this.sharedScreen.Load += new System.EventHandler(this.sharedScreen_Load);
             // 
             // memberListScreen
             // 
