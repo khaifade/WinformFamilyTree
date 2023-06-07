@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinformFamilyTree.TreeClasses;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace WinformFamilyTree
 {
@@ -75,7 +76,12 @@ namespace WinformFamilyTree
         }
 
 
-
+        private void workspaceCaption_Change(object sender, EventArgs e)
+        {
+            KryptonButton navButton = (KryptonButton)sender;
+            workspaceGroupBox.Values.Heading = navButton.Text;
+            
+        }
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -89,6 +95,8 @@ namespace WinformFamilyTree
             sharedScreen.Hide();
             homeScreen.BringToFront();
 
+            // change caption of the workspace
+            workspaceCaption_Change(homeScreenButton, e);
         }
 
         private void viewBiographyButton_Click(object sender, EventArgs e)
@@ -99,6 +107,8 @@ namespace WinformFamilyTree
             sharedScreen.Hide();
             biographyScreen.BringToFront();
 
+            // change caption of the workspace
+           workspaceCaption_Change(viewBiographyButton, e);
         }
 
         private void memberListButton_Click(object sender, EventArgs e)
@@ -109,7 +119,11 @@ namespace WinformFamilyTree
             memberListScreen.Show();
             sharedScreen.Hide();
             memberListScreen.BringToFront();
+
             // Hide search box
+
+            // change caption of the workspace
+            workspaceCaption_Change(memberListButton, e);
 
         }
 
@@ -121,6 +135,8 @@ namespace WinformFamilyTree
             sharedScreen.Show();
             sharedScreen.BringToFront();
 
+            // change caption of the workspace
+            workspaceCaption_Change(sharedButton, e);
         }
 
         private void searchBox_DoubleClick(object sender, EventArgs e)
