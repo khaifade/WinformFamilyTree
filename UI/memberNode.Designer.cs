@@ -1,6 +1,6 @@
-﻿namespace WinformFamilyTree
+﻿namespace WinformFamilyTree.UI
 {
-    partial class HomeScreen
+    partial class memberNode
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,22 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.memberNode1 = new WinformFamilyTree.UI.memberNode();
+            this.infoGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
             this.memberProfilePicture = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            ((System.ComponentModel.ISupportInitialize)(this.infoGroupBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoGroupBox.Panel)).BeginInit();
+            this.infoGroupBox.Panel.SuspendLayout();
+            this.infoGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // memberNode1
+            // infoGroupBox
             // 
-            this.memberNode1.Location = new System.Drawing.Point(152, 151);
-            this.memberNode1.Margin = new System.Windows.Forms.Padding(0);
-            this.memberNode1.Name = "memberNode1";
-            this.memberNode1.Size = new System.Drawing.Size(200, 150);
-            this.memberNode1.TabIndex = 0;
+            this.infoGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.infoGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.infoGroupBox.Name = "infoGroupBox";
+            // 
+            // infoGroupBox.Panel
+            // 
+            this.infoGroupBox.Panel.Controls.Add(this.memberProfilePicture);
+            this.infoGroupBox.Size = new System.Drawing.Size(200, 150);
+            this.infoGroupBox.TabIndex = 0;
+            this.infoGroupBox.Values.Heading = "";
             // 
             // memberProfilePicture
             // 
-            this.memberProfilePicture.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.memberProfilePicture.Location = new System.Drawing.Point(437, 186);
+            this.memberProfilePicture.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.memberProfilePicture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.memberProfilePicture.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.memberProfilePicture.Location = new System.Drawing.Point(0, 25);
             this.memberProfilePicture.Margin = new System.Windows.Forms.Padding(0);
             this.memberProfilePicture.Name = "memberProfilePicture";
             this.memberProfilePicture.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(186)))), ((int)(((byte)(239)))));
@@ -72,25 +83,25 @@
             this.memberProfilePicture.StateCommon.Border.Rounding = 300;
             this.memberProfilePicture.StateCommon.Border.Width = 5;
             this.memberProfilePicture.TabIndex = 5;
-            this.memberProfilePicture.Values.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
-            this.memberProfilePicture.Values.Text = "";
             // 
-            // HomeScreen
+            // memberNode
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.memberProfilePicture);
-            this.Controls.Add(this.memberNode1);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.infoGroupBox);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.MaximumSize = new System.Drawing.Size(844, 499);
-            this.Name = "HomeScreen";
-            this.Size = new System.Drawing.Size(844, 499);
+            this.Name = "memberNode";
+            this.Size = new System.Drawing.Size(200, 150);
+            ((System.ComponentModel.ISupportInitialize)(this.infoGroupBox.Panel)).EndInit();
+            this.infoGroupBox.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.infoGroupBox)).EndInit();
+            this.infoGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private UI.memberNode memberNode1;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox infoGroupBox;
         private ComponentFactory.Krypton.Toolkit.KryptonButton memberProfilePicture;
     }
 }

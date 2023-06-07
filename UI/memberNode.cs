@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinformFamilyTree
+namespace WinformFamilyTree.UI
 {
-    public partial class HomeScreen : UserControl
+    public partial class memberNode : UserControl
     {
-        public HomeScreen()
+        public memberNode()
         {
             InitializeComponent();
         }
-
     }
 }

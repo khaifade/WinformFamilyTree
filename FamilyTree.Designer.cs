@@ -34,10 +34,6 @@ namespace WinformFamilyTree
         {
             this.components = new System.ComponentModel.Container();
             this.containerLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.sharedScreen = new WinformFamilyTree.SharedScreen();
-            this.memberListScreen = new WinformFamilyTree.MemberListScreen();
-            this.biographyScreen = new WinformFamilyTree.BiographyViewScreen();
-            this.homeScreen = new WinformFamilyTree.HomeScreen();
             this.navGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
             this.wrappedNavLayout = new System.Windows.Forms.TableLayoutPanel();
             this.wrappedNavButtonLayout = new System.Windows.Forms.FlowLayoutPanel();
@@ -56,6 +52,10 @@ namespace WinformFamilyTree
             this.searchIcon = new System.Windows.Forms.PictureBox();
             this.searchBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.workspaceGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.memberListScreen = new WinformFamilyTree.MemberListScreen();
+            this.homeScreen = new WinformFamilyTree.HomeScreen();
+            this.biographyScreen = new WinformFamilyTree.BiographyViewScreen();
+            this.sharedScreen = new WinformFamilyTree.SharedScreen();
             this.containerLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navGroupBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navGroupBox.Panel)).BeginInit();
@@ -115,43 +115,6 @@ namespace WinformFamilyTree
             this.containerLayout.Size = new System.Drawing.Size(1264, 681);
             this.containerLayout.TabIndex = 9;
             this.containerLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // sharedScreen
-            // 
-            this.sharedScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sharedScreen.Location = new System.Drawing.Point(0, 0);
-            this.sharedScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.sharedScreen.Name = "sharedScreen";
-            this.sharedScreen.Size = new System.Drawing.Size(844, 499);
-            this.sharedScreen.TabIndex = 3;
-            this.sharedScreen.Load += new System.EventHandler(this.sharedScreen_Load);
-            // 
-            // memberListScreen
-            // 
-            this.memberListScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.memberListScreen.Location = new System.Drawing.Point(0, 0);
-            this.memberListScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.memberListScreen.Name = "memberListScreen";
-            this.memberListScreen.Size = new System.Drawing.Size(844, 499);
-            this.memberListScreen.TabIndex = 2;
-            // 
-            // biographyScreen
-            // 
-            this.biographyScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.biographyScreen.Location = new System.Drawing.Point(0, 0);
-            this.biographyScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.biographyScreen.Name = "biographyScreen";
-            this.biographyScreen.Size = new System.Drawing.Size(844, 499);
-            this.biographyScreen.TabIndex = 1;
-            // 
-            // homeScreen
-            // 
-            this.homeScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homeScreen.Location = new System.Drawing.Point(0, 0);
-            this.homeScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.homeScreen.Name = "homeScreen";
-            this.homeScreen.Size = new System.Drawing.Size(844, 499);
-            this.homeScreen.TabIndex = 0;
             // 
             // navGroupBox
             // 
@@ -509,6 +472,43 @@ namespace WinformFamilyTree
             this.workspaceGroupBox.StateCommon.Content.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.workspaceGroupBox.TabIndex = 12;
             this.workspaceGroupBox.Values.Heading = "Tổng quan";
+            // 
+            // memberListScreen
+            // 
+            this.memberListScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.memberListScreen.Location = new System.Drawing.Point(0, 0);
+            this.memberListScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.memberListScreen.Name = "memberListScreen";
+            this.memberListScreen.Size = new System.Drawing.Size(844, 499);
+            this.memberListScreen.TabIndex = 2;
+            // 
+            // homeScreen
+            // 
+            this.homeScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.homeScreen.Location = new System.Drawing.Point(0, 0);
+            this.homeScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.homeScreen.Name = "homeScreen";
+            this.homeScreen.Size = new System.Drawing.Size(844, 499);
+            this.homeScreen.TabIndex = 0;
+            // 
+            // biographyScreen
+            // 
+            this.biographyScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.biographyScreen.Location = new System.Drawing.Point(0, 0);
+            this.biographyScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.biographyScreen.Name = "biographyScreen";
+            this.biographyScreen.Size = new System.Drawing.Size(844, 499);
+            this.biographyScreen.TabIndex = 1;
+            // 
+            // sharedScreen
+            // 
+            this.sharedScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sharedScreen.Location = new System.Drawing.Point(0, 0);
+            this.sharedScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.sharedScreen.Name = "sharedScreen";
+            this.sharedScreen.Size = new System.Drawing.Size(844, 499);
+            this.sharedScreen.TabIndex = 3;
+            this.sharedScreen.Load += new System.EventHandler(this.sharedScreen_Load);
             // 
             // familyTree
             // 
