@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.infoGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
-            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.memberBirthYearLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.memberNameLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.memberProfilePicture = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.infoGroupBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoGroupBox.Panel)).BeginInit();
@@ -46,8 +46,8 @@
             // 
             // infoGroupBox.Panel
             // 
-            this.infoGroupBox.Panel.Controls.Add(this.kryptonLabel2);
-            this.infoGroupBox.Panel.Controls.Add(this.kryptonLabel1);
+            this.infoGroupBox.Panel.Controls.Add(this.memberBirthYearLabel);
+            this.infoGroupBox.Panel.Controls.Add(this.memberNameLabel);
             this.infoGroupBox.Size = new System.Drawing.Size(200, 50);
             this.infoGroupBox.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.infoGroupBox.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
@@ -58,29 +58,29 @@
             this.infoGroupBox.TabIndex = 0;
             this.infoGroupBox.Values.Heading = "";
             // 
-            // kryptonLabel2
+            // memberBirthYearLabel
             // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(134, 7);
-            this.kryptonLabel2.Margin = new System.Windows.Forms.Padding(0);
-            this.kryptonLabel2.Name = "kryptonLabel2";
-            this.kryptonLabel2.Size = new System.Drawing.Size(52, 24);
-            this.kryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
-            this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel2.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
-            this.kryptonLabel2.TabIndex = 0;
-            this.kryptonLabel2.Values.Text = "1923";
+            this.memberBirthYearLabel.Location = new System.Drawing.Point(134, 7);
+            this.memberBirthYearLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.memberBirthYearLabel.Name = "memberBirthYearLabel";
+            this.memberBirthYearLabel.Size = new System.Drawing.Size(52, 24);
+            this.memberBirthYearLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.memberBirthYearLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberBirthYearLabel.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
+            this.memberBirthYearLabel.TabIndex = 0;
+            this.memberBirthYearLabel.Values.Text = "1923";
             // 
-            // kryptonLabel1
+            // memberNameLabel
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(0, 7);
-            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(0);
-            this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(98, 24);
-            this.kryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
-            this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel1.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
-            this.kryptonLabel1.TabIndex = 0;
-            this.kryptonLabel1.Values.Text = "Lê Quý Gia";
+            this.memberNameLabel.Location = new System.Drawing.Point(0, 7);
+            this.memberNameLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.memberNameLabel.Name = "memberNameLabel";
+            this.memberNameLabel.Size = new System.Drawing.Size(98, 24);
+            this.memberNameLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.memberNameLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberNameLabel.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
+            this.memberNameLabel.TabIndex = 0;
+            this.memberNameLabel.Values.Text = "Lê Quý Gia";
             // 
             // memberProfilePicture
             // 
@@ -134,8 +134,8 @@
 
         #endregion
         private ComponentFactory.Krypton.Toolkit.KryptonGroupBox infoGroupBox;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel memberBirthYearLabel;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel memberNameLabel;
         private ComponentFactory.Krypton.Toolkit.KryptonButton memberProfilePicture;
     }
 }

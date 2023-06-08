@@ -36,20 +36,20 @@
             this.addParentButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.addChildButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.deleteMemberButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.icon_deterRelationship = new System.Windows.Forms.PictureBox();
+            this.icon_deleteMember = new System.Windows.Forms.PictureBox();
+            this.icon_addChild = new System.Windows.Forms.PictureBox();
+            this.icon_addParent = new System.Windows.Forms.PictureBox();
+            this.icon_addSpouse = new System.Windows.Forms.PictureBox();
+            this.icon_viewBio = new System.Windows.Forms.PictureBox();
             this.deterRelationshipButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.backgroundPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_deterRelationship)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_deleteMember)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_addChild)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_addParent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_addSpouse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_viewBio)).BeginInit();
             this.SuspendLayout();
             // 
             // backgroundPanel
@@ -58,17 +58,17 @@
             this.backgroundPanel.ColumnCount = 2;
             this.backgroundPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.backgroundPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.backgroundPanel.Controls.Add(this.pictureBox6, 0, 5);
+            this.backgroundPanel.Controls.Add(this.icon_deterRelationship, 0, 5);
             this.backgroundPanel.Controls.Add(this.deleteMemberButton, 1, 4);
-            this.backgroundPanel.Controls.Add(this.pictureBox5, 0, 4);
+            this.backgroundPanel.Controls.Add(this.icon_deleteMember, 0, 4);
             this.backgroundPanel.Controls.Add(this.addChildButton, 1, 3);
-            this.backgroundPanel.Controls.Add(this.pictureBox4, 0, 3);
+            this.backgroundPanel.Controls.Add(this.icon_addChild, 0, 3);
             this.backgroundPanel.Controls.Add(this.addParentButton, 1, 2);
-            this.backgroundPanel.Controls.Add(this.pictureBox3, 0, 2);
+            this.backgroundPanel.Controls.Add(this.icon_addParent, 0, 2);
             this.backgroundPanel.Controls.Add(this.addSpouseButton, 1, 1);
-            this.backgroundPanel.Controls.Add(this.pictureBox2, 0, 1);
+            this.backgroundPanel.Controls.Add(this.icon_addSpouse, 0, 1);
             this.backgroundPanel.Controls.Add(this.viewBiographyButton, 1, 0);
-            this.backgroundPanel.Controls.Add(this.pictureBox1, 0, 0);
+            this.backgroundPanel.Controls.Add(this.icon_viewBio, 0, 0);
             this.backgroundPanel.Controls.Add(this.deterRelationshipButton, 1, 5);
             this.backgroundPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.backgroundPanel.Location = new System.Drawing.Point(0, 0);
@@ -154,73 +154,73 @@
             this.deleteMemberButton.TabIndex = 9;
             this.deleteMemberButton.Values.Text = "Xoá khỏi gia tộc";
             // 
-            // pictureBox6
+            // icon_deterRelationship
             // 
-            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox6.Image = global::WinformFamilyTree.Properties.Resources.determine_icon;
-            this.pictureBox6.Location = new System.Drawing.Point(3, 169);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(34, 27);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 10;
-            this.pictureBox6.TabStop = false;
+            this.icon_deterRelationship.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.icon_deterRelationship.Image = global::WinformFamilyTree.Properties.Resources.determine_icon;
+            this.icon_deterRelationship.Location = new System.Drawing.Point(3, 169);
+            this.icon_deterRelationship.Name = "icon_deterRelationship";
+            this.icon_deterRelationship.Size = new System.Drawing.Size(34, 27);
+            this.icon_deterRelationship.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icon_deterRelationship.TabIndex = 10;
+            this.icon_deterRelationship.TabStop = false;
             // 
-            // pictureBox5
+            // icon_deleteMember
             // 
-            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox5.Image = global::WinformFamilyTree.Properties.Resources.delete_icon;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 135);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(34, 27);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 8;
-            this.pictureBox5.TabStop = false;
+            this.icon_deleteMember.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.icon_deleteMember.Image = global::WinformFamilyTree.Properties.Resources.delete_icon;
+            this.icon_deleteMember.Location = new System.Drawing.Point(3, 135);
+            this.icon_deleteMember.Name = "icon_deleteMember";
+            this.icon_deleteMember.Size = new System.Drawing.Size(34, 27);
+            this.icon_deleteMember.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icon_deleteMember.TabIndex = 8;
+            this.icon_deleteMember.TabStop = false;
             // 
-            // pictureBox4
+            // icon_addChild
             // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox4.Image = global::WinformFamilyTree.Properties.Resources.child_icon;
-            this.pictureBox4.Location = new System.Drawing.Point(3, 102);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(34, 27);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
+            this.icon_addChild.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.icon_addChild.Image = global::WinformFamilyTree.Properties.Resources.child_icon;
+            this.icon_addChild.Location = new System.Drawing.Point(3, 102);
+            this.icon_addChild.Name = "icon_addChild";
+            this.icon_addChild.Size = new System.Drawing.Size(34, 27);
+            this.icon_addChild.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icon_addChild.TabIndex = 6;
+            this.icon_addChild.TabStop = false;
             // 
-            // pictureBox3
+            // icon_addParent
             // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.Image = global::WinformFamilyTree.Properties.Resources.spouse_icon;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 69);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(34, 27);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
+            this.icon_addParent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.icon_addParent.Image = global::WinformFamilyTree.Properties.Resources.spouse_icon;
+            this.icon_addParent.Location = new System.Drawing.Point(3, 69);
+            this.icon_addParent.Name = "icon_addParent";
+            this.icon_addParent.Size = new System.Drawing.Size(34, 27);
+            this.icon_addParent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icon_addParent.TabIndex = 4;
+            this.icon_addParent.TabStop = false;
             // 
-            // pictureBox2
+            // icon_addSpouse
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::WinformFamilyTree.Properties.Resources.spouse_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 36);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 27);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.icon_addSpouse.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.icon_addSpouse.Image = global::WinformFamilyTree.Properties.Resources.spouse_icon;
+            this.icon_addSpouse.Location = new System.Drawing.Point(3, 36);
+            this.icon_addSpouse.Name = "icon_addSpouse";
+            this.icon_addSpouse.Size = new System.Drawing.Size(34, 27);
+            this.icon_addSpouse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icon_addSpouse.TabIndex = 2;
+            this.icon_addSpouse.TabStop = false;
             // 
-            // pictureBox1
+            // icon_viewBio
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::WinformFamilyTree.Properties.Resources.biogrpahy_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 33);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.icon_viewBio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.icon_viewBio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.icon_viewBio.Image = global::WinformFamilyTree.Properties.Resources.biogrpahy_icon;
+            this.icon_viewBio.Location = new System.Drawing.Point(3, 0);
+            this.icon_viewBio.Margin = new System.Windows.Forms.Padding(0);
+            this.icon_viewBio.Name = "icon_viewBio";
+            this.icon_viewBio.Size = new System.Drawing.Size(34, 33);
+            this.icon_viewBio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icon_viewBio.TabIndex = 1;
+            this.icon_viewBio.TabStop = false;
             // 
             // deterRelationshipButton
             // 
@@ -253,12 +253,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.backgroundPanel.ResumeLayout(false);
             this.backgroundPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_deterRelationship)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_deleteMember)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_addChild)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_addParent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_addSpouse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_viewBio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,16 +267,16 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonPalette customPopupForm;
         private System.Windows.Forms.TableLayoutPanel backgroundPanel;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox icon_viewBio;
+        private System.Windows.Forms.PictureBox icon_addSpouse;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel viewBiographyButton;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox icon_addChild;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel addParentButton;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox icon_addParent;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel addSpouseButton;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox icon_deleteMember;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel addChildButton;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox icon_deterRelationship;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel deleteMemberButton;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel deterRelationshipButton;
     }
