@@ -29,56 +29,31 @@
         private void InitializeComponent()
         {
             this.memberNode1 = new WinformFamilyTree.UI.memberNode();
-            this.memberProfilePicture = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.memberNode2 = new WinformFamilyTree.UI.memberNode();
             this.SuspendLayout();
             // 
             // memberNode1
             // 
-            this.memberNode1.Location = new System.Drawing.Point(152, 151);
+            this.memberNode1.BackColor = System.Drawing.Color.Transparent;
+            this.memberNode1.Location = new System.Drawing.Point(410, 146);
             this.memberNode1.Margin = new System.Windows.Forms.Padding(0);
             this.memberNode1.Name = "memberNode1";
             this.memberNode1.Size = new System.Drawing.Size(200, 150);
             this.memberNode1.TabIndex = 0;
             // 
-            // memberProfilePicture
+            // memberNode2
             // 
-            this.memberProfilePicture.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.memberProfilePicture.Location = new System.Drawing.Point(437, 186);
-            this.memberProfilePicture.Margin = new System.Windows.Forms.Padding(0);
-            this.memberProfilePicture.Name = "memberProfilePicture";
-            this.memberProfilePicture.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(186)))), ((int)(((byte)(239)))));
-            this.memberProfilePicture.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(85)))));
-            this.memberProfilePicture.OverrideDefault.Border.ColorAngle = 225F;
-            this.memberProfilePicture.OverrideDefault.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
-            this.memberProfilePicture.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.memberProfilePicture.OverrideDefault.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.memberProfilePicture.OverrideDefault.Border.Rounding = 200;
-            this.memberProfilePicture.OverrideDefault.Border.Width = 5;
-            this.memberProfilePicture.Size = new System.Drawing.Size(100, 100);
-            this.memberProfilePicture.StateCommon.Back.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
-            this.memberProfilePicture.StateCommon.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.memberProfilePicture.StateCommon.Back.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
-            this.memberProfilePicture.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
-            this.memberProfilePicture.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(186)))), ((int)(((byte)(239)))));
-            this.memberProfilePicture.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(85)))));
-            this.memberProfilePicture.StateCommon.Border.ColorAngle = 225F;
-            this.memberProfilePicture.StateCommon.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
-            this.memberProfilePicture.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.memberProfilePicture.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.memberProfilePicture.StateCommon.Border.Rounding = 300;
-            this.memberProfilePicture.StateCommon.Border.Width = 5;
-            this.memberProfilePicture.TabIndex = 5;
-            this.memberProfilePicture.Values.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
-            this.memberProfilePicture.Values.Text = "";
+            this.memberNode2.BackColor = System.Drawing.Color.Transparent;
+            this.memberNode2.Location = new System.Drawing.Point(167, 146);
+            this.memberNode2.Margin = new System.Windows.Forms.Padding(0);
+            this.memberNode2.Name = "memberNode2";
+            this.memberNode2.Size = new System.Drawing.Size(200, 150);
+            this.memberNode2.TabIndex = 1;
             // 
             // HomeScreen
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.memberProfilePicture);
+            this.Controls.Add(this.memberNode2);
             this.Controls.Add(this.memberNode1);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.MaximumSize = new System.Drawing.Size(844, 499);
@@ -91,6 +66,6 @@
         #endregion
 
         private UI.memberNode memberNode1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton memberProfilePicture;
+        private UI.memberNode memberNode2;
     }
 }

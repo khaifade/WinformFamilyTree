@@ -13,7 +13,7 @@ using ComponentFactory.Krypton.Toolkit;
 namespace WinformFamilyTree
 {
     
-    public partial class familyTree : Form
+    public partial class familyTree : KryptonForm
     {
         // These variable used to communicate together.
         public static familyTree instance;

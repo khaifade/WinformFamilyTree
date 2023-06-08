@@ -33,6 +33,7 @@ namespace WinformFamilyTree
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(familyTree));
             this.containerLayout = new System.Windows.Forms.TableLayoutPanel();
             this.navGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
             this.wrappedNavLayout = new System.Windows.Forms.TableLayoutPanel();
@@ -56,6 +57,7 @@ namespace WinformFamilyTree
             this.homeScreen = new WinformFamilyTree.HomeScreen();
             this.biographyScreen = new WinformFamilyTree.BiographyViewScreen();
             this.sharedScreen = new WinformFamilyTree.SharedScreen();
+            this.customForm = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.containerLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navGroupBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navGroupBox.Panel)).BeginInit();
@@ -347,7 +349,7 @@ namespace WinformFamilyTree
             this.AvatarProfilePicture.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.AvatarProfilePicture.Name = "AvatarProfilePicture";
             this.AvatarProfilePicture.Size = new System.Drawing.Size(150, 150);
-            this.AvatarProfilePicture.StateCommon.Back.Image = global::WinformFamilyTree.Properties.Resources.chu_chim_canh_cut_con_nhin_cute_de_thuong_113124382;
+            this.AvatarProfilePicture.StateCommon.Back.Image = global::WinformFamilyTree.Properties.Resources.family_tree_logo;
             this.AvatarProfilePicture.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
             this.AvatarProfilePicture.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.AvatarProfilePicture.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -356,6 +358,7 @@ namespace WinformFamilyTree
             this.AvatarProfilePicture.StateCommon.Border.Rounding = 100;
             this.AvatarProfilePicture.StateCommon.Border.Width = 3;
             this.AvatarProfilePicture.TabIndex = 1;
+            this.AvatarProfilePicture.Values.Image = global::WinformFamilyTree.Properties.Resources.family_tree_logo;
             this.AvatarProfilePicture.Values.Text = "";
             // 
             // userNameLabel
@@ -487,6 +490,7 @@ namespace WinformFamilyTree
             this.homeScreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.homeScreen.Location = new System.Drawing.Point(0, 0);
             this.homeScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.homeScreen.MaximumSize = new System.Drawing.Size(844, 499);
             this.homeScreen.Name = "homeScreen";
             this.homeScreen.Size = new System.Drawing.Size(844, 499);
             this.homeScreen.TabIndex = 0;
@@ -519,8 +523,11 @@ namespace WinformFamilyTree
             this.Controls.Add(this.containerLayout);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "familyTree";
+            this.Palette = this.customForm;
+            this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Family Tree";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -573,6 +580,7 @@ namespace WinformFamilyTree
         private PictureBox searchIcon;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox searchBox;
         private ComponentFactory.Krypton.Toolkit.KryptonGroupBox workspaceGroupBox;
+        private ComponentFactory.Krypton.Toolkit.KryptonPalette customForm;
     }
 }
 

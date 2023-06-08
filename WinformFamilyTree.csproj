@@ -82,6 +82,12 @@
     <Compile Include="UI\memberNode.Designer.cs">
       <DependentUpon>memberNode.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\popupFunction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\popupFunction.Designer.cs">
+      <DependentUpon>popupFunction.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\SignInPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     <EmbeddedResource Include="UI\memberNode.resx">
       <DependentUpon>memberNode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\popupFunction.resx">
+      <DependentUpon>popupFunction.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\SignInPage.resx">
       <DependentUpon>SignInPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +201,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\family-tree-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\biogrpahy-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spouse-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\child-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\determine-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

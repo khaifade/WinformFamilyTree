@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComponentFactory.Krypton.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,14 @@ namespace WinformFamilyTree.UI
         public memberNode()
         {
             InitializeComponent();
+        }
+
+        private void memberProfilePicture_Click(object sender, EventArgs e)
+        {
+            using (popupFunction pu = new popupFunction())
+            {
+                pu.ShowDialog(this);
+            }
         }
     }
 }
