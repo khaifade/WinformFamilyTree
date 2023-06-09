@@ -38,6 +38,8 @@ namespace WinformFamilyTree
                 // load to next page
                 MessageBox.Show("Đăng nhập thành công!");
                 this.Hide();
+                familyTree.instance.pLoginLayout.Hide();
+                
             } else
             {
                 MessageBox.Show("Sai email hoặc mật khẩu!");

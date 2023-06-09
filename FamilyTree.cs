@@ -8,17 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinformFamilyTree.TreeClasses;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace WinformFamilyTree
 {
     
-    public partial class familyTree : Form
+    public partial class familyTree : KryptonForm
     {
         // These variable used to communicate together.
         public static familyTree instance;
         public UserControl ucFirstPage;
         public UserControl ucSignUpPage;
         public UserControl ucSignInPage;
+        public Panel pLoginLayout;
 
         // Declaring a variable to submit a sign up form to database
         public void formSubmit_SignUp(object sender, EventArgs e)
@@ -43,27 +45,28 @@ namespace WinformFamilyTree
         public familyTree()
         {
             InitializeComponent();
-            ucSignInPage = signInPage;
-            ucFirstPage = firstPage; 
-            ucSignUpPage = signUpPage;
+            //ucSignInPage = signInPage;
+            //ucFirstPage = firstPage; 
+            //ucSignUpPage = signUpPage;
+            //pLoginLayout = loginLayout;
             instance = this;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // Inital View is Home Screen 
-            tableLayoutPanel1.BackColor = Color.FromArgb(0, 0, 0, 0);
-            viewBiographyButton.FlatStyle = FlatStyle.Flat; 
-            viewBiographyButton.FlatAppearance.BorderSize = 0;
-            homeScreenButton.FlatStyle = FlatStyle.Flat;
-            homeScreenButton.FlatAppearance.BorderSize= 0;
-            memberListButton.FlatStyle = FlatStyle.Flat;
-            memberListButton.FlatAppearance.BorderSize = 0;
-            sharedButton.FlatStyle = FlatStyle.Flat;
-            sharedButton.FlatAppearance.BorderSize = 0;
-            firstPage.Show();
-            signUpPage.Hide();
-            signInPage.Hide();
+            containerLayout.BackColor = Color.FromArgb(0, 0, 0, 0);
+            //viewBiographyButton.FlatStyle = FlatStyle.Flat; 
+            //viewBiographyButton.FlatAppearance.BorderSize = 0;
+            //homeScreenButton.FlatStyle = FlatStyle.Flat;
+            //homeScreenButton.FlatAppearance.BorderSize= 0;
+            //memberListButton.FlatStyle = FlatStyle.Flat;
+            //memberListButton.FlatAppearance.BorderSize = 0;
+            //sharedButton.FlatStyle = FlatStyle.Flat;
+            //sharedButton.FlatAppearance.BorderSize = 0;
+            //firstPage.Show();
+            //signUpPage.Hide();
+            //signInPage.Hide();
             homeScreen.Hide();
             biographyScreen.Hide();
             memberListScreen.Hide();
@@ -73,7 +76,12 @@ namespace WinformFamilyTree
         }
 
 
-
+        private void workspaceCaption_Change(object sender, EventArgs e)
+        {
+            KryptonButton navButton = (KryptonButton)sender;
+            workspaceGroupBox.Values.Heading = navButton.Text;
+            
+        }
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -87,6 +95,8 @@ namespace WinformFamilyTree
             sharedScreen.Hide();
             homeScreen.BringToFront();
 
+            // change caption of the workspace
+            workspaceCaption_Change(homeScreenButton, e);
         }
 
         private void viewBiographyButton_Click(object sender, EventArgs e)
@@ -97,6 +107,8 @@ namespace WinformFamilyTree
             sharedScreen.Hide();
             biographyScreen.BringToFront();
 
+            // change caption of the workspace
+           workspaceCaption_Change(viewBiographyButton, e);
         }
 
         private void memberListButton_Click(object sender, EventArgs e)
@@ -107,7 +119,11 @@ namespace WinformFamilyTree
             memberListScreen.Show();
             sharedScreen.Hide();
             memberListScreen.BringToFront();
+
             // Hide search box
+
+            // change caption of the workspace
+            workspaceCaption_Change(memberListButton, e);
 
         }
 
@@ -119,6 +135,8 @@ namespace WinformFamilyTree
             sharedScreen.Show();
             sharedScreen.BringToFront();
 
+            // change caption of the workspace
+            workspaceCaption_Change(sharedButton, e);
         }
 
         private void searchBox_DoubleClick(object sender, EventArgs e)
@@ -176,9 +194,9 @@ namespace WinformFamilyTree
 
         }
 
-        private void signUpPage2_Load(object sender, EventArgs e)
+        private void sharedScreen_Load(object sender, EventArgs e)
         {
-       
+
         }
     }
 }

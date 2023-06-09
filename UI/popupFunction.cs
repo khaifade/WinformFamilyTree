@@ -7,15 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 
-namespace WinformFamilyTree
+namespace WinformFamilyTree.UI
 {
-    public partial class HomeScreen : UserControl
+    public partial class popupFunction : KryptonForm
     {
-        public HomeScreen()
+        public popupFunction()
         {
             InitializeComponent();
         }
-
     }
 }
