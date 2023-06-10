@@ -22,6 +22,7 @@ namespace WinformFamilyTree
         public UserControl ucSignUpPage = new SignUpPage();
         public UserControl ucSignInPage = new SignInPage();
         public UserControl ucFirstTimeUserPage = new FirstTimeUserPage();
+        public UserControl ucHomeScreen = new HomeScreen();
         public KryptonGroupPanel workspace;
         public FlowLayoutPanel navPanel;
 
@@ -204,10 +205,10 @@ namespace WinformFamilyTree
         {
 
         }
-        public void refreshBiographyScreen(int memberID)
+        public void refreshBiographyScreen(MemberClass member)
         {
             viewBiographyButton.PerformClick();
-            BiographyViewScreen bio = new BiographyViewScreen(memberID);
+            BiographyViewScreen bio = new BiographyViewScreen(member);
             this.workspace.Controls.Add(bio);
             bio.Show();
             bio.BringToFront();

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinformFamilyTree.TreeClasses;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace WinformFamilyTree
 {
@@ -41,10 +42,12 @@ namespace WinformFamilyTree
                 // TODO: If this is the first time logged in
 
                 // load to next page
-                this.Hide();
-                familyTree.instance.ucFirstTimeUserPage.Show();
-
-                // TODO: if this is the second time logged in
+                this.Hide();    
+                MemberClass member = new MemberClass();
+                if (member.numMember() == 0)
+                    familyTree.instance.ucFirstTimeUserPage.Show();
+                else
+                    familyTree.instance.ucHomeScreen.Show();
 
                 
             } else

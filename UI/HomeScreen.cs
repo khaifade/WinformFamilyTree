@@ -23,11 +23,16 @@ namespace WinformFamilyTree
             Instance = this;
             // TODO: Get member's name, member's brithYear & member's profile picture from database of each MemberNode
             // Example for demo:
-            string mbName = "Richard";
-            string mbBirthYear = "1999";
-            var node = new memberNode(mbName, mbBirthYear);
-            MainPanel.Controls.Add(node);
-            node.Location = new Point(0,0);
+            int x = 0;
+            int y = 0;
+            for(int i = 20; i< 25; i++)
+            {
+                var node = new memberNode(i);
+                MainPanel.Controls.Add(node);
+                node.Location = new Point(x,y);
+                y = y + 100;
+            }
+            
         }
 
     }

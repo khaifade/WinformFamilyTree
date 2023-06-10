@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WinformFamilyTree.TreeClasses
 {
-    internal class MemberClass
+    public class MemberClass
     {
         public int ID { get; set; }
         public string FirstName { get; set; }
@@ -50,20 +52,28 @@ namespace WinformFamilyTree.TreeClasses
             return dt;
         }
 
-        public DataTable SelectMember(int memberID)
+        public MemberClass SelectMember(int memberID)
         {
             SqlConnection conn = new SqlConnection(myConnectionString);
             DataTable dt = new DataTable();
+            MemberClass member = new MemberClass();
             try
             {
                 conn.Open();
                 // Creating SQL Command using sql and connection
                 string sql = "SELECT * FROM MEMBER WHERE MemberID = @MemberID";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@Member", memberID);
+                cmd.Parameters.AddWithValue("@MemberID", memberID);
                 // Creating Adapter using cmd
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
+                member.ID = memberID;
+                member.FirstName = dt.Rows[0].Field<string>(1);
+                member.LastName = dt.Rows[0].Field<string>(2);
+                member.DateOfBirth = dt.Rows[0].Field<DateTime>(3);
+                member.Gender = dt.Rows[0].Field<string>(4);
+                member.PlaceOfOrigin = dt.Rows[0].Field<string>(5);
+                member.Biography = dt.Rows[0].Field<string>(7);
 
             }
             catch (Exception ex)
@@ -71,7 +81,7 @@ namespace WinformFamilyTree.TreeClasses
                 Console.WriteLine(ex.Message);
             }
             finally { conn.Close(); }
-            return dt;
+            return member;
         }
         // Function for inserting Data into database
         public bool Insert(MemberClass c)
@@ -164,8 +174,30 @@ namespace WinformFamilyTree.TreeClasses
 
         public int numMember()
         {
-            return 0;
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            int count = 0;
+            DataTable dt = new DataTable();
+            try
+            {
+                conn.Open();
+
+                string sql = "SELECT COUNT(*) FROM MEMBER ";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                int rows = cmd.ExecuteNonQuery();
+                adapter.Fill(dt);
+                count = dt.Rows[0].Field<int>(0);
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+            
+            return count;
         }
+
 
     }
 }

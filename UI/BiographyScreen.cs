@@ -23,20 +23,19 @@ namespace WinformFamilyTree
         }
 
         // Màn hình khởi tạo khi truy xuất tiểu sử 1 thành viên từ màn hình chính
-        public BiographyViewScreen(int memberID)
+        public BiographyViewScreen(MemberClass member)
         {
 
             InitializeComponent();
             MainPanel.Visible = true;
-            MemberClass member = new MemberClass();
-            member.ID = memberID;
-            DataTable dt = member.SelectMember(memberID);
+            //MemberClass member = new MemberClass();
+            //member = member.SelectMember(memberID);
             fullNameText.Text = member.LastName + " " + member.FirstName;
             genderText.Text = member.Gender;
-            dateOfBirthText.Text = member.DateOfBirth.Day.ToString() + " " + member.DateOfBirth.Month.ToString() + " " + member.DateOfBirth.ToString();
+            dateOfBirthText.Text = member.DateOfBirth.Day.ToString() + "/" + member.DateOfBirth.Month.ToString() + "/" + member.DateOfBirth.Year.ToString();
             if(member.DateOfDeath != null)
             { 
-                dataOfDeathText.Text = member.DateOfDeath.Day.ToString() + " " + member.DateOfDeath.Month.ToString() + " " + member.DateOfDeath.Year.ToString();
+                dataOfDeathText.Text = member.DateOfDeath.Day.ToString() + "/" + member.DateOfDeath.Month.ToString() + "/" + member.DateOfDeath.Year.ToString();
             } else
             {
                 dataOfDeathText.Text = "không xác định";

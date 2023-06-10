@@ -1,4 +1,4 @@
-﻿    using ComponentFactory.Krypton.Toolkit;
+﻿using ComponentFactory.Krypton.Toolkit;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,33 +8,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinformFamilyTree.TreeClasses;
 
 namespace WinformFamilyTree.UI
 {
     public partial class memberNode : UserControl
     {
         public KryptonButton profilePicture { get; set; }
-        string _name;
-        string _brithYear;
+        MemberClass member;
         public memberNode()
         {
             InitializeComponent();
             profilePicture = memberProfilePicture;
         }
 
-        public memberNode(string name, string birthYear)
+        public memberNode(int memberID)
         {
             InitializeComponent();
             profilePicture = memberProfilePicture;
-            _name = name;
-            _brithYear = birthYear;
-            memberNameLabel.Text = name;
-            memberBirthYearLabel.Text = birthYear;
+            MemberClass member = new MemberClass();
+            member = member.SelectMember(memberID);
+            this.member = member;
+            memberNameLabel.Text = member.FirstName + " " + member.LastName;
+            memberBirthYearLabel.Text = member.DateOfBirth.Year.ToString();
         }
 
         private void memberProfilePicture_Click(object sender, EventArgs e)
         {
-            using (popupFunction pu = new popupFunction())
+            using (popupFunction pu = new popupFunction(this.member))
             {
                 pu.ShowDialog(this);
             }

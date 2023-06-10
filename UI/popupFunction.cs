@@ -9,13 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using WinformFamilyTree.TreeClasses;
 
 namespace WinformFamilyTree.UI
 {
     public partial class popupFunction : KryptonForm
     {
+        MemberClass member;
+
         public popupFunction()
         {
+            InitializeComponent();
+        }
+        public popupFunction(MemberClass member)
+        {
+            this.member = member;
             InitializeComponent();
         }
 
@@ -47,8 +55,7 @@ namespace WinformFamilyTree.UI
             // TODO: khởi tạo lại biographyViewScreen với memberID
             // Then: Đi đến màn hình Xem tiểu sử
             // Example:
-            int memberID = 1;
-            familyTree.instance.refreshBiographyScreen(memberID);
+            familyTree.instance.refreshBiographyScreen(this.member);
         }
 
         async private void deleteMemberButton_Click(object sender, EventArgs e)
