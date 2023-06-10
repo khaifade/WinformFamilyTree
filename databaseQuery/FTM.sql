@@ -11,7 +11,7 @@ create table MEMBER
 	PlaceOfOrigin varchar(255),
 	Email varchar(50),
 	Biography varchar(max),
-	MemberProfilePicture varbinary(max)
+	MemberProfilePicture image
 
 )
 
