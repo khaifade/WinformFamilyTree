@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.customPopupForm = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.backgroundPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.viewBiographyButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.addSpouseButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.addParentButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.addChildButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.deleteMemberButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.icon_deterRelationship = new System.Windows.Forms.PictureBox();
+            this.deleteMemberButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.icon_deleteMember = new System.Windows.Forms.PictureBox();
+            this.addChildButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.icon_addChild = new System.Windows.Forms.PictureBox();
+            this.addParentButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.icon_addParent = new System.Windows.Forms.PictureBox();
+            this.addSpouseButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.icon_addSpouse = new System.Windows.Forms.PictureBox();
+            this.viewBiographyButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.icon_viewBio = new System.Windows.Forms.PictureBox();
             this.deterRelationshipButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.backgroundPanel.SuspendLayout();
@@ -84,61 +84,16 @@
             this.backgroundPanel.Size = new System.Drawing.Size(184, 201);
             this.backgroundPanel.TabIndex = 0;
             // 
-            // viewBiographyButton
+            // icon_deterRelationship
             // 
-            this.viewBiographyButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.viewBiographyButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.viewBiographyButton.Location = new System.Drawing.Point(40, 4);
-            this.viewBiographyButton.Margin = new System.Windows.Forms.Padding(0);
-            this.viewBiographyButton.Name = "viewBiographyButton";
-            this.viewBiographyButton.Size = new System.Drawing.Size(108, 24);
-            this.viewBiographyButton.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
-            this.viewBiographyButton.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewBiographyButton.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
-            this.viewBiographyButton.TabIndex = 0;
-            this.viewBiographyButton.Values.Text = "Xem tiểu sử";
-            // 
-            // addSpouseButton
-            // 
-            this.addSpouseButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.addSpouseButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addSpouseButton.Location = new System.Drawing.Point(40, 37);
-            this.addSpouseButton.Margin = new System.Windows.Forms.Padding(0);
-            this.addSpouseButton.Name = "addSpouseButton";
-            this.addSpouseButton.Size = new System.Drawing.Size(139, 24);
-            this.addSpouseButton.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
-            this.addSpouseButton.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addSpouseButton.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
-            this.addSpouseButton.TabIndex = 3;
-            this.addSpouseButton.Values.Text = "Thêm vợ/chồng";
-            // 
-            // addParentButton
-            // 
-            this.addParentButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.addParentButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addParentButton.Location = new System.Drawing.Point(40, 70);
-            this.addParentButton.Margin = new System.Windows.Forms.Padding(0);
-            this.addParentButton.Name = "addParentButton";
-            this.addParentButton.Size = new System.Drawing.Size(114, 24);
-            this.addParentButton.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
-            this.addParentButton.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addParentButton.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
-            this.addParentButton.TabIndex = 5;
-            this.addParentButton.Values.Text = "Thêm bố/mẹ";
-            // 
-            // addChildButton
-            // 
-            this.addChildButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.addChildButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addChildButton.Location = new System.Drawing.Point(40, 103);
-            this.addChildButton.Margin = new System.Windows.Forms.Padding(0);
-            this.addChildButton.Name = "addChildButton";
-            this.addChildButton.Size = new System.Drawing.Size(119, 24);
-            this.addChildButton.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
-            this.addChildButton.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addChildButton.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
-            this.addChildButton.TabIndex = 7;
-            this.addChildButton.Values.Text = "Thêm con cái";
+            this.icon_deterRelationship.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.icon_deterRelationship.Image = global::WinformFamilyTree.Properties.Resources.determine_icon;
+            this.icon_deterRelationship.Location = new System.Drawing.Point(3, 169);
+            this.icon_deterRelationship.Name = "icon_deterRelationship";
+            this.icon_deterRelationship.Size = new System.Drawing.Size(34, 27);
+            this.icon_deterRelationship.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icon_deterRelationship.TabIndex = 10;
+            this.icon_deterRelationship.TabStop = false;
             // 
             // deleteMemberButton
             // 
@@ -153,17 +108,7 @@
             this.deleteMemberButton.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.deleteMemberButton.TabIndex = 9;
             this.deleteMemberButton.Values.Text = "Xoá khỏi gia tộc";
-            // 
-            // icon_deterRelationship
-            // 
-            this.icon_deterRelationship.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.icon_deterRelationship.Image = global::WinformFamilyTree.Properties.Resources.determine_icon;
-            this.icon_deterRelationship.Location = new System.Drawing.Point(3, 169);
-            this.icon_deterRelationship.Name = "icon_deterRelationship";
-            this.icon_deterRelationship.Size = new System.Drawing.Size(34, 27);
-            this.icon_deterRelationship.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.icon_deterRelationship.TabIndex = 10;
-            this.icon_deterRelationship.TabStop = false;
+            this.deleteMemberButton.Click += new System.EventHandler(this.deleteMemberButton_Click);
             // 
             // icon_deleteMember
             // 
@@ -176,6 +121,21 @@
             this.icon_deleteMember.TabIndex = 8;
             this.icon_deleteMember.TabStop = false;
             // 
+            // addChildButton
+            // 
+            this.addChildButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.addChildButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addChildButton.Location = new System.Drawing.Point(40, 103);
+            this.addChildButton.Margin = new System.Windows.Forms.Padding(0);
+            this.addChildButton.Name = "addChildButton";
+            this.addChildButton.Size = new System.Drawing.Size(119, 24);
+            this.addChildButton.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.addChildButton.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addChildButton.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
+            this.addChildButton.TabIndex = 7;
+            this.addChildButton.Values.Text = "Thêm con cái";
+            this.addChildButton.Click += new System.EventHandler(this.addMember_Click);
+            // 
             // icon_addChild
             // 
             this.icon_addChild.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -186,6 +146,21 @@
             this.icon_addChild.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.icon_addChild.TabIndex = 6;
             this.icon_addChild.TabStop = false;
+            // 
+            // addParentButton
+            // 
+            this.addParentButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.addParentButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addParentButton.Location = new System.Drawing.Point(40, 70);
+            this.addParentButton.Margin = new System.Windows.Forms.Padding(0);
+            this.addParentButton.Name = "addParentButton";
+            this.addParentButton.Size = new System.Drawing.Size(114, 24);
+            this.addParentButton.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.addParentButton.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addParentButton.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
+            this.addParentButton.TabIndex = 5;
+            this.addParentButton.Values.Text = "Thêm bố/mẹ";
+            this.addParentButton.Click += new System.EventHandler(this.addMember_Click);
             // 
             // icon_addParent
             // 
@@ -198,6 +173,21 @@
             this.icon_addParent.TabIndex = 4;
             this.icon_addParent.TabStop = false;
             // 
+            // addSpouseButton
+            // 
+            this.addSpouseButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.addSpouseButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addSpouseButton.Location = new System.Drawing.Point(40, 37);
+            this.addSpouseButton.Margin = new System.Windows.Forms.Padding(0);
+            this.addSpouseButton.Name = "addSpouseButton";
+            this.addSpouseButton.Size = new System.Drawing.Size(139, 24);
+            this.addSpouseButton.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.addSpouseButton.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addSpouseButton.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
+            this.addSpouseButton.TabIndex = 3;
+            this.addSpouseButton.Values.Text = "Thêm vợ/chồng";
+            this.addSpouseButton.Click += new System.EventHandler(this.addMember_Click);
+            // 
             // icon_addSpouse
             // 
             this.icon_addSpouse.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -209,10 +199,24 @@
             this.icon_addSpouse.TabIndex = 2;
             this.icon_addSpouse.TabStop = false;
             // 
+            // viewBiographyButton
+            // 
+            this.viewBiographyButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.viewBiographyButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.viewBiographyButton.Location = new System.Drawing.Point(40, 4);
+            this.viewBiographyButton.Margin = new System.Windows.Forms.Padding(0);
+            this.viewBiographyButton.Name = "viewBiographyButton";
+            this.viewBiographyButton.Size = new System.Drawing.Size(108, 24);
+            this.viewBiographyButton.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.viewBiographyButton.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewBiographyButton.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
+            this.viewBiographyButton.TabIndex = 0;
+            this.viewBiographyButton.Values.Text = "Xem tiểu sử";
+            this.viewBiographyButton.Click += new System.EventHandler(this.viewBiographyButton_Click);
+            // 
             // icon_viewBio
             // 
             this.icon_viewBio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.icon_viewBio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.icon_viewBio.Image = global::WinformFamilyTree.Properties.Resources.biogrpahy_icon;
             this.icon_viewBio.Location = new System.Drawing.Point(3, 0);
             this.icon_viewBio.Margin = new System.Windows.Forms.Padding(0);
@@ -235,6 +239,7 @@
             this.deterRelationshipButton.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.deterRelationshipButton.TabIndex = 9;
             this.deterRelationshipButton.Values.Text = "Tìm mối liên hệ";
+            this.deterRelationshipButton.Click += new System.EventHandler(this.deterRelationshipButton_Click);
             // 
             // popupFunction
             // 

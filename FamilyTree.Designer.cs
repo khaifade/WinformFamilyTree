@@ -48,16 +48,18 @@ namespace WinformFamilyTree
             this.userNameLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.customFont = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.borderEdge = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
-            this.seachGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
-            this.wrappedSearchBox = new System.Windows.Forms.FlowLayoutPanel();
-            this.searchIcon = new System.Windows.Forms.PictureBox();
-            this.searchBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.workspaceGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
             this.memberListScreen = new WinformFamilyTree.MemberListScreen();
             this.homeScreen = new WinformFamilyTree.HomeScreen();
             this.biographyScreen = new WinformFamilyTree.BiographyViewScreen();
             this.sharedScreen = new WinformFamilyTree.SharedScreen();
+            this.searchBoxContainer = new System.Windows.Forms.Panel();
+            this.seachGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
+            this.wrappedSearchBox = new System.Windows.Forms.FlowLayoutPanel();
+            this.searchIcon = new System.Windows.Forms.PictureBox();
+            this.searchBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.customForm = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.containerLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navGroupBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navGroupBox.Panel)).BeginInit();
@@ -66,16 +68,18 @@ namespace WinformFamilyTree
             this.wrappedNavLayout.SuspendLayout();
             this.wrappedNavButtonLayout.SuspendLayout();
             this.wrappedUserLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.workspaceGroupBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workspaceGroupBox.Panel)).BeginInit();
+            this.workspaceGroupBox.Panel.SuspendLayout();
+            this.workspaceGroupBox.SuspendLayout();
+            this.searchBoxContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seachGroupBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seachGroupBox.Panel)).BeginInit();
             this.seachGroupBox.Panel.SuspendLayout();
             this.seachGroupBox.SuspendLayout();
             this.wrappedSearchBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workspaceGroupBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workspaceGroupBox.Panel)).BeginInit();
-            this.workspaceGroupBox.Panel.SuspendLayout();
-            this.workspaceGroupBox.SuspendLayout();
+            this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // containerLayout
@@ -92,8 +96,8 @@ namespace WinformFamilyTree
             this.containerLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.containerLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.containerLayout.Controls.Add(this.navGroupBox, 1, 2);
-            this.containerLayout.Controls.Add(this.seachGroupBox, 7, 2);
             this.containerLayout.Controls.Add(this.workspaceGroupBox, 6, 3);
+            this.containerLayout.Controls.Add(this.searchBoxContainer, 7, 2);
             this.containerLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.containerLayout.Location = new System.Drawing.Point(0, 0);
             this.containerLayout.Margin = new System.Windows.Forms.Padding(0);
@@ -392,9 +396,90 @@ namespace WinformFamilyTree
             this.borderEdge.StateCommon.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.borderEdge.StateCommon.Width = 5;
             // 
+            // workspaceGroupBox
+            // 
+            this.containerLayout.SetColumnSpan(this.workspaceGroupBox, 2);
+            this.workspaceGroupBox.Location = new System.Drawing.Point(380, 100);
+            this.workspaceGroupBox.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.workspaceGroupBox.Name = "workspaceGroupBox";
+            // 
+            // workspaceGroupBox.Panel
+            // 
+            this.workspaceGroupBox.Panel.AutoScroll = true;
+            this.workspaceGroupBox.Panel.Controls.Add(this.memberListScreen);
+            this.workspaceGroupBox.Panel.Controls.Add(this.homeScreen);
+            this.workspaceGroupBox.Panel.Controls.Add(this.biographyScreen);
+            this.workspaceGroupBox.Panel.Controls.Add(this.sharedScreen);
+            this.containerLayout.SetRowSpan(this.workspaceGroupBox, 4);
+            this.workspaceGroupBox.Size = new System.Drawing.Size(862, 530);
+            this.workspaceGroupBox.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.workspaceGroupBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
+            this.workspaceGroupBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.workspaceGroupBox.StateCommon.Border.Rounding = 20;
+            this.workspaceGroupBox.StateCommon.Border.Width = 2;
+            this.workspaceGroupBox.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.workspaceGroupBox.StateCommon.Content.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
+            this.workspaceGroupBox.TabIndex = 12;
+            this.workspaceGroupBox.Values.Heading = "Tổng quan";
+            // 
+            // memberListScreen
+            // 
+            this.memberListScreen.BackColor = System.Drawing.Color.White;
+            this.memberListScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.memberListScreen.Location = new System.Drawing.Point(0, 0);
+            this.memberListScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.memberListScreen.Name = "memberListScreen";
+            this.memberListScreen.Size = new System.Drawing.Size(844, 499);
+            this.memberListScreen.TabIndex = 2;
+            // 
+            // homeScreen
+            // 
+            this.homeScreen.AutoScroll = true;
+            this.homeScreen.BackColor = System.Drawing.Color.White;
+            this.homeScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.homeScreen.Location = new System.Drawing.Point(0, 0);
+            this.homeScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.homeScreen.MaximumSize = new System.Drawing.Size(844, 499);
+            this.homeScreen.Name = "homeScreen";
+            this.homeScreen.Size = new System.Drawing.Size(844, 499);
+            this.homeScreen.TabIndex = 0;
+            // 
+            // biographyScreen
+            // 
+            this.biographyScreen.BackColor = System.Drawing.Color.White;
+            this.biographyScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.biographyScreen.Location = new System.Drawing.Point(0, 0);
+            this.biographyScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.biographyScreen.Name = "biographyScreen";
+            this.biographyScreen.Size = new System.Drawing.Size(844, 499);
+            this.biographyScreen.TabIndex = 1;
+            // 
+            // sharedScreen
+            // 
+            this.sharedScreen.BackColor = System.Drawing.Color.White;
+            this.sharedScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sharedScreen.Location = new System.Drawing.Point(0, 0);
+            this.sharedScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.sharedScreen.Name = "sharedScreen";
+            this.sharedScreen.Size = new System.Drawing.Size(844, 499);
+            this.sharedScreen.TabIndex = 3;
+            this.sharedScreen.Load += new System.EventHandler(this.sharedScreen_Load);
+            // 
+            // searchBoxContainer
+            // 
+            this.searchBoxContainer.Controls.Add(this.seachGroupBox);
+            this.searchBoxContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchBoxContainer.Location = new System.Drawing.Point(1027, 53);
+            this.searchBoxContainer.Name = "searchBoxContainer";
+            this.searchBoxContainer.Size = new System.Drawing.Size(212, 44);
+            this.searchBoxContainer.TabIndex = 13;
+            // 
             // seachGroupBox
             // 
-            this.seachGroupBox.Location = new System.Drawing.Point(1027, 53);
+            this.seachGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.seachGroupBox.Location = new System.Drawing.Point(0, 0);
             this.seachGroupBox.Name = "seachGroupBox";
             // 
             // seachGroupBox.Panel
@@ -448,71 +533,15 @@ namespace WinformFamilyTree
             this.searchBox.StateCommon.Content.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBox.TabIndex = 10;
             // 
-            // workspaceGroupBox
+            // MainPanel
             // 
-            this.containerLayout.SetColumnSpan(this.workspaceGroupBox, 2);
-            this.workspaceGroupBox.Location = new System.Drawing.Point(380, 100);
-            this.workspaceGroupBox.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.workspaceGroupBox.Name = "workspaceGroupBox";
-            // 
-            // workspaceGroupBox.Panel
-            // 
-            this.workspaceGroupBox.Panel.AutoScroll = true;
-            this.workspaceGroupBox.Panel.Controls.Add(this.memberListScreen);
-            this.workspaceGroupBox.Panel.Controls.Add(this.homeScreen);
-            this.workspaceGroupBox.Panel.Controls.Add(this.biographyScreen);
-            this.workspaceGroupBox.Panel.Controls.Add(this.sharedScreen);
-            this.containerLayout.SetRowSpan(this.workspaceGroupBox, 4);
-            this.workspaceGroupBox.Size = new System.Drawing.Size(862, 530);
-            this.workspaceGroupBox.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.workspaceGroupBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
-            this.workspaceGroupBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.workspaceGroupBox.StateCommon.Border.Rounding = 20;
-            this.workspaceGroupBox.StateCommon.Border.Width = 2;
-            this.workspaceGroupBox.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.workspaceGroupBox.StateCommon.Content.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
-            this.workspaceGroupBox.TabIndex = 12;
-            this.workspaceGroupBox.Values.Heading = "Tổng quan";
-            // 
-            // memberListScreen
-            // 
-            this.memberListScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.memberListScreen.Location = new System.Drawing.Point(0, 0);
-            this.memberListScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.memberListScreen.Name = "memberListScreen";
-            this.memberListScreen.Size = new System.Drawing.Size(844, 499);
-            this.memberListScreen.TabIndex = 2;
-            // 
-            // homeScreen
-            // 
-            this.homeScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homeScreen.Location = new System.Drawing.Point(0, 0);
-            this.homeScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.homeScreen.MaximumSize = new System.Drawing.Size(844, 499);
-            this.homeScreen.Name = "homeScreen";
-            this.homeScreen.Size = new System.Drawing.Size(844, 499);
-            this.homeScreen.TabIndex = 0;
-            // 
-            // biographyScreen
-            // 
-            this.biographyScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.biographyScreen.Location = new System.Drawing.Point(0, 0);
-            this.biographyScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.biographyScreen.Name = "biographyScreen";
-            this.biographyScreen.Size = new System.Drawing.Size(844, 499);
-            this.biographyScreen.TabIndex = 1;
-            // 
-            // sharedScreen
-            // 
-            this.sharedScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sharedScreen.Location = new System.Drawing.Point(0, 0);
-            this.sharedScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.sharedScreen.Name = "sharedScreen";
-            this.sharedScreen.Size = new System.Drawing.Size(844, 499);
-            this.sharedScreen.TabIndex = 3;
-            this.sharedScreen.Load += new System.EventHandler(this.sharedScreen_Load);
+            this.MainPanel.Controls.Add(this.containerLayout);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1264, 681);
+            this.MainPanel.TabIndex = 13;
             // 
             // familyTree
             // 
@@ -520,11 +549,12 @@ namespace WinformFamilyTree
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.containerLayout);
+            this.Controls.Add(this.MainPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximizeBox = false;
             this.Name = "familyTree";
             this.Palette = this.customForm;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
@@ -541,6 +571,11 @@ namespace WinformFamilyTree
             this.wrappedNavButtonLayout.ResumeLayout(false);
             this.wrappedUserLayout.ResumeLayout(false);
             this.wrappedUserLayout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.workspaceGroupBox.Panel)).EndInit();
+            this.workspaceGroupBox.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.workspaceGroupBox)).EndInit();
+            this.workspaceGroupBox.ResumeLayout(false);
+            this.searchBoxContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.seachGroupBox.Panel)).EndInit();
             this.seachGroupBox.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.seachGroupBox)).EndInit();
@@ -548,10 +583,7 @@ namespace WinformFamilyTree
             this.wrappedSearchBox.ResumeLayout(false);
             this.wrappedSearchBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workspaceGroupBox.Panel)).EndInit();
-            this.workspaceGroupBox.Panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.workspaceGroupBox)).EndInit();
-            this.workspaceGroupBox.ResumeLayout(false);
+            this.MainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -581,6 +613,8 @@ namespace WinformFamilyTree
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox searchBox;
         private ComponentFactory.Krypton.Toolkit.KryptonGroupBox workspaceGroupBox;
         private ComponentFactory.Krypton.Toolkit.KryptonPalette customForm;
+        private Panel MainPanel;
+        private Panel searchBoxContainer;
     }
 }
 

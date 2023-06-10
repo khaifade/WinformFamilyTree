@@ -37,8 +37,15 @@ namespace WinformFamilyTree
             {
                 // load to next page
                 MessageBox.Show("Đăng nhập thành công!");
+
+                // TODO: If this is the first time logged in
+
+                // load to next page
                 this.Hide();
-                familyTree.instance.pLoginLayout.Hide();
+                familyTree.instance.ucFirstTimeUserPage.Show();
+
+                // TODO: if this is the second time logged in
+
                 
             } else
             {
@@ -51,6 +58,19 @@ namespace WinformFamilyTree
         private void SignInEmailTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void SignInPasswordTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SignInPasswordTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                signInButton_Click((object)sender, e);
+            }
         }
     }
 }

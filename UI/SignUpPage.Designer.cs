@@ -31,6 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SignUpScreenLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.backToFirstPageButton = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SignUpFirstNameLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.SignUpLastNameTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -70,23 +71,24 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1200, 788);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1280, 720);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // SignUpScreenLabel
             // 
             this.SignUpScreenLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.SignUpScreenLabel.Location = new System.Drawing.Point(261, 134);
-            this.SignUpScreenLabel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 37);
+            this.SignUpScreenLabel.Location = new System.Drawing.Point(353, 127);
+            this.SignUpScreenLabel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
             this.SignUpScreenLabel.Name = "SignUpScreenLabel";
-            this.SignUpScreenLabel.Size = new System.Drawing.Size(678, 65);
-            this.SignUpScreenLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
-            this.SignUpScreenLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
+            this.SignUpScreenLabel.Size = new System.Drawing.Size(573, 59);
+            this.SignUpScreenLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(186)))), ((int)(((byte)(239)))));
+            this.SignUpScreenLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(85)))));
             this.SignUpScreenLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
-            this.SignUpScreenLabel.StateCommon.ShortText.ColorAngle = 0F;
-            this.SignUpScreenLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUpScreenLabel.StateCommon.ShortText.ColorAngle = 180F;
+            this.SignUpScreenLabel.StateCommon.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
+            this.SignUpScreenLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Inter ExtraBold", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpScreenLabel.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.SignUpScreenLabel.StateCommon.ShortText.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
             this.SignUpScreenLabel.StateCommon.ShortText.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
@@ -99,21 +101,43 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.Controls.Add(this.backToFirstPageButton, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.signUpButton, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel3, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel4, 0, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(307, 236);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(67, 0, 67, 0);
+            this.tableLayoutPanel2.Controls.Add(this.signUpButton, 0, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(420, 216);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(50, 0, 50, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(586, 472);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(440, 384);
             this.tableLayoutPanel2.TabIndex = 4;
+            // 
+            // backToFirstPageButton
+            // 
+            this.backToFirstPageButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.backToFirstPageButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backToFirstPageButton.Location = new System.Drawing.Point(308, 322);
+            this.backToFirstPageButton.Margin = new System.Windows.Forms.Padding(0);
+            this.backToFirstPageButton.Name = "backToFirstPageButton";
+            this.backToFirstPageButton.Size = new System.Drawing.Size(110, 28);
+            this.backToFirstPageButton.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
+            this.backToFirstPageButton.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
+            this.backToFirstPageButton.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
+            this.backToFirstPageButton.StateCommon.ShortText.ColorAngle = 180F;
+            this.backToFirstPageButton.StateCommon.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
+            this.backToFirstPageButton.StateCommon.ShortText.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backToFirstPageButton.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
+            this.backToFirstPageButton.StateCommon.ShortText.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
+            this.backToFirstPageButton.StateCommon.ShortText.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.backToFirstPageButton.TabIndex = 8;
+            this.backToFirstPageButton.Values.Text = "Quay lại...";
+            this.backToFirstPageButton.Click += new System.EventHandler(this.backToFirstPageButton_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -121,10 +145,9 @@
             this.flowLayoutPanel1.Controls.Add(this.SignUpLastNameTextBox);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 4);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(402, 110);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(302, 90);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // SignUpFirstNameLabel
@@ -132,7 +155,7 @@
             this.SignUpFirstNameLabel.Location = new System.Drawing.Point(0, 0);
             this.SignUpFirstNameLabel.Margin = new System.Windows.Forms.Padding(0);
             this.SignUpFirstNameLabel.Name = "SignUpFirstNameLabel";
-            this.SignUpFirstNameLabel.Size = new System.Drawing.Size(178, 37);
+            this.SignUpFirstNameLabel.Size = new System.Drawing.Size(144, 30);
             this.SignUpFirstNameLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.SignUpFirstNameLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.SignUpFirstNameLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -147,17 +170,17 @@
             // SignUpLastNameTextBox
             // 
             this.SignUpLastNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.SignUpLastNameTextBox.Location = new System.Drawing.Point(0, 37);
+            this.SignUpLastNameTextBox.Location = new System.Drawing.Point(0, 30);
             this.SignUpLastNameTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.SignUpLastNameTextBox.Name = "SignUpLastNameTextBox";
-            this.SignUpLastNameTextBox.Size = new System.Drawing.Size(400, 51);
+            this.SignUpLastNameTextBox.Size = new System.Drawing.Size(300, 50);
             this.SignUpLastNameTextBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.SignUpLastNameTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.SignUpLastNameTextBox.StateCommon.Border.Rounding = 20;
             this.SignUpLastNameTextBox.StateCommon.Border.Width = 2;
-            this.SignUpLastNameTextBox.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUpLastNameTextBox.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpLastNameTextBox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5);
             this.SignUpLastNameTextBox.TabIndex = 8;
             this.SignUpLastNameTextBox.WordWrap = false;
@@ -171,10 +194,9 @@
             this.flowLayoutPanel2.Controls.Add(this.SignUpFirstNameTextBox);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(414, 4);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(311, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(168, 110);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(126, 90);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // SignUpLastNameLabel
@@ -182,7 +204,7 @@
             this.SignUpLastNameLabel.Location = new System.Drawing.Point(0, 0);
             this.SignUpLastNameLabel.Margin = new System.Windows.Forms.Padding(0);
             this.SignUpLastNameLabel.Name = "SignUpLastNameLabel";
-            this.SignUpLastNameLabel.Size = new System.Drawing.Size(55, 37);
+            this.SignUpLastNameLabel.Size = new System.Drawing.Size(45, 30);
             this.SignUpLastNameLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.SignUpLastNameLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.SignUpLastNameLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -197,17 +219,17 @@
             // SignUpFirstNameTextBox
             // 
             this.SignUpFirstNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.SignUpFirstNameTextBox.Location = new System.Drawing.Point(0, 37);
+            this.SignUpFirstNameTextBox.Location = new System.Drawing.Point(0, 30);
             this.SignUpFirstNameTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.SignUpFirstNameTextBox.Name = "SignUpFirstNameTextBox";
-            this.SignUpFirstNameTextBox.Size = new System.Drawing.Size(168, 51);
+            this.SignUpFirstNameTextBox.Size = new System.Drawing.Size(126, 50);
             this.SignUpFirstNameTextBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.SignUpFirstNameTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.SignUpFirstNameTextBox.StateCommon.Border.Rounding = 20;
             this.SignUpFirstNameTextBox.StateCommon.Border.Width = 2;
-            this.SignUpFirstNameTextBox.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUpFirstNameTextBox.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpFirstNameTextBox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5);
             this.SignUpFirstNameTextBox.TabIndex = 8;
             this.SignUpFirstNameTextBox.WordWrap = false;
@@ -218,10 +240,11 @@
             // signUpButton
             // 
             this.signUpButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.signUpButton.AutoSize = true;
             this.signUpButton.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom2;
-            this.tableLayoutPanel2.SetColumnSpan(this.signUpButton, 2);
-            this.signUpButton.Location = new System.Drawing.Point(159, 379);
-            this.signUpButton.Margin = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.signUpButton.Location = new System.Drawing.Point(74, 293);
+            this.signUpButton.Margin = new System.Windows.Forms.Padding(0, 5, 0, 10);
+            this.signUpButton.MinimumSize = new System.Drawing.Size(160, 0);
             this.signUpButton.Name = "signUpButton";
             this.signUpButton.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.signUpButton.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
@@ -232,7 +255,7 @@
             this.signUpButton.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.signUpButton.OverrideDefault.Content.ShortText.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.signUpButton.OverrideFocus.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.signUpButton.Size = new System.Drawing.Size(267, 80);
+            this.signUpButton.Size = new System.Drawing.Size(160, 53);
             this.signUpButton.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.signUpButton.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.signUpButton.StateCommon.Back.ColorAngle = 180F;
@@ -292,10 +315,9 @@
             this.flowLayoutPanel3.Controls.Add(this.SignUpEmailTextBox);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(4, 122);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 99);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(578, 110);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(434, 90);
             this.flowLayoutPanel3.TabIndex = 2;
             // 
             // SignUpEmailLabel
@@ -303,7 +325,7 @@
             this.SignUpEmailLabel.Location = new System.Drawing.Point(0, 0);
             this.SignUpEmailLabel.Margin = new System.Windows.Forms.Padding(0);
             this.SignUpEmailLabel.Name = "SignUpEmailLabel";
-            this.SignUpEmailLabel.Size = new System.Drawing.Size(74, 37);
+            this.SignUpEmailLabel.Size = new System.Drawing.Size(61, 30);
             this.SignUpEmailLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.SignUpEmailLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.SignUpEmailLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -318,17 +340,17 @@
             // SignUpEmailTextBox
             // 
             this.SignUpEmailTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.SignUpEmailTextBox.Location = new System.Drawing.Point(0, 37);
+            this.SignUpEmailTextBox.Location = new System.Drawing.Point(0, 30);
             this.SignUpEmailTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.SignUpEmailTextBox.Name = "SignUpEmailTextBox";
-            this.SignUpEmailTextBox.Size = new System.Drawing.Size(579, 51);
+            this.SignUpEmailTextBox.Size = new System.Drawing.Size(434, 50);
             this.SignUpEmailTextBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.SignUpEmailTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.SignUpEmailTextBox.StateCommon.Border.Rounding = 20;
             this.SignUpEmailTextBox.StateCommon.Border.Width = 2;
-            this.SignUpEmailTextBox.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUpEmailTextBox.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpEmailTextBox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5);
             this.SignUpEmailTextBox.TabIndex = 8;
             this.SignUpEmailTextBox.WordWrap = false;
@@ -340,10 +362,9 @@
             this.flowLayoutPanel4.Controls.Add(this.SignUpPasswordTextBox);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(4, 240);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 195);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(578, 110);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(434, 90);
             this.flowLayoutPanel4.TabIndex = 3;
             // 
             // SignUpPasswordLabel
@@ -351,7 +372,7 @@
             this.SignUpPasswordLabel.Location = new System.Drawing.Point(0, 0);
             this.SignUpPasswordLabel.Margin = new System.Windows.Forms.Padding(0);
             this.SignUpPasswordLabel.Name = "SignUpPasswordLabel";
-            this.SignUpPasswordLabel.Size = new System.Drawing.Size(119, 37);
+            this.SignUpPasswordLabel.Size = new System.Drawing.Size(97, 30);
             this.SignUpPasswordLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.SignUpPasswordLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.SignUpPasswordLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -366,18 +387,18 @@
             // SignUpPasswordTextBox
             // 
             this.SignUpPasswordTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.SignUpPasswordTextBox.Location = new System.Drawing.Point(0, 37);
+            this.SignUpPasswordTextBox.Location = new System.Drawing.Point(0, 30);
             this.SignUpPasswordTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.SignUpPasswordTextBox.Name = "SignUpPasswordTextBox";
             this.SignUpPasswordTextBox.PasswordChar = '●';
-            this.SignUpPasswordTextBox.Size = new System.Drawing.Size(579, 51);
+            this.SignUpPasswordTextBox.Size = new System.Drawing.Size(434, 50);
             this.SignUpPasswordTextBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.SignUpPasswordTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.SignUpPasswordTextBox.StateCommon.Border.Rounding = 20;
             this.SignUpPasswordTextBox.StateCommon.Border.Width = 2;
-            this.SignUpPasswordTextBox.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUpPasswordTextBox.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpPasswordTextBox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5);
             this.SignUpPasswordTextBox.TabIndex = 8;
             this.SignUpPasswordTextBox.UseSystemPasswordChar = true;
@@ -385,15 +406,15 @@
             // 
             // SignUpPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SignUpPage";
-            this.Size = new System.Drawing.Size(1200, 788);
+            this.Size = new System.Drawing.Size(1280, 720);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -424,5 +445,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel SignUpPasswordLabel;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox SignUpPasswordTextBox;
         private ComponentFactory.Krypton.Toolkit.KryptonButton signUpButton;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel backToFirstPageButton;
     }
 }

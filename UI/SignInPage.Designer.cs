@@ -63,21 +63,22 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1074, 623);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1280, 720);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // SignInScreenLabel
             // 
             this.SignInScreenLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.SignInScreenLabel.Location = new System.Drawing.Point(214, 126);
+            this.SignInScreenLabel.Location = new System.Drawing.Point(296, 170);
             this.SignInScreenLabel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
             this.SignInScreenLabel.Name = "SignInScreenLabel";
-            this.SignInScreenLabel.Size = new System.Drawing.Size(644, 61);
-            this.SignInScreenLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
-            this.SignInScreenLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
+            this.SignInScreenLabel.Size = new System.Drawing.Size(687, 52);
+            this.SignInScreenLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(186)))), ((int)(((byte)(239)))));
+            this.SignInScreenLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(85)))));
             this.SignInScreenLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
-            this.SignInScreenLabel.StateCommon.ShortText.ColorAngle = 0F;
-            this.SignInScreenLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignInScreenLabel.StateCommon.ShortText.ColorAngle = 180F;
+            this.SignInScreenLabel.StateCommon.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
+            this.SignInScreenLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Inter Black", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignInScreenLabel.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.SignInScreenLabel.StateCommon.ShortText.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
             this.SignInScreenLabel.StateCommon.ShortText.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
@@ -92,7 +93,7 @@
             this.tableLayoutPanel2.Controls.Add(this.signInButton, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel4, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(314, 217);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(418, 252);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(100, 0, 100, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
@@ -189,7 +190,7 @@
             this.SignInEmailLabel.Location = new System.Drawing.Point(0, 0);
             this.SignInEmailLabel.Margin = new System.Windows.Forms.Padding(0);
             this.SignInEmailLabel.Name = "SignInEmailLabel";
-            this.SignInEmailLabel.Size = new System.Drawing.Size(74, 37);
+            this.SignInEmailLabel.Size = new System.Drawing.Size(61, 30);
             this.SignInEmailLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.SignInEmailLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.SignInEmailLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -204,17 +205,17 @@
             // SignInEmailTextBox
             // 
             this.SignInEmailTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.SignInEmailTextBox.Location = new System.Drawing.Point(74, 0);
+            this.SignInEmailTextBox.Location = new System.Drawing.Point(0, 30);
             this.SignInEmailTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.SignInEmailTextBox.Name = "SignInEmailTextBox";
-            this.SignInEmailTextBox.Size = new System.Drawing.Size(434, 51);
+            this.SignInEmailTextBox.Size = new System.Drawing.Size(434, 50);
             this.SignInEmailTextBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.SignInEmailTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.SignInEmailTextBox.StateCommon.Border.Rounding = 20;
             this.SignInEmailTextBox.StateCommon.Border.Width = 2;
-            this.SignInEmailTextBox.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignInEmailTextBox.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignInEmailTextBox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5);
             this.SignInEmailTextBox.TabIndex = 8;
             this.SignInEmailTextBox.WordWrap = false;
@@ -237,7 +238,7 @@
             this.SignInPasswordLabel.Location = new System.Drawing.Point(0, 0);
             this.SignInPasswordLabel.Margin = new System.Windows.Forms.Padding(0);
             this.SignInPasswordLabel.Name = "SignInPasswordLabel";
-            this.SignInPasswordLabel.Size = new System.Drawing.Size(119, 37);
+            this.SignInPasswordLabel.Size = new System.Drawing.Size(97, 30);
             this.SignInPasswordLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.SignInPasswordLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.SignInPasswordLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -252,22 +253,23 @@
             // SignInPasswordTextBox
             // 
             this.SignInPasswordTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.SignInPasswordTextBox.Location = new System.Drawing.Point(119, 0);
+            this.SignInPasswordTextBox.Location = new System.Drawing.Point(0, 30);
             this.SignInPasswordTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.SignInPasswordTextBox.Name = "SignInPasswordTextBox";
             this.SignInPasswordTextBox.PasswordChar = '●';
-            this.SignInPasswordTextBox.Size = new System.Drawing.Size(434, 51);
+            this.SignInPasswordTextBox.Size = new System.Drawing.Size(434, 50);
             this.SignInPasswordTextBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.SignInPasswordTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.SignInPasswordTextBox.StateCommon.Border.Rounding = 20;
             this.SignInPasswordTextBox.StateCommon.Border.Width = 2;
-            this.SignInPasswordTextBox.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignInPasswordTextBox.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignInPasswordTextBox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5);
             this.SignInPasswordTextBox.TabIndex = 8;
             this.SignInPasswordTextBox.UseSystemPasswordChar = true;
             this.SignInPasswordTextBox.WordWrap = false;
+            this.SignInPasswordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SignInPasswordTextBox_KeyPress);
             // 
             // contextMenuStrip1
             // 
@@ -277,12 +279,12 @@
             // 
             // SignInPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "SignInPage";
-            this.Size = new System.Drawing.Size(1074, 623);
+            this.Size = new System.Drawing.Size(1280, 720);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

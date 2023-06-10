@@ -7,18 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using ComponentFactory.Krypton.Toolkit;
 namespace WinformFamilyTree
 {
     public partial class MemberListScreen : UserControl
     {
         public static MemberListScreen instance;
-        public DataGridView dtg;
+        public KryptonDataGridView dtg;
         public MemberListScreen()
         {
             InitializeComponent();
             instance = this;
-            dtg = dataGridView1;
+            dtg = DataGirdView;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

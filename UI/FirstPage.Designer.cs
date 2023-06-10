@@ -54,7 +54,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.37981F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.42789F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1080, 832);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1280, 720);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -65,20 +65,20 @@
             this.tableLayoutPanel2.Controls.Add(this.signUpButton, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.signInButton, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(216, 269);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(256, 233);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 145F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(648, 145);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(768, 125);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // signUpButton
             // 
             this.signUpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.signUpButton.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom2;
-            this.signUpButton.Location = new System.Drawing.Point(74, 0);
+            this.signUpButton.Location = new System.Drawing.Point(134, 0);
             this.signUpButton.Margin = new System.Windows.Forms.Padding(0, 0, 50, 0);
             this.signUpButton.Name = "signUpButton";
             this.signUpButton.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
@@ -146,7 +146,7 @@
             // signInButton
             // 
             this.signInButton.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom2;
-            this.signInButton.Location = new System.Drawing.Point(374, 0);
+            this.signInButton.Location = new System.Drawing.Point(434, 0);
             this.signInButton.Margin = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.signInButton.Name = "signInButton";
             this.signInButton.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
@@ -216,14 +216,15 @@
             // FirstPageLabel
             // 
             this.FirstPageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.FirstPageLabel.Location = new System.Drawing.Point(241, 166);
+            this.FirstPageLabel.Location = new System.Drawing.Point(311, 144);
             this.FirstPageLabel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.FirstPageLabel.Name = "FirstPageLabel";
-            this.FirstPageLabel.Size = new System.Drawing.Size(598, 83);
-            this.FirstPageLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
-            this.FirstPageLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
+            this.FirstPageLabel.Size = new System.Drawing.Size(658, 69);
+            this.FirstPageLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(186)))), ((int)(((byte)(239)))));
+            this.FirstPageLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(85)))));
             this.FirstPageLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
-            this.FirstPageLabel.StateCommon.ShortText.ColorAngle = 0F;
+            this.FirstPageLabel.StateCommon.ShortText.ColorAngle = 180F;
+            this.FirstPageLabel.StateCommon.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
             this.FirstPageLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstPageLabel.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.FirstPageLabel.StateCommon.ShortText.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
@@ -238,7 +239,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FirstPage";
-            this.Size = new System.Drawing.Size(1080, 832);
+            this.Size = new System.Drawing.Size(1280, 720);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
