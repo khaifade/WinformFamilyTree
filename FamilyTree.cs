@@ -78,6 +78,7 @@ namespace WinformFamilyTree
             this.MainPanel.Controls.Add(userControl);
             userControl.Visible = true;
             userControl.BringToFront();
+
         }
 
         private void workspaceCaption_Change(object sender, EventArgs e)
@@ -203,7 +204,7 @@ namespace WinformFamilyTree
         {
 
         }
-        public void refreshBiographyScreen(string memberID)
+        public void refreshBiographyScreen(int memberID)
         {
             viewBiographyButton.PerformClick();
             BiographyViewScreen bio = new BiographyViewScreen(memberID);
@@ -211,6 +212,10 @@ namespace WinformFamilyTree
             bio.Show();
             bio.BringToFront();
 
+        }
+        public void refreshHomeScreen()
+        {
+            homeScreenButton.PerformClick();
         }
     }
 }

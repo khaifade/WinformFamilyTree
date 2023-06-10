@@ -1,22 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinformFamilyTree.TreeClasses;
 
 namespace WinformFamilyTree.UI
 {
     public partial class MemberInfoForm : UserControl
     {
+
+        
         public MemberInfoForm()
         {
             InitializeComponent();
             cancelFormButton.Click += cancelFormButtonFirstTime_Click;
-            saveFormButton.Click += saveFormButton_Click;
         }
 
         public MemberInfoForm(string type)
@@ -41,10 +45,10 @@ namespace WinformFamilyTree.UI
         {
             // Show the Open File dialog. If the user clicks OK, load the
             // picture that the user chose.
-            if (openImageDialog.ShowDialog() == DialogResult.OK)
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                attachImage.Load(openImageDialog.FileName);
-
+                attachImage.Image = new Bitmap(openFileDialog.FileName);
                 // TODO: add this picture to database
             }
         }
@@ -62,6 +66,30 @@ namespace WinformFamilyTree.UI
         {
             this.Hide();
             // TODO: Add all filled data to database
+            MemberClass member = new MemberClass();
+            member.LastName = lastNameTextBox.Text;
+            member.FirstName = firstNameTextBox.Text;
+            member.Gender = genderComboBox.Text;
+            member.DateOfBirth = dateOfBirthBox.Value;
+            member.PlaceOfOrigin = placeOfOriginTextBox.Text;
+            member.Biography = biographyRichTextBox.Text;
+            member.proFilePicture = getPicture();
+            if(!aliveCheckBox.Checked)
+            {
+                member.DateOfDeath = dateOfDeathBox.Value;
+            }
+            
+            if (member.Insert(member))
+            {
+                MessageBox.Show("thêm thành công!");
+                this.Hide();
+                familyTree.instance.refreshHomeScreen();
+            }
+            else
+            {
+                MessageBox.Show("Lỗi, hãy thử lại!");
+            }
+
         }
 
         private void aliveCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -78,5 +106,13 @@ namespace WinformFamilyTree.UI
 
             }
         }
+
+        private byte[] getPicture()
+        {
+            MemoryStream stream = new MemoryStream();
+            attachImage.Image.Save(stream, attachImage.Image.RawFormat);
+            return stream.GetBuffer();
+        }
+        
     }
 }

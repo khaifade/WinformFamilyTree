@@ -38,8 +38,6 @@ namespace WinformFamilyTree.UI
             var ucMemberInfoForm = new MemberInfoForm(type);
             familyTree.instance.AddUserControl(ucMemberInfoForm);
             
-            
-
         }
 
         private void viewBiographyButton_Click(object sender, EventArgs e)
@@ -49,7 +47,7 @@ namespace WinformFamilyTree.UI
             // TODO: khởi tạo lại biographyViewScreen với memberID
             // Then: Đi đến màn hình Xem tiểu sử
             // Example:
-            string memberID = "1";
+            int memberID = 1;
             familyTree.instance.refreshBiographyScreen(memberID);
         }
 
