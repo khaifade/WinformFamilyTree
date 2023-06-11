@@ -7,7 +7,7 @@ create table MEMBER
 	FirstName varchar(20) not null,
 	LastName varchar(40) not null,
 	DateOfBirth date not null, 
-	DateOfDeath date not null,
+	DateOfDeath date,
 	Gender varchar(3) not null,
 	PlaceOfOrigin varchar(255),
 	Email varchar(50),
