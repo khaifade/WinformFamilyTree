@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinformFamilyTree.UI;
+using WinformFamilyTree.TreeClasses;
 
 namespace WinformFamilyTree
 {
@@ -25,7 +26,8 @@ namespace WinformFamilyTree
             // Example for demo:
             int x = 0;
             int y = 0;
-            for(int i = 20; i< 25; i++)
+            MemberClass member = new MemberClass();
+            for(int i = 1; i<= member.numMember(); i++)
             {
                 var node = new memberNode(i);
                 MainPanel.Controls.Add(node);
