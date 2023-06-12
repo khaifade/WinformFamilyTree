@@ -1,21 +1,21 @@
 create database FTM
+go
 use FTM
-
+go
 create table MEMBER
 (
 	MemberID int not null IDENTITY(1,1) primary key,
-	FirstName varchar(20) not null,
-	LastName varchar(40) not null,
+	FirstName nvarchar(20) not null,
+	LastName nvarchar(40) not null,
 	DateOfBirth date not null, 
 	DateOfDeath date,
-	Gender varchar(3) not null,
-	PlaceOfOrigin varchar(255),
-	Email varchar(50),
-	Biography varchar(max),
+	Gender nvarchar(3) not null,
+	PlaceOfOrigin nvarchar(255),
+	Biography nvarchar(max),
 	MemberProfilePicture image
 
 )
-
+go
 create table RELATIONSHIP_SPOUSE
 (
 	MemberID1 int,
@@ -24,7 +24,7 @@ create table RELATIONSHIP_SPOUSE
 	constraint FK_Relationship_Spouse_Member1 foreign key (MemberID1) references Member (MemberID),
 	constraint FK_Relationship_Spouse_Member2 foreign key (MemberID2) references Member (MemberID)
 )
-
+go
 create table RELATIONSHIP_PARENT_CHILD
 (
 	ChildID int,
