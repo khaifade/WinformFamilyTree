@@ -16,6 +16,8 @@ namespace WinformFamilyTree.UI
     public partial class MemberInfoForm : UserControl
     {
 
+        int rootID;
+        string type;
         
         public MemberInfoForm()
         {
@@ -23,10 +25,12 @@ namespace WinformFamilyTree.UI
             cancelFormButton.Click += cancelFormButtonFirstTime_Click;
         }
 
-        public MemberInfoForm(string type)
+        public MemberInfoForm(string type, int rootID)
         {
 
             InitializeComponent();
+            this.rootID = rootID;
+            this.type = type;
             if (type == "parent")
             {
                 relationshipComboBox.Text = "Bố/Mẹ";
@@ -34,11 +38,11 @@ namespace WinformFamilyTree.UI
             }
             if (type == "spouse")
             {
-                relationshipComboBox.Text = "Vợ/Chồng";
+                relationshipComboBox.Text = "Vợ/Chồng" ;
             }
             if (type == "child")
             {
-                relationshipComboBox.Text = "Con cái";
+                relationshipComboBox.Text = "Con cái" ;
             }
         }
         private void attachImage_Click(object sender, EventArgs e)
@@ -49,7 +53,6 @@ namespace WinformFamilyTree.UI
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 attachImage.Image = new Bitmap(openFileDialog.FileName);
-                // TODO: add this picture to database
             }
         }
         private void cancelFormButton_Click(object sender, EventArgs e)
@@ -78,16 +81,48 @@ namespace WinformFamilyTree.UI
             {
                 member.DateOfDeath = dateOfDeathBox.Value;
             }
-            
-            if (member.Insert(member))
+            // the first member do not have any relatonship
+            if (member.numMember() == 0)
             {
-                MessageBox.Show("thêm thành công!");
-                this.Hide();
-                familyTree.instance.refreshHomeScreen();
-            }
-            else
+                if (member.Insert(member))
+                {
+                    MessageBox.Show("thêm thành công!");
+                    this.Hide();
+                    familyTree.instance.refreshHomeScreen();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi, hãy thử lại!");
+                }
+            } else // the second member need to connect relationship
             {
-                MessageBox.Show("Lỗi, hãy thử lại!");
+                if (this.type == "spouse") // add spouse 
+                {
+                    if (member.Insert(member) && member.InsertSpouseRel(rootID, member.getMemberID(member)))
+                    {
+                        MessageBox.Show("thêm thành công!");
+                        this.Hide();
+                        familyTree.instance.refreshHomeScreen();
+                    }
+                    else
+                    {
+                        member.Delete(member);
+                        MessageBox.Show("Lỗi, hãy thử lại!");
+                    }
+                } else if(this.type == "child") // add child
+                {
+                    if (member.Insert(member) && member.InsertParentChildRel(member.getMemberID(member),member.getSpouseID(rootID)))
+                    {
+                        MessageBox.Show("thêm thành công!");
+                        this.Hide();
+                        familyTree.instance.refreshHomeScreen();
+                    }
+                    else
+                    {
+                        member.Delete(member);
+                        MessageBox.Show("Lỗi, hãy thử lại!");
+                    }
+                }
             }
 
         }

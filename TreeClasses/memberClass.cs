@@ -6,6 +6,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -113,6 +114,57 @@ namespace WinformFamilyTree.TreeClasses
             finally { conn.Close(); }
             return isSuccess;
         }
+
+        //Insert spouse
+        public bool InsertSpouseRel(int ID1, int ID2)
+        {
+            bool isSuccess = false;
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            try
+            {
+                conn.Open();
+                // Creating SQL Command using sql and conn
+                string sql = "INSERT INTO RELATIONSHIP_SPOUSE (MemberID1, MemberID2) VALUES (@ID1, @ID2)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@ID1", ID1);
+                cmd.Parameters.AddWithValue("@ID2", ID2);
+                int rows = cmd.ExecuteNonQuery();
+                // If the query run sucessfully, the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0) { isSuccess = true; }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+            return isSuccess;
+        }
+
+        // insert child
+        public bool InsertParentChildRel(int childID, int spouseID)
+        {
+            bool isSuccess = false;
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            try
+            {
+                conn.Open();
+                // Creating SQL Command using sql and conn
+                string sql = "INSERT INTO RELATIONSHIP_PARENT_CHILD (ChildID, ParentID) VALUES (@childID, @ParentID)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@ChildID", childID);
+                cmd.Parameters.AddWithValue("@ParentID", spouseID);
+                int rows = cmd.ExecuteNonQuery();
+                // If the query run sucessfully, the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0) { isSuccess = true; }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+            return isSuccess;
+        }
+
         // Function for Update data to database
         public bool Update(MemberClass c)
         {
@@ -198,6 +250,52 @@ namespace WinformFamilyTree.TreeClasses
             return count;
         }
 
+        public int getMemberID(MemberClass member)
+        {
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            DataTable dt = new DataTable();
+            try
+            {
+                conn.Open();
+
+                string sql = "SELECT MemberID FROM MEMBER WHERE FirstName = @FirstName AND LastName = @LastName";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@FirstName", member.FirstName);
+                cmd.Parameters.AddWithValue("@LastName",member.LastName);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                int rows = cmd.ExecuteNonQuery();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+            return dt.Rows[0].Field<int>(0);
+        }
+
+        public int getSpouseID(int memberID)
+        {
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            DataTable dt = new DataTable();
+            try
+            {
+                conn.Open();
+
+                string sql = "SELECT SpouseID FROM RELATIONSHIP_SPOUSE WHERE MemberID1 = @MemberID OR MemberID2 = @MemberID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@MemberID", memberID);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                int rows = cmd.ExecuteNonQuery();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+            return dt.Rows[0].Field<int>(0);
+        }
 
     }
 }

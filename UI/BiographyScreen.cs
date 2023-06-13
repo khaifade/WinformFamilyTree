@@ -45,5 +45,10 @@ namespace WinformFamilyTree
             // convert AvatarProfilePicture to picture
             //AvatarProfilePicture = member.proFilePicture;
         }
+
+        private void editInfoButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
