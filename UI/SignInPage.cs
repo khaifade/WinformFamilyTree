@@ -75,5 +75,11 @@ namespace WinformFamilyTree
                 signInButton_Click((object)sender, e);
             }
         }
+
+        private void backToFirstPage_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            familyTree.instance.ucFirstPage.Show();
+        }
     }
 }
