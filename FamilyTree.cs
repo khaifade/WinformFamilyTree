@@ -56,6 +56,8 @@ namespace WinformFamilyTree
             instance.AddUserControl(ucFirstTimeUserPage);
             workspace = workspaceGroupBox.Panel;
             navPanel = wrappedNavButtonLayout;
+            homeScreen.Load();
+            memberListScreen.Load();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -227,6 +229,11 @@ namespace WinformFamilyTree
             {
 
             }
+        }
+
+        private void wrappedNavButtonLayout_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

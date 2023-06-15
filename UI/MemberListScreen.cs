@@ -19,12 +19,15 @@ namespace WinformFamilyTree
         public MemberListScreen()
         {
             InitializeComponent();
+        }
+        public void Load()
+        {
             MemberClass mb = new MemberClass();
             instance = this;
             dtg = DataGirdView;
             dtg.AllowUserToResizeColumns = false;
             dtg.DataSource = mb.Select();
-            
+
         }
         public void Update()
         {

@@ -23,6 +23,9 @@ namespace WinformFamilyTree
         public HomeScreen()
         {
             InitializeComponent();
+        }
+        public void Load()
+        {
             deterMessage = deterRealtionshipMessage;
             Instance = this;
             // TODO: Get member's name, member's brithYear & member's profile picture from database of each MemberNode
@@ -37,7 +40,6 @@ namespace WinformFamilyTree
                 node.Location = new Point(x,y);
                 y = y + 100;
             }
-            
         }
         public void Update()
         {

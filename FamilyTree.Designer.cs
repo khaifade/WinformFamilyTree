@@ -148,7 +148,7 @@ namespace WinformFamilyTree
             this.navGroupBox.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(85)))));
             this.navGroupBox.StateCommon.Content.ShortText.ColorAngle = 225F;
             this.navGroupBox.StateCommon.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
-            this.navGroupBox.StateCommon.Content.ShortText.Font = new System.Drawing.Font("UTM Hanzel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navGroupBox.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navGroupBox.StateCommon.Content.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.navGroupBox.TabIndex = 9;
             this.navGroupBox.Values.Heading = "Phần mềm quản lý cây gia phả";
@@ -167,7 +167,7 @@ namespace WinformFamilyTree
             this.wrappedNavLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.wrappedNavLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.wrappedNavLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.wrappedNavLayout.Size = new System.Drawing.Size(322, 533);
+            this.wrappedNavLayout.Size = new System.Drawing.Size(322, 538);
             this.wrappedNavLayout.TabIndex = 0;
             // 
             // wrappedNavButtonLayout
@@ -181,11 +181,12 @@ namespace WinformFamilyTree
             this.wrappedNavButtonLayout.Controls.Add(this.homeScreenButton);
             this.wrappedNavButtonLayout.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.wrappedNavButtonLayout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wrappedNavButtonLayout.Location = new System.Drawing.Point(18, 277);
+            this.wrappedNavButtonLayout.Location = new System.Drawing.Point(18, 282);
             this.wrappedNavButtonLayout.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
             this.wrappedNavButtonLayout.Name = "wrappedNavButtonLayout";
             this.wrappedNavButtonLayout.Size = new System.Drawing.Size(285, 226);
             this.wrappedNavButtonLayout.TabIndex = 3;
+            this.wrappedNavButtonLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.wrappedNavButtonLayout_Paint);
             // 
             // sharedButton
             // 
@@ -198,7 +199,7 @@ namespace WinformFamilyTree
             this.sharedButton.OverrideDefault.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.sharedButton.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.sharedButton.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.sharedButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sharedButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sharedButton.Palette = this.customButton;
             this.sharedButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.sharedButton.Size = new System.Drawing.Size(285, 49);
@@ -209,12 +210,12 @@ namespace WinformFamilyTree
             this.sharedButton.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.sharedButton.StatePressed.Content.ShortText.ColorAngle = 90F;
             this.sharedButton.StatePressed.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
-            this.sharedButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sharedButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sharedButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.sharedButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
             this.sharedButton.StateTracking.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.sharedButton.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.sharedButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sharedButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sharedButton.TabIndex = 6;
             this.sharedButton.Values.Text = "Chia sẻ cây";
             this.sharedButton.Click += new System.EventHandler(this.shareButton_Click);
@@ -232,7 +233,7 @@ namespace WinformFamilyTree
             this.customButton.Common.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.customButton.Common.StateCommon.Border.Rounding = 20;
             this.customButton.Common.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.customButton.Common.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton.Common.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // memberListButton
             // 
@@ -245,7 +246,7 @@ namespace WinformFamilyTree
             this.memberListButton.OverrideDefault.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.memberListButton.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.memberListButton.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.memberListButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberListButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memberListButton.Palette = this.customButton;
             this.memberListButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.memberListButton.Size = new System.Drawing.Size(285, 49);
@@ -256,12 +257,12 @@ namespace WinformFamilyTree
             this.memberListButton.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.memberListButton.StatePressed.Content.ShortText.ColorAngle = 90F;
             this.memberListButton.StatePressed.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
-            this.memberListButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberListButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memberListButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.memberListButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
             this.memberListButton.StateTracking.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.memberListButton.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.memberListButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberListButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memberListButton.TabIndex = 5;
             this.memberListButton.Values.Text = "Danh sách thành viên";
             this.memberListButton.Click += new System.EventHandler(this.memberListButton_Click);
@@ -277,7 +278,7 @@ namespace WinformFamilyTree
             this.viewBiographyButton.OverrideDefault.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.viewBiographyButton.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.viewBiographyButton.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.viewBiographyButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewBiographyButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewBiographyButton.Palette = this.customButton;
             this.viewBiographyButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.viewBiographyButton.Size = new System.Drawing.Size(285, 49);
@@ -288,12 +289,12 @@ namespace WinformFamilyTree
             this.viewBiographyButton.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.viewBiographyButton.StatePressed.Content.ShortText.ColorAngle = 90F;
             this.viewBiographyButton.StatePressed.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
-            this.viewBiographyButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewBiographyButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewBiographyButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.viewBiographyButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
             this.viewBiographyButton.StateTracking.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.viewBiographyButton.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.viewBiographyButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewBiographyButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewBiographyButton.TabIndex = 4;
             this.viewBiographyButton.Values.Text = "Xem tiểu sử";
             this.viewBiographyButton.Click += new System.EventHandler(this.viewBiographyButton_Click);
@@ -309,7 +310,7 @@ namespace WinformFamilyTree
             this.homeScreenButton.OverrideDefault.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.homeScreenButton.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.homeScreenButton.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.homeScreenButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeScreenButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeScreenButton.Palette = this.customButton;
             this.homeScreenButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.homeScreenButton.Size = new System.Drawing.Size(285, 49);
@@ -320,12 +321,12 @@ namespace WinformFamilyTree
             this.homeScreenButton.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.homeScreenButton.StatePressed.Content.ShortText.ColorAngle = 90F;
             this.homeScreenButton.StatePressed.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
-            this.homeScreenButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeScreenButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeScreenButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.homeScreenButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
             this.homeScreenButton.StateTracking.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.homeScreenButton.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.homeScreenButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeScreenButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeScreenButton.TabIndex = 3;
             this.homeScreenButton.Values.Text = "Màn hình chính";
             this.homeScreenButton.Click += new System.EventHandler(this.homeScreenButton_Click);
@@ -340,17 +341,17 @@ namespace WinformFamilyTree
             this.wrappedUserLayout.Controls.Add(this.borderEdge);
             this.wrappedUserLayout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.wrappedUserLayout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wrappedUserLayout.Location = new System.Drawing.Point(82, 0);
+            this.wrappedUserLayout.Location = new System.Drawing.Point(86, 0);
             this.wrappedUserLayout.Margin = new System.Windows.Forms.Padding(0);
             this.wrappedUserLayout.Name = "wrappedUserLayout";
-            this.wrappedUserLayout.Size = new System.Drawing.Size(158, 213);
+            this.wrappedUserLayout.Size = new System.Drawing.Size(150, 215);
             this.wrappedUserLayout.TabIndex = 2;
             // 
             // AvatarProfilePicture
             // 
             this.AvatarProfilePicture.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.AvatarProfilePicture.Enabled = false;
-            this.AvatarProfilePicture.Location = new System.Drawing.Point(4, 20);
+            this.AvatarProfilePicture.Location = new System.Drawing.Point(0, 20);
             this.AvatarProfilePicture.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.AvatarProfilePicture.Name = "AvatarProfilePicture";
             this.AvatarProfilePicture.Size = new System.Drawing.Size(150, 150);
@@ -374,19 +375,19 @@ namespace WinformFamilyTree
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Palette = this.customFont;
             this.userNameLabel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.userNameLabel.Size = new System.Drawing.Size(158, 24);
+            this.userNameLabel.Size = new System.Drawing.Size(149, 23);
             this.userNameLabel.TabIndex = 2;
             this.userNameLabel.Values.Text = "Người dùng khách";
             // 
             // customFont
             // 
             this.customFont.Common.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.customFont.Common.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customFont.Common.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // borderEdge
             // 
             this.borderEdge.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.borderEdge.Location = new System.Drawing.Point(29, 204);
+            this.borderEdge.Location = new System.Drawing.Point(25, 203);
             this.borderEdge.Margin = new System.Windows.Forms.Padding(0);
             this.borderEdge.Name = "borderEdge";
             this.borderEdge.Size = new System.Drawing.Size(100, 5);
@@ -420,7 +421,7 @@ namespace WinformFamilyTree
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.workspaceGroupBox.StateCommon.Border.Rounding = 20;
             this.workspaceGroupBox.StateCommon.Border.Width = 2;
-            this.workspaceGroupBox.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.workspaceGroupBox.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.workspaceGroupBox.StateCommon.Content.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.workspaceGroupBox.TabIndex = 12;
             this.workspaceGroupBox.Values.Heading = "Tổng quan";
@@ -432,7 +433,7 @@ namespace WinformFamilyTree
             this.memberListScreen.Location = new System.Drawing.Point(0, 0);
             this.memberListScreen.Margin = new System.Windows.Forms.Padding(0);
             this.memberListScreen.Name = "memberListScreen";
-            this.memberListScreen.Size = new System.Drawing.Size(844, 499);
+            this.memberListScreen.Size = new System.Drawing.Size(844, 500);
             this.memberListScreen.TabIndex = 2;
             // 
             // homeScreen
@@ -454,7 +455,7 @@ namespace WinformFamilyTree
             this.biographyScreen.Location = new System.Drawing.Point(0, 0);
             this.biographyScreen.Margin = new System.Windows.Forms.Padding(0);
             this.biographyScreen.Name = "biographyScreen";
-            this.biographyScreen.Size = new System.Drawing.Size(844, 499);
+            this.biographyScreen.Size = new System.Drawing.Size(844, 500);
             this.biographyScreen.TabIndex = 1;
             // 
             // sharedScreen
@@ -464,7 +465,7 @@ namespace WinformFamilyTree
             this.sharedScreen.Location = new System.Drawing.Point(0, 0);
             this.sharedScreen.Margin = new System.Windows.Forms.Padding(0);
             this.sharedScreen.Name = "sharedScreen";
-            this.sharedScreen.Size = new System.Drawing.Size(844, 499);
+            this.sharedScreen.Size = new System.Drawing.Size(844, 500);
             this.sharedScreen.TabIndex = 3;
             this.sharedScreen.Load += new System.EventHandler(this.sharedScreen_Load);
             // 
@@ -524,16 +525,15 @@ namespace WinformFamilyTree
             this.searchBox.Location = new System.Drawing.Point(25, 0);
             this.searchBox.Margin = new System.Windows.Forms.Padding(0);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(163, 27);
+            this.searchBox.Size = new System.Drawing.Size(163, 26);
             this.searchBox.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.searchBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.searchBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.searchBox.StateCommon.Content.Color1 = System.Drawing.Color.White;
-            this.searchBox.StateCommon.Content.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBox.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBox.TabIndex = 10;
-            this.searchBox.TextChanged += searchBox_TextChanged;
             // 
             // MainPanel
             // 
