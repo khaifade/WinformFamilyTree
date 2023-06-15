@@ -106,12 +106,13 @@
             // 
             // wrappedNavLayout
             // 
+            this.wrappedNavLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.wrappedNavLayout.BackColor = System.Drawing.Color.Transparent;
             this.wrappedNavLayout.ColumnCount = 1;
             this.wrappedNavLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.wrappedNavLayout.Controls.Add(this.wrappedUserLayout, 0, 0);
             this.wrappedNavLayout.Controls.Add(this.startButton, 0, 1);
-            this.wrappedNavLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wrappedNavLayout.Location = new System.Drawing.Point(0, 0);
             this.wrappedNavLayout.Name = "wrappedNavLayout";
             this.wrappedNavLayout.RowCount = 2;
@@ -139,9 +140,9 @@
             // 
             // AvatarProfilePicture
             // 
-            this.AvatarProfilePicture.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.AvatarProfilePicture.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.AvatarProfilePicture.Enabled = false;
-            this.AvatarProfilePicture.Location = new System.Drawing.Point(71, 20);
+            this.AvatarProfilePicture.Location = new System.Drawing.Point(35, 20);
             this.AvatarProfilePicture.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.AvatarProfilePicture.Name = "AvatarProfilePicture";
             this.AvatarProfilePicture.Size = new System.Drawing.Size(150, 150);

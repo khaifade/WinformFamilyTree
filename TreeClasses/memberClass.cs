@@ -305,7 +305,31 @@ namespace WinformFamilyTree.TreeClasses
             {
                 conn.Open();
                 // Creating SQL Command using sql and connection
-                string sql = "SELECT * FROM MEMBER WHERE FirstName LIKE '%" + queryStr + "%' OR LastName LIKE '%" + queryStr  + "%' OR CONCAT(LastName,' ',FirstName) LIKE '%" + queryStr  + "%'";
+                string sql = "SELECT * FROM MEMBER WHERE CONCAT(LastName,' ',FirstName) LIKE '%" + queryStr  + "%'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                // Creating Adapter using cmd
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+            return dt;
+        }
+        
+        public DataTable FindFromName_ID(string queryStr)
+        {
+            // Step 1: Database connection
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            DataTable dt = new DataTable();
+            try
+            {
+                conn.Open();
+                // Creating SQL Command using sql and connection
+                string sql = "SELECT MemberID, CONCAT(LastName,' ',FirstName) AS MemberName FROM MEMBER WHERE CONCAT(LastName,' ',FirstName) LIKE '%" + queryStr + "%'";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 // Creating Adapter using cmd
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);

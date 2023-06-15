@@ -54,12 +54,16 @@ namespace WinformFamilyTree
             this.biographyScreen = new WinformFamilyTree.BiographyViewScreen();
             this.sharedScreen = new WinformFamilyTree.SharedScreen();
             this.searchBoxContainer = new System.Windows.Forms.Panel();
-            this.seachGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
+            this.searchGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
             this.wrappedSearchBox = new System.Windows.Forms.FlowLayoutPanel();
             this.searchIcon = new System.Windows.Forms.PictureBox();
+            this.SearchComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.searchBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.customForm = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.memberDataSet = new WinformFamilyTree.memberDataSet();
+            this.tblmemberBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbl_memberTableAdapter = new WinformFamilyTree.memberDataSetTableAdapters.tbl_memberTableAdapter();
             this.containerLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navGroupBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navGroupBox.Panel)).BeginInit();
@@ -73,13 +77,16 @@ namespace WinformFamilyTree
             this.workspaceGroupBox.Panel.SuspendLayout();
             this.workspaceGroupBox.SuspendLayout();
             this.searchBoxContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.seachGroupBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seachGroupBox.Panel)).BeginInit();
-            this.seachGroupBox.Panel.SuspendLayout();
-            this.seachGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchGroupBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchGroupBox.Panel)).BeginInit();
+            this.searchGroupBox.Panel.SuspendLayout();
+            this.searchGroupBox.SuspendLayout();
             this.wrappedSearchBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchComboBox)).BeginInit();
             this.MainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memberDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblmemberBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // containerLayout
@@ -186,7 +193,6 @@ namespace WinformFamilyTree
             this.wrappedNavButtonLayout.Name = "wrappedNavButtonLayout";
             this.wrappedNavButtonLayout.Size = new System.Drawing.Size(285, 226);
             this.wrappedNavButtonLayout.TabIndex = 3;
-            this.wrappedNavButtonLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.wrappedNavButtonLayout_Paint);
             // 
             // sharedButton
             // 
@@ -457,6 +463,7 @@ namespace WinformFamilyTree
             this.biographyScreen.Name = "biographyScreen";
             this.biographyScreen.Size = new System.Drawing.Size(844, 500);
             this.biographyScreen.TabIndex = 1;
+            this.biographyScreen.Load += new System.EventHandler(this.biographyScreen_Load);
             // 
             // sharedScreen
             // 
@@ -471,36 +478,37 @@ namespace WinformFamilyTree
             // 
             // searchBoxContainer
             // 
-            this.searchBoxContainer.Controls.Add(this.seachGroupBox);
+            this.searchBoxContainer.Controls.Add(this.searchGroupBox);
             this.searchBoxContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchBoxContainer.Location = new System.Drawing.Point(1027, 53);
             this.searchBoxContainer.Name = "searchBoxContainer";
             this.searchBoxContainer.Size = new System.Drawing.Size(212, 44);
             this.searchBoxContainer.TabIndex = 13;
             // 
-            // seachGroupBox
+            // searchGroupBox
             // 
-            this.seachGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seachGroupBox.Location = new System.Drawing.Point(0, 0);
-            this.seachGroupBox.Name = "seachGroupBox";
+            this.searchGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.searchGroupBox.Name = "searchGroupBox";
             // 
-            // seachGroupBox.Panel
+            // searchGroupBox.Panel
             // 
-            this.seachGroupBox.Panel.Controls.Add(this.wrappedSearchBox);
-            this.seachGroupBox.Size = new System.Drawing.Size(212, 44);
-            this.seachGroupBox.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.seachGroupBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
-            this.seachGroupBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.searchGroupBox.Panel.Controls.Add(this.wrappedSearchBox);
+            this.searchGroupBox.Size = new System.Drawing.Size(212, 44);
+            this.searchGroupBox.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.searchGroupBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
+            this.searchGroupBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.seachGroupBox.StateCommon.Border.Rounding = 20;
-            this.seachGroupBox.StateCommon.Border.Width = 2;
-            this.seachGroupBox.TabIndex = 11;
+            this.searchGroupBox.StateCommon.Border.Rounding = 20;
+            this.searchGroupBox.StateCommon.Border.Width = 2;
+            this.searchGroupBox.TabIndex = 11;
             // 
             // wrappedSearchBox
             // 
             this.wrappedSearchBox.BackColor = System.Drawing.Color.Transparent;
             this.wrappedSearchBox.Controls.Add(this.searchIcon);
+            this.wrappedSearchBox.Controls.Add(this.SearchComboBox);
             this.wrappedSearchBox.Controls.Add(this.searchBox);
             this.wrappedSearchBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wrappedSearchBox.Location = new System.Drawing.Point(0, 0);
@@ -520,9 +528,21 @@ namespace WinformFamilyTree
             this.searchIcon.TabIndex = 0;
             this.searchIcon.TabStop = false;
             // 
+            // SearchComboBox
+            // 
+            this.SearchComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.SearchComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.SearchComboBox.DropDownWidth = 163;
+            this.SearchComboBox.Location = new System.Drawing.Point(28, 3);
+            this.SearchComboBox.Name = "SearchComboBox";
+            this.SearchComboBox.Size = new System.Drawing.Size(163, 21);
+            this.SearchComboBox.TabIndex = 11;
+            this.SearchComboBox.SelectionChangeCommitted += new System.EventHandler(this.SearchComboBox_SelectionChangeCommitted);
+            this.SearchComboBox.TextChanged += new System.EventHandler(this.SearchComboBox_TextChanged);
+            // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(25, 0);
+            this.searchBox.Location = new System.Drawing.Point(0, 27);
             this.searchBox.Margin = new System.Windows.Forms.Padding(0);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(163, 26);
@@ -534,6 +554,7 @@ namespace WinformFamilyTree
             this.searchBox.StateCommon.Content.Color1 = System.Drawing.Color.White;
             this.searchBox.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBox.TabIndex = 10;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // MainPanel
             // 
@@ -545,6 +566,20 @@ namespace WinformFamilyTree
             this.MainPanel.Size = new System.Drawing.Size(1264, 681);
             this.MainPanel.TabIndex = 13;
             // 
+            // memberDataSet
+            // 
+            this.memberDataSet.DataSetName = "memberDataSet";
+            this.memberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblmemberBindingSource
+            // 
+            this.tblmemberBindingSource.DataMember = "tbl_member";
+            this.tblmemberBindingSource.DataSource = this.memberDataSet;
+            // 
+            // tbl_memberTableAdapter
+            // 
+            this.tbl_memberTableAdapter.ClearBeforeFill = true;
+            // 
             // familyTree
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -552,6 +587,7 @@ namespace WinformFamilyTree
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.MainPanel);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.tblmemberBindingSource, "ID", true));
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -578,14 +614,17 @@ namespace WinformFamilyTree
             ((System.ComponentModel.ISupportInitialize)(this.workspaceGroupBox)).EndInit();
             this.workspaceGroupBox.ResumeLayout(false);
             this.searchBoxContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.seachGroupBox.Panel)).EndInit();
-            this.seachGroupBox.Panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.seachGroupBox)).EndInit();
-            this.seachGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.searchGroupBox.Panel)).EndInit();
+            this.searchGroupBox.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.searchGroupBox)).EndInit();
+            this.searchGroupBox.ResumeLayout(false);
             this.wrappedSearchBox.ResumeLayout(false);
             this.wrappedSearchBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchComboBox)).EndInit();
             this.MainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.memberDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblmemberBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -609,7 +648,7 @@ namespace WinformFamilyTree
         private ComponentFactory.Krypton.Toolkit.KryptonButton sharedButton;
         private ComponentFactory.Krypton.Toolkit.KryptonButton memberListButton;
         private ComponentFactory.Krypton.Toolkit.KryptonButton viewBiographyButton;
-        private ComponentFactory.Krypton.Toolkit.KryptonGroup seachGroupBox;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroup searchGroupBox;
         private FlowLayoutPanel wrappedSearchBox;
         private PictureBox searchIcon;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox searchBox;
@@ -617,6 +656,10 @@ namespace WinformFamilyTree
         private ComponentFactory.Krypton.Toolkit.KryptonPalette customForm;
         private Panel MainPanel;
         private Panel searchBoxContainer;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox SearchComboBox;
+        private memberDataSet memberDataSet;
+        private BindingSource tblmemberBindingSource;
+        private memberDataSetTableAdapters.tbl_memberTableAdapter tbl_memberTableAdapter;
     }
 }
 

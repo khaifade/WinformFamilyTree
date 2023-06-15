@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using WinformFamilyTree.TreeClasses;
 using ComponentFactory.Krypton.Toolkit;
 using WinformFamilyTree.UI;
+using WinformFamilyTree.TreeClasses;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinformFamilyTree
 {
@@ -93,7 +95,8 @@ namespace WinformFamilyTree
 
         private void homeScreenButton_Click(object sender, EventArgs e)
         {
-            seachGroupBox.Show();
+            searchGroupBox.Show();
+            SearchComboBox.Visible = true;
             homeScreen.Show();
             biographyScreen.Hide();
             memberListScreen.Hide();
@@ -107,7 +110,7 @@ namespace WinformFamilyTree
 
         private void viewBiographyButton_Click(object sender, EventArgs e)
         {
-            seachGroupBox.Show();
+            searchGroupBox.Hide();
             homeScreen.Hide();
             biographyScreen.Show();
             memberListScreen.Hide();
@@ -123,12 +126,13 @@ namespace WinformFamilyTree
         {
             // Only show screen of member list and hide other screen
             homeScreen.Hide();
+            SearchComboBox.Visible = false;
             biographyScreen.Hide();
             memberListScreen.Show();
             memberListScreen.Update();
             sharedScreen.Hide();
             memberListScreen.BringToFront();
-            seachGroupBox.Show();
+            searchGroupBox.Show();
             // change caption of the workspace
             workspaceCaption_Change(memberListButton, e);
 
@@ -141,7 +145,7 @@ namespace WinformFamilyTree
             memberListScreen.Hide();
             sharedScreen.Show();
             sharedScreen.BringToFront();
-            seachGroupBox.Hide();
+            searchGroupBox.Hide();
             // change caption of the workspace
             workspaceCaption_Change(sharedButton, e);
         }
@@ -194,7 +198,7 @@ namespace WinformFamilyTree
 
         private void homeScreenButton_onClick(object sender, EventArgs e)
         {
-
+            SearchComboBox.Visible = true;
             homeScreenButton.BackColor = Color.White;
             homeScreenButton.ForeColor = mainColor;
             homeScreenButton.Font = new Font(homeScreenButton.Font, FontStyle.Bold);
@@ -221,17 +225,33 @@ namespace WinformFamilyTree
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
-            if(memberListScreen.Visible)
-            {
-                memberListScreen.findMembers(searchBox.Text);
-            }
-            else
-            {
-
-            }
+            memberListScreen.findMembers(searchBox.Text);
         }
 
-        private void wrappedNavButtonLayout_Paint(object sender, PaintEventArgs e)
+        private void SearchComboBox_TextChanged(object sender, EventArgs e)
+        {
+            
+            KryptonComboBox cb = (KryptonComboBox)sender;
+            MemberClass member = new MemberClass();
+            string curName = cb.Text;
+            instance.ActiveControl = null;
+            cb.DataSource = member.FindFromName_ID(SearchComboBox.Text);
+            cb.DisplayMember = "MemberName";
+            cb.ValueMember = "MemberID";
+            cb.TextChanged -= SearchComboBox_TextChanged;
+            cb.Text = curName;
+            cb.Focus();
+            cb.Select(cb.Text.Length, 0);
+            //cb.DroppedDown = true;
+            cb.TextChanged += SearchComboBox_TextChanged;
+        }
+
+        private void SearchComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void biographyScreen_Load(object sender, EventArgs e)
         {
 
         }
