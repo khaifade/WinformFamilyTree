@@ -349,6 +349,7 @@ namespace WinformFamilyTree
             // AvatarProfilePicture
             // 
             this.AvatarProfilePicture.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.AvatarProfilePicture.Enabled = false;
             this.AvatarProfilePicture.Location = new System.Drawing.Point(4, 20);
             this.AvatarProfilePicture.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.AvatarProfilePicture.Name = "AvatarProfilePicture";
@@ -532,6 +533,7 @@ namespace WinformFamilyTree
             this.searchBox.StateCommon.Content.Color1 = System.Drawing.Color.White;
             this.searchBox.StateCommon.Content.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBox.TabIndex = 10;
+            this.searchBox.TextChanged += searchBox_TextChanged;
             // 
             // MainPanel
             // 

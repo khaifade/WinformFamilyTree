@@ -139,8 +139,9 @@
             // 
             // AvatarProfilePicture
             // 
-            this.AvatarProfilePicture.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.AvatarProfilePicture.Location = new System.Drawing.Point(35, 20);
+            this.AvatarProfilePicture.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.AvatarProfilePicture.Enabled = false;
+            this.AvatarProfilePicture.Location = new System.Drawing.Point(71, 20);
             this.AvatarProfilePicture.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.AvatarProfilePicture.Name = "AvatarProfilePicture";
             this.AvatarProfilePicture.Size = new System.Drawing.Size(150, 150);

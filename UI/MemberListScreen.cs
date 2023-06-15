@@ -19,18 +19,26 @@ namespace WinformFamilyTree
         public MemberListScreen()
         {
             InitializeComponent();
-            MemberClass nb = new MemberClass();
+            MemberClass mb = new MemberClass();
             instance = this;
             dtg = DataGirdView;
             dtg.AllowUserToResizeColumns = false;
-            dtg.DataSource = nb.Select();
+            dtg.DataSource = mb.Select();
             
         }
         public void Update()
         {
             InitializeComponent();
-            MemberClass nb = new MemberClass();
-            dtg.DataSource = nb.Select();
+            MemberClass mb = new MemberClass();
+            dtg.DataSource = mb.Select();
+        }
+        public void findMembers(string queryStr)
+        {
+            MemberClass mb = new MemberClass();
+            if (string.IsNullOrEmpty(queryStr))
+                dtg.DataSource = mb.Select();
+            else
+                dtg.DataSource = mb.FindFromName(queryStr);
         }
     }
 }

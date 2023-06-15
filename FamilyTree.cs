@@ -219,7 +219,14 @@ namespace WinformFamilyTree
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
+            if(memberListScreen.Visible)
+            {
+                memberListScreen.findMembers(searchBox.Text);
+            }
+            else
+            {
 
+            }
         }
     }
 }
