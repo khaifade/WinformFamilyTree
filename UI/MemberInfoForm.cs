@@ -18,7 +18,7 @@ namespace WinformFamilyTree.UI
 
         int rootID;
         string type;
-        
+        int curID;
         public MemberInfoForm()
         {
             InitializeComponent();
@@ -45,6 +45,20 @@ namespace WinformFamilyTree.UI
                 relationshipComboBox.Text = "Con cái" ;
             }
         }
+        public MemberInfoForm(MemberClass member)
+        {
+            InitializeComponent();
+            lastNameTextBox.Text = member.LastName;
+            firstNameTextBox.Text = member.FirstName;
+            genderComboBox.Text = member.Gender;
+            dateOfBirthBox.Value = member.DateOfBirth;
+            placeOfOriginTextBox.Text = member.PlaceOfOrigin;
+            biographyRichTextBox.Text = member.Biography;
+            curID = member.ID;
+            type = "edit";
+            this.relationshipComboBox.Visible = false;
+            this.relationshipLabel.Visible = false;
+        }
         private void attachImage_Click(object sender, EventArgs e)
         {
             // Show the Open File dialog. If the user clicks OK, load the
@@ -58,6 +72,7 @@ namespace WinformFamilyTree.UI
         private void cancelFormButton_Click(object sender, EventArgs e)
         {
             this.Hide();
+            familyTree.instance.Controls.Remove(this);
         }
         private void cancelFormButtonFirstTime_Click(object sender, EventArgs e)
         {
@@ -67,64 +82,94 @@ namespace WinformFamilyTree.UI
 
         private void saveFormButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             // TODO: Add all filled data to database
-            MemberClass member = new MemberClass();
-            member.LastName = lastNameTextBox.Text;
-            member.FirstName = firstNameTextBox.Text;
-            member.Gender = genderComboBox.Text;
-            member.DateOfBirth = dateOfBirthBox.Value;
-            member.PlaceOfOrigin = placeOfOriginTextBox.Text;
-            member.Biography = biographyRichTextBox.Text;
-            member.proFilePicture = getPicture();
-            if(!aliveCheckBox.Checked)
+
+            if (string.IsNullOrEmpty(lastNameTextBox.Text) || string.IsNullOrEmpty(firstNameTextBox.Text))
             {
-                member.DateOfDeath = dateOfDeathBox.Value;
-            }
-            // the first member do not have any relatonship
-            if (member.numMember() == 0)
-            {
-                if (member.Insert(member))
-                {
-                    MessageBox.Show("thêm thành công!");
-                    this.Hide();
-                    familyTree.instance.refreshHomeScreen();
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi, hãy thử lại!");
-                }
-            } else // the second member need to connect relationship
-            {
-                if (this.type == "spouse") // add spouse 
-                {
-                    if (member.Insert(member) && member.InsertSpouseRel(rootID, member.getMemberID(member)))
-                    {
-                        MessageBox.Show("thêm thành công!");
-                        this.Hide();
-                        familyTree.instance.refreshHomeScreen();
-                    }
-                    else
-                    {
-                        member.Delete(member);
-                        MessageBox.Show("Lỗi, hãy thử lại!");
-                    }
-                } else if(this.type == "child") // add child
-                {
-                    if (member.Insert(member) && member.InsertParentChildRel(member.getMemberID(member),member.getSpouseID(rootID)))
-                    {
-                        MessageBox.Show("thêm thành công!");
-                        this.Hide();
-                        familyTree.instance.refreshHomeScreen();
-                    }
-                    else
-                    {
-                        member.Delete(member);
-                        MessageBox.Show("Lỗi, hãy thử lại!");
-                    }
-                }
+                   MessageBox.Show("Lỗi, hãy điền họ tên!");
             }
 
+            else
+            {
+                MemberClass member = new MemberClass();
+                member.ID = curID;
+                member.LastName = lastNameTextBox.Text;
+                member.FirstName = firstNameTextBox.Text;
+                member.Gender = genderComboBox.Text;
+                member.DateOfBirth = dateOfBirthBox.Value;
+                member.PlaceOfOrigin = placeOfOriginTextBox.Text;
+                member.Biography = biographyRichTextBox.Text;
+                member.proFilePicture = getPicture();
+
+                if (!aliveCheckBox.Checked)
+                {
+                    member.DateOfDeath = dateOfDeathBox.Value;
+                }
+                // the first member do not have any relatonship
+                if (member.numMember() == 0)
+                {
+                    if (member.Insert(member))
+                    {
+                        MessageBox.Show("Thêm thành công!");
+                        this.Hide();
+                        familyTree.instance.refreshHomeScreen();
+                        familyTree.instance.Controls.Remove(this);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi, hãy thử lại!");
+                    }
+                }
+                else // the second member need to connect relationship
+                {
+                    if (this.type == "spouse") // add spouse 
+                    {
+                        if (member.Insert(member) && member.InsertSpouseRel(rootID, member.getMemberID(member)))
+                        {
+                            MessageBox.Show("Thêm thành công!");
+                            this.Hide();
+                            familyTree.instance.refreshHomeScreen();
+                            familyTree.instance.Controls.Remove(this);
+                        }
+                        else
+                        {
+                            member.Delete(member);
+                            MessageBox.Show("Lỗi, hãy thử lại!");
+                        }
+                    }
+                    else if (this.type == "child") // add child
+                    {
+                        if (member.Insert(member) && member.InsertParentChildRel(member.getMemberID(member), member.getSpouseID(rootID)))
+                        {
+                            MessageBox.Show("Thêm thành công!");
+                            this.Hide();
+                            familyTree.instance.refreshHomeScreen();
+                            familyTree.instance.Controls.Remove(this);
+                        }
+                        else
+                        {
+                            member.Delete(member);
+                            MessageBox.Show("Lỗi, hãy thử lại!");
+                        }
+                    }
+                    else if (this.type == "edit") // edit member's info
+                    {
+                        if (member.Update(member))
+                        {
+                            MessageBox.Show("Sửa thành công!");
+                            this.Hide();
+                            familyTree.instance.refreshHomeScreen();
+                            familyTree.instance.Controls.Remove(this);
+                        }
+                        else
+                        {
+                            member.Delete(member);
+                            MessageBox.Show("Lỗi, hãy thử lại!");
+                        }
+                    }
+                }
+            }
         }
 
         private void aliveCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -148,6 +193,5 @@ namespace WinformFamilyTree.UI
             attachImage.Image.Save(stream, attachImage.Image.RawFormat);
             return stream.GetBuffer();
         }
-        
     }
 }

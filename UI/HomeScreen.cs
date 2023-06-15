@@ -15,6 +15,9 @@ namespace WinformFamilyTree
 {
     public partial class HomeScreen : UserControl
     {
+        private int numMem;
+        private int x = 0;
+        private int y = 0;
         public static HomeScreen Instance { get; private set; }
         public KryptonButton deterMessage;
         public HomeScreen()
@@ -24,10 +27,10 @@ namespace WinformFamilyTree
             Instance = this;
             // TODO: Get member's name, member's brithYear & member's profile picture from database of each MemberNode
             // Example for demo:
-            int x = 0;
-            int y = 0;
+            
             MemberClass member = new MemberClass();
-            for(int i = 1; i<= member.numMember(); i++)
+            numMem = member.numMember();
+            for (int i = 1; i<= numMem; i++)
             {
                 var node = new memberNode(i);
                 MainPanel.Controls.Add(node);
@@ -36,6 +39,21 @@ namespace WinformFamilyTree
             }
             
         }
-
+        public void Update()
+        {
+            MemberClass member = new MemberClass();
+            int curNum = member.numMember();
+            if (numMem < curNum)
+            {
+                for(int i = numMem + 1; i<=curNum; i++)
+                {
+                    var node = new memberNode(i);
+                    MainPanel.Controls.Add(node);
+                    node.Location = new Point(x, y);
+                    y = y + 100;
+                }
+                numMem = curNum;
+            }    
+        }
     }
 }

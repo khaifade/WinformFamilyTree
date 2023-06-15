@@ -9,12 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinformFamilyTree.TreeClasses;
+using WinformFamilyTree.UI;
 
 namespace WinformFamilyTree
 {
     public partial class BiographyViewScreen : UserControl
     {
         // Màn hình khởi tạo khi không có thành viên 
+        MemberClass member;
         public BiographyViewScreen()
         {
             InitializeComponent();
@@ -30,6 +32,7 @@ namespace WinformFamilyTree
             MainPanel.Visible = true;
             //MemberClass member = new MemberClass();
             //member = member.SelectMember(memberID);
+            this.member = member;
             fullNameText.Text = member.LastName + " " + member.FirstName;
             genderText.Text = member.Gender;
             dateOfBirthText.Text = member.DateOfBirth.Day.ToString() + "/" + member.DateOfBirth.Month.ToString() + "/" + member.DateOfBirth.Year.ToString();
@@ -48,7 +51,8 @@ namespace WinformFamilyTree
 
         private void editInfoButton_Click(object sender, EventArgs e)
         {
-
+            var ucMemberInfoForm = new MemberInfoForm(member);
+            familyTree.instance.AddUserControl(ucMemberInfoForm);
         }
     }
 }

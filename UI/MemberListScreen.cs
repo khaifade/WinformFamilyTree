@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using WinformFamilyTree.TreeClasses;
+
 namespace WinformFamilyTree
 {
     public partial class MemberListScreen : UserControl
@@ -17,17 +19,18 @@ namespace WinformFamilyTree
         public MemberListScreen()
         {
             InitializeComponent();
+            MemberClass nb = new MemberClass();
             instance = this;
             dtg = DataGirdView;
+            dtg.AllowUserToResizeColumns = false;
+            dtg.DataSource = nb.Select();
+            
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void Update()
         {
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            InitializeComponent();
+            MemberClass nb = new MemberClass();
+            dtg.DataSource = nb.Select();
         }
     }
 }

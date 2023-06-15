@@ -90,8 +90,8 @@
             this.cancelFormButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelFormButton.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom2;
             this.cancelFormButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelFormButton.Location = new System.Drawing.Point(259, 0);
-            this.cancelFormButton.Margin = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.cancelFormButton.Location = new System.Drawing.Point(194, 0);
+            this.cancelFormButton.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.cancelFormButton.Name = "cancelFormButton";
             this.cancelFormButton.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.cancelFormButton.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -100,7 +100,7 @@
             this.cancelFormButton.OverrideDefault.Border.Rounding = 20;
             this.cancelFormButton.OverrideDefault.Content.ShortText.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.cancelFormButton.OverrideFocus.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.cancelFormButton.Size = new System.Drawing.Size(179, 57);
+            this.cancelFormButton.Size = new System.Drawing.Size(134, 46);
             this.cancelFormButton.StateCommon.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.cancelFormButton.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonHighlight;
             this.cancelFormButton.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
@@ -137,10 +137,10 @@
             this.flowLayoutPanel4.Controls.Add(this.genderLabel);
             this.flowLayoutPanel4.Controls.Add(this.genderComboBox);
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(232, 5);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(174, 3);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(140, 68);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(105, 59);
             this.flowLayoutPanel4.TabIndex = 10;
             // 
             // genderLabel
@@ -148,7 +148,7 @@
             this.genderLabel.Location = new System.Drawing.Point(0, 0);
             this.genderLabel.Margin = new System.Windows.Forms.Padding(0);
             this.genderLabel.Name = "genderLabel";
-            this.genderLabel.Size = new System.Drawing.Size(79, 27);
+            this.genderLabel.Size = new System.Drawing.Size(64, 22);
             this.genderLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.genderLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.genderLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -169,10 +169,10 @@
             "Nam",
             "Nữ",
             "Khác"});
-            this.genderComboBox.Location = new System.Drawing.Point(0, 27);
+            this.genderComboBox.Location = new System.Drawing.Point(0, 22);
             this.genderComboBox.Margin = new System.Windows.Forms.Padding(0);
             this.genderComboBox.Name = "genderComboBox";
-            this.genderComboBox.Size = new System.Drawing.Size(140, 41);
+            this.genderComboBox.Size = new System.Drawing.Size(105, 37);
             this.genderComboBox.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.genderComboBox.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -191,10 +191,10 @@
             this.flowLayoutPanel3.Controls.Add(this.firstNameLabel);
             this.flowLayoutPanel3.Controls.Add(this.firstNameTextBox);
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(13, 6);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(10, 3);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(145, 67);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(109, 58);
             this.flowLayoutPanel3.TabIndex = 9;
             // 
             // firstNameLabel
@@ -202,7 +202,7 @@
             this.firstNameLabel.Location = new System.Drawing.Point(0, 0);
             this.firstNameLabel.Margin = new System.Windows.Forms.Padding(0);
             this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(41, 27);
+            this.firstNameLabel.Size = new System.Drawing.Size(34, 22);
             this.firstNameLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.firstNameLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.firstNameLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -217,10 +217,10 @@
             // firstNameTextBox
             // 
             this.firstNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.firstNameTextBox.Location = new System.Drawing.Point(0, 27);
+            this.firstNameTextBox.Location = new System.Drawing.Point(0, 22);
             this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(145, 40);
+            this.firstNameTextBox.Size = new System.Drawing.Size(109, 36);
             this.firstNameTextBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.firstNameTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -240,12 +240,12 @@
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel4, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(439, 77);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(329, 62);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(439, 79);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(329, 65);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // flowLayoutPanel6
@@ -256,10 +256,10 @@
             this.flowLayoutPanel6.Controls.Add(this.placeOfOriginTextBox);
             this.flowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(0, 235);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(0, 192);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(878, 79);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(658, 65);
             this.flowLayoutPanel6.TabIndex = 12;
             // 
             // placeOfOriginLabel
@@ -267,7 +267,7 @@
             this.placeOfOriginLabel.Location = new System.Drawing.Point(0, 0);
             this.placeOfOriginLabel.Margin = new System.Windows.Forms.Padding(0);
             this.placeOfOriginLabel.Name = "placeOfOriginLabel";
-            this.placeOfOriginLabel.Size = new System.Drawing.Size(77, 27);
+            this.placeOfOriginLabel.Size = new System.Drawing.Size(63, 22);
             this.placeOfOriginLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.placeOfOriginLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.placeOfOriginLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -282,10 +282,10 @@
             // placeOfOriginTextBox
             // 
             this.placeOfOriginTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.placeOfOriginTextBox.Location = new System.Drawing.Point(0, 27);
+            this.placeOfOriginTextBox.Location = new System.Drawing.Point(0, 22);
             this.placeOfOriginTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.placeOfOriginTextBox.Name = "placeOfOriginTextBox";
-            this.placeOfOriginTextBox.Size = new System.Drawing.Size(877, 40);
+            this.placeOfOriginTextBox.Size = new System.Drawing.Size(658, 36);
             this.placeOfOriginTextBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.placeOfOriginTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -304,10 +304,10 @@
             this.flowLayoutPanel7.Controls.Add(this.relationshipLabel);
             this.flowLayoutPanel7.Controls.Add(this.relationshipComboBox);
             this.flowLayoutPanel7.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(0, 319);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(0, 260);
             this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(345, 68);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(259, 59);
             this.flowLayoutPanel7.TabIndex = 13;
             // 
             // relationshipLabel
@@ -315,7 +315,7 @@
             this.relationshipLabel.Location = new System.Drawing.Point(0, 0);
             this.relationshipLabel.Margin = new System.Windows.Forms.Padding(0);
             this.relationshipLabel.Name = "relationshipLabel";
-            this.relationshipLabel.Size = new System.Drawing.Size(111, 27);
+            this.relationshipLabel.Size = new System.Drawing.Size(90, 22);
             this.relationshipLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.relationshipLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.relationshipLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -335,10 +335,10 @@
             "Con cái",
             "Vợ / Chồng",
             "Bố / Mẹ"});
-            this.relationshipComboBox.Location = new System.Drawing.Point(0, 27);
+            this.relationshipComboBox.Location = new System.Drawing.Point(0, 22);
             this.relationshipComboBox.Margin = new System.Windows.Forms.Padding(0);
             this.relationshipComboBox.Name = "relationshipComboBox";
-            this.relationshipComboBox.Size = new System.Drawing.Size(345, 41);
+            this.relationshipComboBox.Size = new System.Drawing.Size(259, 37);
             this.relationshipComboBox.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.relationshipComboBox.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -355,18 +355,18 @@
             this.flowLayoutPanel10.Controls.Add(this.saveFormButton);
             this.flowLayoutPanel10.Controls.Add(this.cancelFormButton);
             this.flowLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel10.Location = new System.Drawing.Point(439, 712);
+            this.flowLayoutPanel10.Location = new System.Drawing.Point(329, 582);
             this.flowLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
-            this.flowLayoutPanel10.Size = new System.Drawing.Size(439, 85);
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(329, 66);
             this.flowLayoutPanel10.TabIndex = 16;
             // 
             // saveFormButton
             // 
             this.saveFormButton.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom2;
             this.saveFormButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveFormButton.Location = new System.Drawing.Point(40, 0);
-            this.saveFormButton.Margin = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.saveFormButton.Location = new System.Drawing.Point(30, 0);
+            this.saveFormButton.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.saveFormButton.Name = "saveFormButton";
             this.saveFormButton.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.saveFormButton.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
@@ -377,7 +377,7 @@
             this.saveFormButton.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.saveFormButton.OverrideDefault.Content.ShortText.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.saveFormButton.OverrideFocus.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.saveFormButton.Size = new System.Drawing.Size(179, 57);
+            this.saveFormButton.Size = new System.Drawing.Size(134, 46);
             this.saveFormButton.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.saveFormButton.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.saveFormButton.StateCommon.Back.ColorAngle = 180F;
@@ -442,7 +442,7 @@
             this.lastNameLabel.Location = new System.Drawing.Point(0, 0);
             this.lastNameLabel.Margin = new System.Windows.Forms.Padding(0);
             this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(127, 27);
+            this.lastNameLabel.Size = new System.Drawing.Size(103, 22);
             this.lastNameLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.lastNameLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.lastNameLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -462,14 +462,14 @@
             this.backgroundLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.backgroundLayout.Controls.Add(this.mainLayout, 1, 1);
             this.backgroundLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.backgroundLayout.Location = new System.Drawing.Point(365, 0);
+            this.backgroundLayout.Location = new System.Drawing.Point(274, 0);
             this.backgroundLayout.Margin = new System.Windows.Forms.Padding(0);
             this.backgroundLayout.Name = "backgroundLayout";
             this.backgroundLayout.RowCount = 3;
             this.backgroundLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.backgroundLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.backgroundLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.backgroundLayout.Size = new System.Drawing.Size(976, 886);
+            this.backgroundLayout.Size = new System.Drawing.Size(732, 720);
             this.backgroundLayout.TabIndex = 1;
             // 
             // mainLayout
@@ -489,7 +489,7 @@
             this.mainLayout.Controls.Add(this.flowLayoutPanel7, 0, 4);
             this.mainLayout.Controls.Add(this.flowLayoutPanel10, 1, 6);
             this.mainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainLayout.Location = new System.Drawing.Point(48, 44);
+            this.mainLayout.Location = new System.Drawing.Point(36, 36);
             this.mainLayout.Margin = new System.Windows.Forms.Padding(0);
             this.mainLayout.Name = "mainLayout";
             this.mainLayout.RowCount = 7;
@@ -500,7 +500,7 @@
             this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.03361F));
             this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.13446F));
             this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.03361F));
-            this.mainLayout.Size = new System.Drawing.Size(878, 797);
+            this.mainLayout.Size = new System.Drawing.Size(658, 648);
             this.mainLayout.TabIndex = 0;
             // 
             // flowLayoutPanel9
@@ -511,10 +511,10 @@
             this.flowLayoutPanel9.Controls.Add(this.biographyRichTextBox);
             this.flowLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel9.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel9.Location = new System.Drawing.Point(0, 393);
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(0, 322);
             this.flowLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(878, 319);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(658, 260);
             this.flowLayoutPanel9.TabIndex = 15;
             // 
             // kryptonLabel3
@@ -522,7 +522,7 @@
             this.kryptonLabel3.Location = new System.Drawing.Point(0, 0);
             this.kryptonLabel3.Margin = new System.Windows.Forms.Padding(0);
             this.kryptonLabel3.Name = "kryptonLabel3";
-            this.kryptonLabel3.Size = new System.Drawing.Size(68, 27);
+            this.kryptonLabel3.Size = new System.Drawing.Size(56, 22);
             this.kryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.kryptonLabel3.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.kryptonLabel3.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -536,10 +536,10 @@
             // 
             // biographyRichTextBox
             // 
-            this.biographyRichTextBox.Location = new System.Drawing.Point(0, 27);
+            this.biographyRichTextBox.Location = new System.Drawing.Point(0, 22);
             this.biographyRichTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.biographyRichTextBox.Name = "biographyRichTextBox";
-            this.biographyRichTextBox.Size = new System.Drawing.Size(873, 268);
+            this.biographyRichTextBox.Size = new System.Drawing.Size(655, 218);
             this.biographyRichTextBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.biographyRichTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -557,10 +557,10 @@
             this.flowLayoutPanel8.Controls.Add(this.kryptonLabel2);
             this.flowLayoutPanel8.Controls.Add(this.attachImage);
             this.flowLayoutPanel8.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(452, 321);
-            this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(339, 263);
+            this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(188, 65);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(152, 53);
             this.flowLayoutPanel8.TabIndex = 14;
             // 
             // kryptonLabel2
@@ -568,7 +568,7 @@
             this.kryptonLabel2.Location = new System.Drawing.Point(0, 0);
             this.kryptonLabel2.Margin = new System.Windows.Forms.Padding(0);
             this.kryptonLabel2.Name = "kryptonLabel2";
-            this.kryptonLabel2.Size = new System.Drawing.Size(188, 27);
+            this.kryptonLabel2.Size = new System.Drawing.Size(152, 22);
             this.kryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.kryptonLabel2.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.kryptonLabel2.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -587,10 +587,10 @@
             this.attachImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("attachImage.ErrorImage")));
             this.attachImage.Image = global::WinformFamilyTree.Properties.Resources.attach_image_icon;
             this.attachImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("attachImage.InitialImage")));
-            this.attachImage.Location = new System.Drawing.Point(0, 27);
+            this.attachImage.Location = new System.Drawing.Point(0, 22);
             this.attachImage.Margin = new System.Windows.Forms.Padding(0);
             this.attachImage.Name = "attachImage";
-            this.attachImage.Size = new System.Drawing.Size(48, 38);
+            this.attachImage.Size = new System.Drawing.Size(36, 31);
             this.attachImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.attachImage.TabIndex = 10;
             this.attachImage.TabStop = false;
@@ -604,11 +604,11 @@
             this.flowLayoutPanel2.Controls.Add(this.kryptonLabel1);
             this.flowLayoutPanel2.Controls.Add(this.aliveCheckBox);
             this.flowLayoutPanel2.Controls.Add(this.dateOfDeathBox);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(452, 161);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.flowLayoutPanel2.MaximumSize = new System.Drawing.Size(333, 0);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(339, 130);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.flowLayoutPanel2.MaximumSize = new System.Drawing.Size(250, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(279, 68);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(218, 59);
             this.flowLayoutPanel2.TabIndex = 11;
             // 
             // kryptonLabel1
@@ -616,7 +616,7 @@
             this.kryptonLabel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(0);
             this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(246, 27);
+            this.kryptonLabel1.Size = new System.Drawing.Size(198, 22);
             this.kryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.kryptonLabel1.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.kryptonLabel1.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -632,10 +632,10 @@
             // 
             this.aliveCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.aliveCheckBox.Cursor = System.Windows.Forms.Cursors.PanSE;
-            this.aliveCheckBox.Location = new System.Drawing.Point(0, 34);
-            this.aliveCheckBox.Margin = new System.Windows.Forms.Padding(0, 0, 13, 0);
+            this.aliveCheckBox.Location = new System.Drawing.Point(0, 30);
+            this.aliveCheckBox.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.aliveCheckBox.Name = "aliveCheckBox";
-            this.aliveCheckBox.Size = new System.Drawing.Size(97, 26);
+            this.aliveCheckBox.Size = new System.Drawing.Size(81, 21);
             this.aliveCheckBox.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aliveCheckBox.TabIndex = 12;
             this.aliveCheckBox.Values.Text = "Còn sống";
@@ -645,11 +645,11 @@
             // 
             this.dateOfDeathBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateOfDeathBox.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateOfDeathBox.Location = new System.Drawing.Point(110, 27);
+            this.dateOfDeathBox.Location = new System.Drawing.Point(91, 22);
             this.dateOfDeathBox.Margin = new System.Windows.Forms.Padding(0);
             this.dateOfDeathBox.Name = "dateOfDeathBox";
             this.dateOfDeathBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateOfDeathBox.Size = new System.Drawing.Size(169, 41);
+            this.dateOfDeathBox.Size = new System.Drawing.Size(127, 37);
             this.dateOfDeathBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.dateOfDeathBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -667,10 +667,10 @@
             this.flowLayoutPanel5.Controls.Add(this.dateOfBirthLabel);
             this.flowLayoutPanel5.Controls.Add(this.dateOfBirthBox);
             this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 161);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 130);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(188, 68);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(144, 59);
             this.flowLayoutPanel5.TabIndex = 10;
             // 
             // dateOfBirthLabel
@@ -678,7 +678,7 @@
             this.dateOfBirthLabel.Location = new System.Drawing.Point(0, 0);
             this.dateOfBirthLabel.Margin = new System.Windows.Forms.Padding(0);
             this.dateOfBirthLabel.Name = "dateOfBirthLabel";
-            this.dateOfBirthLabel.Size = new System.Drawing.Size(179, 27);
+            this.dateOfBirthLabel.Size = new System.Drawing.Size(144, 22);
             this.dateOfBirthLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.dateOfBirthLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.dateOfBirthLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -694,10 +694,10 @@
             // 
             this.dateOfBirthBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dateOfBirthBox.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateOfBirthBox.Location = new System.Drawing.Point(0, 27);
+            this.dateOfBirthBox.Location = new System.Drawing.Point(0, 22);
             this.dateOfBirthBox.Margin = new System.Windows.Forms.Padding(0);
             this.dateOfBirthBox.Name = "dateOfBirthBox";
-            this.dateOfBirthBox.Size = new System.Drawing.Size(188, 41);
+            this.dateOfBirthBox.Size = new System.Drawing.Size(141, 37);
             this.dateOfBirthBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.dateOfBirthBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -711,10 +711,10 @@
             // 
             this.formLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.mainLayout.SetColumnSpan(this.formLabel, 2);
-            this.formLabel.Location = new System.Drawing.Point(296, 8);
-            this.formLabel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 37);
+            this.formLabel.Location = new System.Drawing.Point(232, 6);
+            this.formLabel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
             this.formLabel.Name = "formLabel";
-            this.formLabel.Size = new System.Drawing.Size(286, 32);
+            this.formLabel.Size = new System.Drawing.Size(193, 26);
             this.formLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.formLabel.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
             this.formLabel.StateCommon.ShortText.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
@@ -724,7 +724,7 @@
             this.formLabel.StateCommon.ShortText.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
             this.formLabel.StateCommon.ShortText.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.formLabel.TabIndex = 7;
-            this.formLabel.Values.Text = "Thông tin thành viên mới";
+            this.formLabel.Values.Text = "Thông tin thành viên";
             // 
             // flowLayoutPanel1
             // 
@@ -733,19 +733,19 @@
             this.flowLayoutPanel1.Controls.Add(this.lastNameLabel);
             this.flowLayoutPanel1.Controls.Add(this.lastNameTextBox);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 83);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 65);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(345, 67);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(259, 58);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // lastNameTextBox
             // 
             this.lastNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lastNameTextBox.Location = new System.Drawing.Point(0, 27);
+            this.lastNameTextBox.Location = new System.Drawing.Point(0, 22);
             this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(345, 40);
+            this.lastNameTextBox.Size = new System.Drawing.Size(259, 36);
             this.lastNameTextBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.lastNameTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -760,9 +760,9 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 365F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 976F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 365F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 274F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 732F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 274F));
             this.tableLayoutPanel2.Controls.Add(this.backgroundLayout, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
@@ -770,17 +770,16 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1707, 886);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1280, 720);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // MemberInfoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MemberInfoForm";
-            this.Size = new System.Drawing.Size(1707, 886);
+            this.Size = new System.Drawing.Size(1280, 720);
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.genderComboBox)).EndInit();

@@ -47,13 +47,15 @@ namespace WinformFamilyTree
                 if (member.numMember() == 0)
                     familyTree.instance.ucFirstTimeUserPage.Show();
                 else
+                {
+                    familyTree.instance.refreshHomeScreen();
                     familyTree.instance.ucHomeScreen.Show();
+                }
 
                 
             } else
             {
                 MessageBox.Show("Sai email hoặc mật khẩu!");
-                SignInEmailTextBox.Clear();
                 SignInPasswordTextBox.Clear();
             }
         }

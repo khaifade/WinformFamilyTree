@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.DataGirdView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.mEMBERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fTMDataSet1 = new WinformFamilyTree.FTMDataSet1();
-            this.mEMBERTableAdapter = new WinformFamilyTree.FTMDataSet1TableAdapters.MEMBERTableAdapter();
+            this.MemberBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.FTMDataSet1 = new WinformFamilyTree.FTMDataSet1();
+            this.MemberTableAdapter = new WinformFamilyTree.FTMDataSet1TableAdapters.MEMBERTableAdapter();
             this.memberIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +42,8 @@
             this.placeOfOriginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGirdView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mEMBERBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fTMDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FTMDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
@@ -55,7 +55,6 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(845, 500);
             this.MainPanel.TabIndex = 2;
-            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // DataGirdView
             // 
@@ -70,39 +69,40 @@
             this.dateOfBirthDataGridViewTextBoxColumn,
             this.genderDataGridViewTextBoxColumn,
             this.placeOfOriginDataGridViewTextBoxColumn});
-            this.DataGirdView.DataSource = this.mEMBERBindingSource;
+            this.DataGirdView.DataSource = this.MemberBindingSource;
             this.DataGirdView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGirdView.Location = new System.Drawing.Point(0, 0);
             this.DataGirdView.Margin = new System.Windows.Forms.Padding(0);
             this.DataGirdView.Name = "DataGirdView";
             this.DataGirdView.ReadOnly = true;
+            this.DataGirdView.RowHeadersVisible = false;
             this.DataGirdView.Size = new System.Drawing.Size(845, 500);
             this.DataGirdView.StateCommon.Background.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.DataGirdView.StateCommon.Background.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
             this.DataGirdView.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.DataGirdView.StateCommon.DataCell.Content.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DataGirdView.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGirdView.StateCommon.DataCell.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGirdView.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DataGirdView.StateCommon.HeaderColumn.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.DataGirdView.StateCommon.HeaderRow.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.DataGirdView.StateCommon.HeaderRow.Content.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGirdView.StateCommon.HeaderRow.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DataGirdView.StateCommon.HeaderRow.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.DataGirdView.TabIndex = 0;
             // 
-            // mEMBERBindingSource
+            // MemberBindingSource
             // 
-            this.mEMBERBindingSource.DataMember = "MEMBER";
-            this.mEMBERBindingSource.DataSource = this.fTMDataSet1;
+            this.MemberBindingSource.DataMember = "MEMBER";
+            this.MemberBindingSource.DataSource = this.FTMDataSet1;
             // 
-            // fTMDataSet1
+            // FTMDataSet1
             // 
-            this.fTMDataSet1.DataSetName = "FTMDataSet1";
-            this.fTMDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.FTMDataSet1.DataSetName = "FTMDataSet1";
+            this.FTMDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // mEMBERTableAdapter
+            // MemberTableAdapter
             // 
-            this.mEMBERTableAdapter.ClearBeforeFill = true;
+            this.MemberTableAdapter.ClearBeforeFill = true;
             // 
             // memberIDDataGridViewTextBoxColumn
             // 
@@ -110,21 +110,24 @@
             this.memberIDDataGridViewTextBoxColumn.HeaderText = "MemberID";
             this.memberIDDataGridViewTextBoxColumn.Name = "memberIDDataGridViewTextBoxColumn";
             this.memberIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.memberIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
             this.firstNameDataGridViewTextBoxColumn.HeaderText = "Họ và tên đệm";
             this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
             this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.firstNameDataGridViewTextBoxColumn.Width = 200;
             // 
             // lastNameDataGridViewTextBoxColumn
             // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
             this.lastNameDataGridViewTextBoxColumn.HeaderText = "Tên";
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
             this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.lastNameDataGridViewTextBoxColumn.Width = 80;
             // 
             // dateOfBirthDataGridViewTextBoxColumn
@@ -133,6 +136,7 @@
             this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "Ngày sinh";
             this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
             this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateOfBirthDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // genderDataGridViewTextBoxColumn
             // 
@@ -140,6 +144,7 @@
             this.genderDataGridViewTextBoxColumn.HeaderText = "Giới tính";
             this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
             this.genderDataGridViewTextBoxColumn.ReadOnly = true;
+            this.genderDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // placeOfOriginDataGridViewTextBoxColumn
             // 
@@ -147,6 +152,7 @@
             this.placeOfOriginDataGridViewTextBoxColumn.HeaderText = "Nơi sinh";
             this.placeOfOriginDataGridViewTextBoxColumn.Name = "placeOfOriginDataGridViewTextBoxColumn";
             this.placeOfOriginDataGridViewTextBoxColumn.ReadOnly = true;
+            this.placeOfOriginDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.placeOfOriginDataGridViewTextBoxColumn.Width = 265;
             // 
             // MemberListScreen
@@ -160,8 +166,8 @@
             this.Size = new System.Drawing.Size(845, 500);
             this.MainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGirdView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mEMBERBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fTMDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FTMDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -169,9 +175,9 @@
         #endregion
         private System.Windows.Forms.Panel MainPanel;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView DataGirdView;
-        private System.Windows.Forms.BindingSource mEMBERBindingSource;
-        private FTMDataSet1 fTMDataSet1;
-        private FTMDataSet1TableAdapters.MEMBERTableAdapter mEMBERTableAdapter;
+        private System.Windows.Forms.BindingSource MemberBindingSource;
+        private FTMDataSet1 FTMDataSet1;
+        private FTMDataSet1TableAdapters.MEMBERTableAdapter MemberTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn memberIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;

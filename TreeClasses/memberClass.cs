@@ -177,7 +177,7 @@ namespace WinformFamilyTree.TreeClasses
                 conn.Open();
                 // Creating SQL Command using sql and conn
 
-                string sql = "UPDATE MEMBER SET FirstName = @FirstName, LastName = @LastName, DateOfBirt = @DateOfBirt, Gender = @Gender, PlaceOfOrigin = @PlaceOfOrigin, Email = @Email, MemberProfilePicture = @MemberProfilePicture WHERE MemberID = @MemberID";
+                string sql = "UPDATE MEMBER SET FirstName = @FirstName, LastName = @LastName, DateOfBirth = @DateOfBirth, Gender = @Gender, PlaceOfOrigin = @PlaceOfOrigin, MemberProfilePicture = @MemberProfilePicture WHERE MemberID = @MemberID";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", c.LastName);

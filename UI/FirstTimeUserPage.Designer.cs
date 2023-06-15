@@ -34,8 +34,8 @@
             this.wrappedNavLayout = new System.Windows.Forms.TableLayoutPanel();
             this.wrappedUserLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.AvatarProfilePicture = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.borderEdge = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
             this.userNameLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.borderEdge = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
             this.startButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.MainPanel.SuspendLayout();
             this.container.SuspendLayout();
@@ -99,7 +99,7 @@
             this.navGroupBox.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(85)))));
             this.navGroupBox.StateCommon.Content.ShortText.ColorAngle = 225F;
             this.navGroupBox.StateCommon.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
-            this.navGroupBox.StateCommon.Content.ShortText.Font = new System.Drawing.Font("UTM Hanzel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navGroupBox.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navGroupBox.StateCommon.Content.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.navGroupBox.TabIndex = 10;
             this.navGroupBox.Values.Heading = "Phần mềm quản lý cây gia phả";
@@ -118,7 +118,7 @@
             this.wrappedNavLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.31169F));
             this.wrappedNavLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.68831F));
             this.wrappedNavLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.wrappedNavLayout.Size = new System.Drawing.Size(750, 385);
+            this.wrappedNavLayout.Size = new System.Drawing.Size(750, 390);
             this.wrappedNavLayout.TabIndex = 0;
             // 
             // wrappedUserLayout
@@ -131,16 +131,16 @@
             this.wrappedUserLayout.Controls.Add(this.borderEdge);
             this.wrappedUserLayout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.wrappedUserLayout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wrappedUserLayout.Location = new System.Drawing.Point(256, 0);
+            this.wrappedUserLayout.Location = new System.Drawing.Point(264, 0);
             this.wrappedUserLayout.Margin = new System.Windows.Forms.Padding(0);
             this.wrappedUserLayout.Name = "wrappedUserLayout";
-            this.wrappedUserLayout.Size = new System.Drawing.Size(237, 263);
+            this.wrappedUserLayout.Size = new System.Drawing.Size(221, 266);
             this.wrappedUserLayout.TabIndex = 2;
             // 
             // AvatarProfilePicture
             // 
             this.AvatarProfilePicture.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.AvatarProfilePicture.Location = new System.Drawing.Point(43, 20);
+            this.AvatarProfilePicture.Location = new System.Drawing.Point(35, 20);
             this.AvatarProfilePicture.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.AvatarProfilePicture.Name = "AvatarProfilePicture";
             this.AvatarProfilePicture.Size = new System.Drawing.Size(150, 150);
@@ -156,10 +156,23 @@
             this.AvatarProfilePicture.Values.Image = global::WinformFamilyTree.Properties.Resources.family_tree_logo;
             this.AvatarProfilePicture.Values.Text = "";
             // 
+            // userNameLabel
+            // 
+            this.userNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.userNameLabel.Location = new System.Drawing.Point(0, 180);
+            this.userNameLabel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.userNameLabel.Name = "userNameLabel";
+            this.userNameLabel.Size = new System.Drawing.Size(221, 29);
+            this.userNameLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.userNameLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameLabel.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
+            this.userNameLabel.TabIndex = 2;
+            this.userNameLabel.Values.Text = "Xin chào `userName`";
+            // 
             // borderEdge
             // 
             this.borderEdge.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.borderEdge.Location = new System.Drawing.Point(68, 216);
+            this.borderEdge.Location = new System.Drawing.Point(60, 214);
             this.borderEdge.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.borderEdge.Name = "borderEdge";
             this.borderEdge.Size = new System.Drawing.Size(100, 5);
@@ -170,25 +183,12 @@
             this.borderEdge.StateCommon.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.borderEdge.StateCommon.Width = 5;
             // 
-            // userNameLabel
-            // 
-            this.userNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.userNameLabel.Location = new System.Drawing.Point(0, 180);
-            this.userNameLabel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.userNameLabel.Name = "userNameLabel";
-            this.userNameLabel.Size = new System.Drawing.Size(237, 31);
-            this.userNameLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
-            this.userNameLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameLabel.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
-            this.userNameLabel.TabIndex = 2;
-            this.userNameLabel.Values.Text = "Xin chào `userName`";
-            // 
             // startButton
             // 
             this.startButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.startButton.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom2;
             this.startButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.startButton.Location = new System.Drawing.Point(283, 263);
+            this.startButton.Location = new System.Drawing.Point(283, 266);
             this.startButton.Margin = new System.Windows.Forms.Padding(0);
             this.startButton.Name = "startButton";
             this.startButton.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));
@@ -214,7 +214,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.startButton.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.startButton.StateCommon.Border.Rounding = 20;
-            this.startButton.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startButton.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startButton.StateCommon.Content.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.startButton.StateCommon.Content.ShortText.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.startButton.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(207)))), ((int)(((byte)(244)))));

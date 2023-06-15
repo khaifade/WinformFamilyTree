@@ -88,10 +88,6 @@ namespace WinformFamilyTree
             workspaceGroupBox.Values.Heading = navButton.Text;
             
         }
-        private void searchBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void homeScreenButton_Click(object sender, EventArgs e)
         {
@@ -102,6 +98,7 @@ namespace WinformFamilyTree
             sharedScreen.Hide();
             homeScreen.BringToFront();
 
+            homeScreen.Update();
             // change caption of the workspace
             workspaceCaption_Change(homeScreenButton, e);
         }
@@ -126,6 +123,7 @@ namespace WinformFamilyTree
             homeScreen.Hide();
             biographyScreen.Hide();
             memberListScreen.Show();
+            memberListScreen.Update();
             sharedScreen.Hide();
             memberListScreen.BringToFront();
             seachGroupBox.Show();
@@ -219,5 +217,9 @@ namespace WinformFamilyTree
             homeScreenButton.PerformClick();
         }
 
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
