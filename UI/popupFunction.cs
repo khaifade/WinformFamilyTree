@@ -63,7 +63,7 @@ namespace WinformFamilyTree.UI
         {
             this.Close();
             await Task.Delay(100);
-            var confirmDeletingDialog = new ConfirmDeletingDialog();
+            var confirmDeletingDialog = new ConfirmDeletingDialog(member);
             confirmDeletingDialog.ShowDialog();
 
         }

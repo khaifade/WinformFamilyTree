@@ -32,13 +32,27 @@ namespace WinformFamilyTree
             // Example for demo:
             
             MemberClass member = new MemberClass();
+
             numMem = member.numMember();
-            for (int i = 1; i<= numMem; i++)
+
+
+            if (member.numMember() == 0)
             {
-                var node = new memberNode(i);
-                MainPanel.Controls.Add(node);
-                node.Location = new Point(x,y);
-                y = y + 100;
+                familyTree.instance.ucFirstTimeUserPage.Show();
+            }
+            else
+            {
+                for (int i = 1; i <= member.getMaxMemberID(); i++)
+                {
+                    if (member.isMemberID(i))
+                    {
+                        var node = new memberNode(i);
+                        MainPanel.Controls.Add(node);
+                        node.Location = new Point(x, y);
+                        y = y + 100;
+                    }
+                }
+
             }
         }
         public void Update()

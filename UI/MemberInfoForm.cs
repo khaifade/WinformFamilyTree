@@ -18,13 +18,23 @@ namespace WinformFamilyTree.UI
 
         int rootID;
         string type;
+
         int curID;
+
+        MemberClass memberNeedChange;
+
         public MemberInfoForm()
         {
             InitializeComponent();
             cancelFormButton.Click += cancelFormButtonFirstTime_Click;
         }
 
+        public MemberInfoForm(MemberClass member)
+        {
+            this.memberNeedChange = member;
+            InitializeComponent();
+            cancelFormButton.Click += cancelFormButtonFirstTime_Click;
+        }
         public MemberInfoForm(string type, int rootID)
         {
 
@@ -82,12 +92,12 @@ namespace WinformFamilyTree.UI
 
         private void saveFormButton_Click(object sender, EventArgs e)
         {
-            
+
             // TODO: Add all filled data to database
 
             if (string.IsNullOrEmpty(lastNameTextBox.Text) || string.IsNullOrEmpty(firstNameTextBox.Text))
             {
-                   MessageBox.Show("Lỗi, hãy điền họ tên!");
+                MessageBox.Show("Lỗi, hãy điền họ tên!");
             }
 
             else
