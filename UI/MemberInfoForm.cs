@@ -21,7 +21,7 @@ namespace WinformFamilyTree.UI
 
         int curID;
 
-        MemberClass memberNeedChange;
+        MemberClass member;
 
         public MemberInfoForm()
         {
@@ -31,7 +31,7 @@ namespace WinformFamilyTree.UI
 
         public MemberInfoForm(MemberClass member)
         {
-            this.memberNeedChange = member;
+            this.member = member;
             InitializeComponent();
             cancelFormButton.Click += cancelFormButtonFirstTime_Click;
         }
@@ -55,20 +55,20 @@ namespace WinformFamilyTree.UI
                 relationshipComboBox.Text = "Con cái" ;
             }
         }
-        public MemberInfoForm(MemberClass member)
-        {
-            InitializeComponent();
-            lastNameTextBox.Text = member.LastName;
-            firstNameTextBox.Text = member.FirstName;
-            genderComboBox.Text = member.Gender;
-            dateOfBirthBox.Value = member.DateOfBirth;
-            placeOfOriginTextBox.Text = member.PlaceOfOrigin;
-            biographyRichTextBox.Text = member.Biography;
-            curID = member.ID;
-            type = "edit";
-            this.relationshipComboBox.Visible = false;
-            this.relationshipLabel.Visible = false;
-        }
+        //public MemberInfoForm(MemberClass member)
+        //{
+        //    InitializeComponent();
+        //    lastNameTextBox.Text = member.LastName;
+        //    firstNameTextBox.Text = member.FirstName;
+        //    genderComboBox.Text = member.Gender;
+        //    dateOfBirthBox.Value = member.DateOfBirth;
+        //    placeOfOriginTextBox.Text = member.PlaceOfOrigin;
+        //    biographyRichTextBox.Text = member.Biography;
+        //    curID = member.ID;
+        //    type = "edit";
+        //    this.relationshipComboBox.Visible = false;
+        //    this.relationshipLabel.Visible = false;
+        //}
         private void attachImage_Click(object sender, EventArgs e)
         {
             // Show the Open File dialog. If the user clicks OK, load the
@@ -144,7 +144,7 @@ namespace WinformFamilyTree.UI
                         }
                         else
                         {
-                            member.Delete(member);
+                            member.Delete(member.getMemberID(member));
                             MessageBox.Show("Lỗi, hãy thử lại!");
                         }
                     }
@@ -159,7 +159,7 @@ namespace WinformFamilyTree.UI
                         }
                         else
                         {
-                            member.Delete(member);
+                            member.Delete(member.getMemberID(member));
                             MessageBox.Show("Lỗi, hãy thử lại!");
                         }
                     }
@@ -174,7 +174,7 @@ namespace WinformFamilyTree.UI
                         }
                         else
                         {
-                            member.Delete(member);
+                            member.Delete(member.getMemberID(member));
                             MessageBox.Show("Lỗi, hãy thử lại!");
                         }
                     }

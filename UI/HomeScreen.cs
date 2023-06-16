@@ -58,18 +58,8 @@ namespace WinformFamilyTree
         public void Update()
         {
             MemberClass member = new MemberClass();
-            int curNum = member.numMember();
-            if (numMem < curNum)
-            {
-                for(int i = numMem + 1; i<=curNum; i++)
-                {
-                    var node = new memberNode(i);
-                    MainPanel.Controls.Add(node);
-                    node.Location = new Point(x, y);
-                    y = y + 100;
-                }
-                numMem = curNum;
-            }    
+            int curNum = member.getMaxMemberID();
+            // late
         }
     }
 }
