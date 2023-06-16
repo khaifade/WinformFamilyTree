@@ -73,10 +73,11 @@ namespace WinformFamilyTree.TreeClasses
                 member.FirstName = dt.Rows[0].Field<string>(1);
                 member.LastName = dt.Rows[0].Field<string>(2);
                 member.DateOfBirth = dt.Rows[0].Field<DateTime>(3);
-                member.Gender = dt.Rows[0].Field<string>(4);
-                member.PlaceOfOrigin = dt.Rows[0].Field<string>(5);
+                member.DateOfDeath = dt.Rows[0].Field<DateTime>(4);
+                member.Gender = dt.Rows[0].Field<string>(5);
+                member.PlaceOfOrigin = dt.Rows[0].Field<string>(6);
                 member.Biography = dt.Rows[0].Field<string>(7);
-
+                member.proFilePicture = dt.Rows[0].Field<byte[]>(8);
             }
             catch (Exception ex)
             {
@@ -178,12 +179,13 @@ namespace WinformFamilyTree.TreeClasses
                 conn.Open();
                 // Creating SQL Command using sql and conn
 
-                string sql = "UPDATE MEMBER SET FirstName = @FirstName, LastName = @LastName, DateOfBirth = @DateOfBirth, Gender = @Gender, PlaceOfOrigin = @PlaceOfOrigin, MemberProfilePicture = @MemberProfilePicture WHERE MemberID = @MemberID";
+                string sql = "UPDATE MEMBER SET FirstName = @FirstName, LastName = @LastName, DateOfBirth = @DateOfBirth, DateOfDeath = @DateOfDeath, Gender = @Gender, PlaceOfOrigin = @PlaceOfOrigin, Biography = @Biography, MemberProfilePicture = @MemberProfilePicture WHERE MemberID = @MemberID";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", c.LastName);
                 cmd.Parameters.AddWithValue("@Gender", c.Gender);
                 cmd.Parameters.AddWithValue("@DateOfBirth", c.DateOfBirth);
+                cmd.Parameters.AddWithValue("@DateOfDeath", c.DateOfDeath);
                 cmd.Parameters.AddWithValue("@PlaceOfOrigin", c.PlaceOfOrigin);
                 cmd.Parameters.AddWithValue("@Biography", c.Biography);
                 cmd.Parameters.AddWithValue("@MemberID", c.ID);

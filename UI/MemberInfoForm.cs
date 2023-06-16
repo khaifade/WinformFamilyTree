@@ -29,12 +29,12 @@ namespace WinformFamilyTree.UI
             cancelFormButton.Click += cancelFormButtonFirstTime_Click;
         }
 
-        public MemberInfoForm(MemberClass member)
-        {
-            this.member = member;
-            InitializeComponent();
-            cancelFormButton.Click += cancelFormButtonFirstTime_Click;
-        }
+        //public MemberInfoForm(MemberClass member)
+        //{
+        //    this.member = member;
+        //    InitializeComponent();
+        //    cancelFormButton.Click += cancelFormButtonFirstTime_Click;
+        //}
         public MemberInfoForm(string type, int rootID)
         {
 
@@ -55,20 +55,20 @@ namespace WinformFamilyTree.UI
                 relationshipComboBox.Text = "Con cái" ;
             }
         }
-        //public MemberInfoForm(MemberClass member)
-        //{
-        //    InitializeComponent();
-        //    lastNameTextBox.Text = member.LastName;
-        //    firstNameTextBox.Text = member.FirstName;
-        //    genderComboBox.Text = member.Gender;
-        //    dateOfBirthBox.Value = member.DateOfBirth;
-        //    placeOfOriginTextBox.Text = member.PlaceOfOrigin;
-        //    biographyRichTextBox.Text = member.Biography;
-        //    curID = member.ID;
-        //    type = "edit";
-        //    this.relationshipComboBox.Visible = false;
-        //    this.relationshipLabel.Visible = false;
-        //}
+        public MemberInfoForm(MemberClass member)
+        {
+            InitializeComponent();
+            lastNameTextBox.Text = member.LastName;
+            firstNameTextBox.Text = member.FirstName;
+            genderComboBox.Text = member.Gender;
+            dateOfBirthBox.Value = member.DateOfBirth;
+            placeOfOriginTextBox.Text = member.PlaceOfOrigin;
+            biographyRichTextBox.Text = member.Biography;
+            curID = member.ID;
+            type = "edit";
+            this.relationshipComboBox.Visible = false;
+            this.relationshipLabel.Visible = false;
+        }
         private void attachImage_Click(object sender, EventArgs e)
         {
             // Show the Open File dialog. If the user clicks OK, load the
@@ -108,6 +108,7 @@ namespace WinformFamilyTree.UI
                 member.FirstName = firstNameTextBox.Text;
                 member.Gender = genderComboBox.Text;
                 member.DateOfBirth = dateOfBirthBox.Value;
+                member.DateOfDeath = dateOfDeathBox.Value;
                 member.PlaceOfOrigin = placeOfOriginTextBox.Text;
                 member.Biography = biographyRichTextBox.Text;
                 member.proFilePicture = getPicture();
@@ -177,6 +178,10 @@ namespace WinformFamilyTree.UI
                             member.Delete(member.getMemberID(member));
                             MessageBox.Show("Lỗi, hãy thử lại!");
                         }
+                    }
+                    else if (this.type == "parent")
+                    {
+
                     }
                 }
             }
