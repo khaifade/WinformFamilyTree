@@ -12,7 +12,7 @@ create table MEMBER
 	Gender nvarchar(3) not null,
 	PlaceOfOrigin nvarchar(255),
 	Biography nvarchar(max),
-	MemberProfilePicture image
+	MemberProfilePicture varbinary(MAX)
 
 )
 go
