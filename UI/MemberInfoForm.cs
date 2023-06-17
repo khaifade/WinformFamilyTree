@@ -18,8 +18,8 @@ namespace WinformFamilyTree.UI
 
         int rootID;
         string type;
-
         int curID;
+        string image;
 
         MemberClass member;
 
@@ -76,7 +76,8 @@ namespace WinformFamilyTree.UI
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                attachImage.Image = new Bitmap(openFileDialog.FileName);
+                attachImage.ImageLocation = openFileDialog.FileName;
+                this.image = openFileDialog.FileName;
             }
         }
         private void cancelFormButton_Click(object sender, EventArgs e)
@@ -111,7 +112,7 @@ namespace WinformFamilyTree.UI
                 member.DateOfDeath = dateOfDeathBox.Value;
                 member.PlaceOfOrigin = placeOfOriginTextBox.Text;
                 member.Biography = biographyRichTextBox.Text;
-                member.proFilePicture = getPicture();
+                member.proFilePicture = Image2Byte(image);
 
                 if (!aliveCheckBox.Checked)
                 {
@@ -202,11 +203,20 @@ namespace WinformFamilyTree.UI
             }
         }
 
-        private byte[] getPicture()
+        private byte[] Image2Byte(string Fullfilename)
         {
-            MemoryStream stream = new MemoryStream();
-            attachImage.Image.Save(stream, attachImage.Image.RawFormat);
-            return stream.GetBuffer();
+            FileStream fs;
+            BinaryReader br;
+            byte[] imgbyte;
+
+            if (!File.Exists(Fullfilename)) { return null; }
+            fs = new FileStream(Fullfilename, FileMode.Open);
+            br = new BinaryReader(fs);
+            imgbyte = new byte[fs.Length];
+            imgbyte = br.ReadBytes(Convert.ToInt32((fs.Length)));
+            br.Close(); fs.Close(); return imgbyte;
         }
+
+
     }
 }

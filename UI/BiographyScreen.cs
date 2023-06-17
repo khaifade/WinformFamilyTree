@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +46,12 @@ namespace WinformFamilyTree
             }
             placeOfOriginText.Text = member.PlaceOfOrigin;
             biographyText.Text = member.Biography;
+            //using(MemoryStream ms = new MemoryStream(member.proFilePicture)) 
+            //{
+            //    Image image = Image.FromStream(ms);
+            //    AvatarProfilePicture.BackgroundImage = image;
+            //    image.Dispose();
+            //}
             // convert AvatarProfilePicture to picture
             //AvatarProfilePicture = member.proFilePicture;
         }
@@ -54,5 +61,7 @@ namespace WinformFamilyTree
             var ucMemberInfoForm = new MemberInfoForm(member);
             familyTree.instance.AddUserControl(ucMemberInfoForm);
         }
+
+      
     }
 }

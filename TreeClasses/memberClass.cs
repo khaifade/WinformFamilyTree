@@ -97,13 +97,15 @@ namespace WinformFamilyTree.TreeClasses
             {
                 conn.Open();
                 // Creating SQL Command using sql and conn
-                string sql = "INSERT INTO MEMBER (FirstName, LastName, Gender, DateOfBirth, PlaceOfOrigin, MemberProfilePicture) VALUES(@FirstName, @LastName, @Gender, @DateOfBirth, @PlaceOfOrigin, @MemberProfilePicture)";
+                string sql = @"INSERT INTO MEMBER (FirstName, LastName, Gender, DateOfBirth, DateOfDeath, PlaceOfOrigin, Biography, MemberProfilePicture) VALUES(@FirstName, @LastName, @Gender, @DateOfBirth, @DateOfDeath, @PlaceOfOrigin, @Biography, @MemberProfilePicture)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", c.LastName);
                 cmd.Parameters.AddWithValue("@Gender", c.Gender);
                 cmd.Parameters.AddWithValue("@DateOfBirth", c.DateOfBirth);
+                cmd.Parameters.AddWithValue("@DateOfDeath", c.DateOfDeath);
                 cmd.Parameters.AddWithValue("@PlaceOfOrigin", c.PlaceOfOrigin);
+                cmd.Parameters.AddWithValue("@Biography", c.Biography);
                 cmd.Parameters.AddWithValue("@MemberProfilePicture", c.proFilePicture);
                 int rows = cmd.ExecuteNonQuery();
                 // If the query run sucessfully, the value of rows will be greater than 0 else its value will be 0
