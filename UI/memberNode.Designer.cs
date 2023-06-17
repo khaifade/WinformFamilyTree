@@ -111,6 +111,7 @@
             this.memberProfilePicture.StateCommon.Border.Width = 5;
             this.memberProfilePicture.TabIndex = 6;
             this.memberProfilePicture.Values.Text = "";
+            this.memberProfilePicture.Click += new System.EventHandler(this.memberProfilePicture_Click);
             // 
             // memberNode
             // 
