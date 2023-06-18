@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinformFamilyTree.Properties;
 using WinformFamilyTree.TreeClasses;
 
 namespace WinformFamilyTree.UI
@@ -202,19 +203,30 @@ namespace WinformFamilyTree.UI
 
             }
         }
-
+            
         private byte[] Image2Byte(string Fullfilename)
         {
+            
             FileStream fs;
             BinaryReader br;
             byte[] imgbyte;
 
-            if (!File.Exists(Fullfilename)) { return null; }
+            if (!File.Exists(Fullfilename)) 
+            {
+                string currentDirectory = Directory.GetCurrentDirectory();
+                currentDirectory = currentDirectory.Substring(0,currentDirectory.Length - 10);
+                currentDirectory = currentDirectory.Replace("\'bin\'debug", "");
+                string relativePath = "\\Resources\\chu-chim-canh-cut-con-nhin-cute-de-thuong_113124382.jpg";
+                Fullfilename = currentDirectory+relativePath;
+            }
             fs = new FileStream(Fullfilename, FileMode.Open);
             br = new BinaryReader(fs);
             imgbyte = new byte[fs.Length];
             imgbyte = br.ReadBytes(Convert.ToInt32((fs.Length)));
-            br.Close(); fs.Close(); return imgbyte;
+            br.Close(); fs.Close();
+            return imgbyte;
+
+            
         }
 
 

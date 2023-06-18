@@ -43,7 +43,7 @@ namespace WinformFamilyTree.UI
             {
                 type = "child";
             }
-            var ucMemberInfoForm = new MemberInfoForm(type,member.ID);
+            MemberInfoForm ucMemberInfoForm = new MemberInfoForm(type,this.member.ID);
             familyTree.instance.AddUserControl(ucMemberInfoForm);
             
             
