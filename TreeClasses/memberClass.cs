@@ -309,6 +309,32 @@ namespace WinformFamilyTree.TreeClasses
             else { return -1; }
         }
 
+        public int getMinMemberID()
+        {
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            DataTable dt = new DataTable();
+            try
+            {
+                conn.Open();
+
+                string sql = "SELECT MIN(MemberID) FROM MEMBER";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                int rows = cmd.ExecuteNonQuery();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+            // if the query is empty, dt is have no rows and opposite
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0].Field<int>(0);
+            }
+            else { return -1; }
+        }
         public int getSpouseID(int memberID)
         {
             SqlConnection conn = new SqlConnection(myConnectionString);
@@ -424,6 +450,38 @@ namespace WinformFamilyTree.TreeClasses
             }
             else { return -1; }
 
+        }
+        public int[] getAllChildID(int parentID)
+        {
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            DataTable dt = new DataTable();
+            int[] children = new int[0];
+            try
+            {
+                conn.Open();
+
+                string sql = "SELECT ChildID FROM RELATIONSHIP_PARENT_CHILD WHERE ParentID = @ParentID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@ParentID", parentID);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                int rows = cmd.ExecuteNonQuery();
+                adapter.Fill(dt);
+                Array.Resize(ref children, dt.Rows.Count);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    children[i] = dt.Rows[i].Field<int>(0);
+                }
+            }
+            return children;
         }
 
         public int getMemberPartner(int spouseID, int memberID)

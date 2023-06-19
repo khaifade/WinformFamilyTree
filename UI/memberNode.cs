@@ -15,21 +15,24 @@ namespace WinformFamilyTree.UI
     public partial class memberNode : UserControl
     {
         public KryptonButton profilePicture { get; set; }
-        MemberClass member;
+        public KryptonGroupBox infoBar { get; set; }
+        public MemberClass member;
         public memberNode()
         {
             InitializeComponent();
             profilePicture = memberProfilePicture;
+            infoBar = infoGroupBox;
         }
 
         public memberNode(int memberID)
         {
             InitializeComponent();
             profilePicture = memberProfilePicture;
+            infoBar = infoGroupBox;
             MemberClass member = new MemberClass();
             member = member.SelectMember(memberID);
             this.member = member;
-            memberNameLabel.Text = member.FirstName + " " + member.LastName;
+            memberNameLabel.Text = member.LastName + " " + member.FirstName;
             memberBirthYearLabel.Text = member.DateOfBirth.Year.ToString();
         }
 
@@ -39,6 +42,10 @@ namespace WinformFamilyTree.UI
             {
                 pu.ShowDialog(this);
             }
+        }
+        public string getName()
+        {
+            return this.Name;
         }
     }
 }

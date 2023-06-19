@@ -12,6 +12,7 @@ using ComponentFactory.Krypton.Toolkit;
 using WinformFamilyTree.UI;
 using WinformFamilyTree.TreeClasses;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using WinformFamilyTree.Properties;
 
 namespace WinformFamilyTree
 {
@@ -103,7 +104,7 @@ namespace WinformFamilyTree
             sharedScreen.Hide();
             homeScreen.BringToFront();
 
-            homeScreen.Update();
+            //homeScreen.Update();
             // change caption of the workspace
             workspaceCaption_Change(homeScreenButton, e);
         }
@@ -254,6 +255,11 @@ namespace WinformFamilyTree
         private void biographyScreen_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void familyTree_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Settings.Default.Save();
         }
     }
 }

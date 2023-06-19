@@ -598,6 +598,7 @@ namespace WinformFamilyTree
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Family Tree";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.familyTree_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.containerLayout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navGroupBox.Panel)).EndInit();

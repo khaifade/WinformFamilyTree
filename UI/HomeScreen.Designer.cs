@@ -30,11 +30,13 @@
         {
             this.MainPanel = new System.Windows.Forms.Panel();
             this.deterRealtionshipMessage = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.memberTableAdapter1 = new WinformFamilyTree.FTMDataSet1TableAdapters.MEMBERTableAdapter();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
+            this.MainPanel.BackColor = System.Drawing.Color.Transparent;
             this.MainPanel.Controls.Add(this.deterRealtionshipMessage);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
@@ -42,6 +44,8 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(844, 499);
             this.MainPanel.TabIndex = 0;
+            this.MainPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.MainPanel_Scroll);
+            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
             // deterRealtionshipMessage
             // 
@@ -49,7 +53,7 @@
             this.deterRealtionshipMessage.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom2;
             this.deterRealtionshipMessage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deterRealtionshipMessage.Enabled = false;
-            this.deterRealtionshipMessage.Location = new System.Drawing.Point(187, 427);
+            this.deterRealtionshipMessage.Location = new System.Drawing.Point(187, 430);
             this.deterRealtionshipMessage.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.deterRealtionshipMessage.Name = "deterRealtionshipMessage";
             this.deterRealtionshipMessage.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(90)))), ((int)(((byte)(36)))));
@@ -122,6 +126,10 @@
             this.deterRealtionshipMessage.Values.Text = "Chọn thêm 1 thành viên cần xác định mối quan hệ";
             this.deterRealtionshipMessage.Visible = false;
             // 
+            // memberTableAdapter1
+            // 
+            this.memberTableAdapter1.ClearBeforeFill = true;
+            // 
             // HomeScreen
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -141,5 +149,6 @@
 
         private System.Windows.Forms.Panel MainPanel;
         private ComponentFactory.Krypton.Toolkit.KryptonButton deterRealtionshipMessage;
+        private FTMDataSet1TableAdapters.MEMBERTableAdapter memberTableAdapter1;
     }
 }

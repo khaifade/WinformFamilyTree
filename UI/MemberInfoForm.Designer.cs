@@ -631,7 +631,9 @@
             // aliveCheckBox
             // 
             this.aliveCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.aliveCheckBox.Cursor = System.Windows.Forms.Cursors.PanSE;
+            this.aliveCheckBox.Checked = true;
+            this.aliveCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.aliveCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.aliveCheckBox.Location = new System.Drawing.Point(0, 30);
             this.aliveCheckBox.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.aliveCheckBox.Name = "aliveCheckBox";

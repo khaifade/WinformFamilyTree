@@ -126,6 +126,7 @@ namespace WinformFamilyTree.UI
                         this.Hide();
                         familyTree.instance.refreshHomeScreen();
                         familyTree.instance.Controls.Remove(this);
+                        HomeScreen.Instance.Update();
                     }
                     else
                     {
@@ -142,6 +143,7 @@ namespace WinformFamilyTree.UI
                             this.Hide();
                             familyTree.instance.refreshHomeScreen();
                             familyTree.instance.Controls.Remove(this);
+                            HomeScreen.Instance.Update();
                         }
                         else
                         {
@@ -157,6 +159,7 @@ namespace WinformFamilyTree.UI
                             this.Hide();
                             familyTree.instance.refreshHomeScreen();
                             familyTree.instance.Controls.Remove(this);
+                            HomeScreen.Instance.Update();
                         }
                         else
                         {
@@ -172,6 +175,7 @@ namespace WinformFamilyTree.UI
                             this.Hide();
                             familyTree.instance.refreshHomeScreen();
                             familyTree.instance.Controls.Remove(this);
+                            HomeScreen.Instance.Update();
                         }
                         else
                         {
