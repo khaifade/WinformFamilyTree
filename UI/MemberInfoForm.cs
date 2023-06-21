@@ -137,7 +137,7 @@ namespace WinformFamilyTree.UI
                 {
                     if (this.type == "spouse") // add spouse 
                     {
-                        if (member.Insert(member) && member.InsertSpouseRel(rootID, member.getMemberID(member)))
+                        if (member.Insert(member) && member.InsertSpouseRel(rootID, member.getMaxMemberID()))
                         {
                             MessageBox.Show("Thêm thành công!");
                             this.Hide();
@@ -153,7 +153,7 @@ namespace WinformFamilyTree.UI
                     }
                     else if (this.type == "child") // add child
                     {
-                        if (member.Insert(member) && member.InsertParentChildRel(member.getMemberID(member), member.getSpouseID(rootID)))
+                        if (member.Insert(member) && member.InsertParentChildRel(member.getMaxMemberID(), member.getSpouseID(rootID)))
                         {
                             MessageBox.Show("Thêm thành công!");
                             this.Hide();
