@@ -12,8 +12,9 @@ create table MEMBER
 	Email varchar(50),
 	Biography varchar(max),
 	MemberProfilePicture varbinary(max)
+)	
 
-)
+alter table MEMBER alter column MemberProfilePicture image
 
 create table RELATIONSHIP_SPOUSE
 (

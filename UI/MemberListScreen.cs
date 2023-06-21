@@ -7,27 +7,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
+using WinformFamilyTree.TreeClasses;
 
 namespace WinformFamilyTree
 {
     public partial class MemberListScreen : UserControl
     {
         public static MemberListScreen instance;
-        public DataGridView dtg;
+        public KryptonDataGridView dtg;
         public MemberListScreen()
         {
             InitializeComponent();
+        }
+        public void Load()
+        {
+            MemberClass mb = new MemberClass();
             instance = this;
-            dtg = dataGridView1;
+            dtg = DataGirdView;
+            dtg.AllowUserToResizeColumns = false;
+            dtg.DataSource = mb.Select();
+
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void Update()
         {
+            InitializeComponent();
+            MemberClass mb = new MemberClass();
+            dtg.DataSource = mb.Select();
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        public void findMembers(string queryStr)
         {
-
+            MemberClass mb = new MemberClass();
+            if (string.IsNullOrEmpty(queryStr))
+                dtg.DataSource = mb.Select();
+            else
+                dtg.DataSource = mb.FindFromName(queryStr);
         }
     }
 }

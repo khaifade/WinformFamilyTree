@@ -45,6 +45,9 @@ namespace WinformFamilyTree
             {
                 MessageBox.Show("Đăng ký thành công!");
                 // load to next page
+                this.Hide();
+                familyTree.instance.ucSignInPage.Show();
+                familyTree.instance.ucSignInPage.BringToFront();
             }
             else
             {
@@ -90,6 +93,12 @@ namespace WinformFamilyTree
         private void SignUpLastNameTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void backToFirstPageButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            familyTree.instance.ucFirstPage.Show();
         }
     }
 }

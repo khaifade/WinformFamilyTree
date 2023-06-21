@@ -48,16 +48,22 @@ namespace WinformFamilyTree
             this.userNameLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.customFont = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.borderEdge = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
-            this.seachGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
-            this.wrappedSearchBox = new System.Windows.Forms.FlowLayoutPanel();
-            this.searchIcon = new System.Windows.Forms.PictureBox();
-            this.searchBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.workspaceGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
             this.memberListScreen = new WinformFamilyTree.MemberListScreen();
             this.homeScreen = new WinformFamilyTree.HomeScreen();
             this.biographyScreen = new WinformFamilyTree.BiographyViewScreen();
             this.sharedScreen = new WinformFamilyTree.SharedScreen();
+            this.searchBoxContainer = new System.Windows.Forms.Panel();
+            this.searchGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
+            this.wrappedSearchBox = new System.Windows.Forms.FlowLayoutPanel();
+            this.searchIcon = new System.Windows.Forms.PictureBox();
+            this.SearchComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.searchBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.customForm = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.memberDataSet = new WinformFamilyTree.memberDataSet();
+            this.tblmemberBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbl_memberTableAdapter = new WinformFamilyTree.memberDataSetTableAdapters.tbl_memberTableAdapter();
             this.containerLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navGroupBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navGroupBox.Panel)).BeginInit();
@@ -66,16 +72,21 @@ namespace WinformFamilyTree
             this.wrappedNavLayout.SuspendLayout();
             this.wrappedNavButtonLayout.SuspendLayout();
             this.wrappedUserLayout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.seachGroupBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seachGroupBox.Panel)).BeginInit();
-            this.seachGroupBox.Panel.SuspendLayout();
-            this.seachGroupBox.SuspendLayout();
-            this.wrappedSearchBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workspaceGroupBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workspaceGroupBox.Panel)).BeginInit();
             this.workspaceGroupBox.Panel.SuspendLayout();
             this.workspaceGroupBox.SuspendLayout();
+            this.searchBoxContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchGroupBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchGroupBox.Panel)).BeginInit();
+            this.searchGroupBox.Panel.SuspendLayout();
+            this.searchGroupBox.SuspendLayout();
+            this.wrappedSearchBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchComboBox)).BeginInit();
+            this.MainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memberDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblmemberBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // containerLayout
@@ -92,8 +103,8 @@ namespace WinformFamilyTree
             this.containerLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.containerLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.containerLayout.Controls.Add(this.navGroupBox, 1, 2);
-            this.containerLayout.Controls.Add(this.seachGroupBox, 7, 2);
             this.containerLayout.Controls.Add(this.workspaceGroupBox, 6, 3);
+            this.containerLayout.Controls.Add(this.searchBoxContainer, 7, 2);
             this.containerLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.containerLayout.Location = new System.Drawing.Point(0, 0);
             this.containerLayout.Margin = new System.Windows.Forms.Padding(0);
@@ -144,7 +155,7 @@ namespace WinformFamilyTree
             this.navGroupBox.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(191)))), ((int)(((byte)(85)))));
             this.navGroupBox.StateCommon.Content.ShortText.ColorAngle = 225F;
             this.navGroupBox.StateCommon.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
-            this.navGroupBox.StateCommon.Content.ShortText.Font = new System.Drawing.Font("UTM Hanzel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navGroupBox.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navGroupBox.StateCommon.Content.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.navGroupBox.TabIndex = 9;
             this.navGroupBox.Values.Heading = "Phần mềm quản lý cây gia phả";
@@ -163,7 +174,7 @@ namespace WinformFamilyTree
             this.wrappedNavLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.wrappedNavLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.wrappedNavLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.wrappedNavLayout.Size = new System.Drawing.Size(322, 533);
+            this.wrappedNavLayout.Size = new System.Drawing.Size(322, 538);
             this.wrappedNavLayout.TabIndex = 0;
             // 
             // wrappedNavButtonLayout
@@ -177,7 +188,7 @@ namespace WinformFamilyTree
             this.wrappedNavButtonLayout.Controls.Add(this.homeScreenButton);
             this.wrappedNavButtonLayout.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.wrappedNavButtonLayout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wrappedNavButtonLayout.Location = new System.Drawing.Point(18, 277);
+            this.wrappedNavButtonLayout.Location = new System.Drawing.Point(18, 282);
             this.wrappedNavButtonLayout.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
             this.wrappedNavButtonLayout.Name = "wrappedNavButtonLayout";
             this.wrappedNavButtonLayout.Size = new System.Drawing.Size(285, 226);
@@ -194,7 +205,7 @@ namespace WinformFamilyTree
             this.sharedButton.OverrideDefault.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.sharedButton.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.sharedButton.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.sharedButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sharedButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sharedButton.Palette = this.customButton;
             this.sharedButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.sharedButton.Size = new System.Drawing.Size(285, 49);
@@ -205,12 +216,12 @@ namespace WinformFamilyTree
             this.sharedButton.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.sharedButton.StatePressed.Content.ShortText.ColorAngle = 90F;
             this.sharedButton.StatePressed.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
-            this.sharedButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sharedButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sharedButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.sharedButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
             this.sharedButton.StateTracking.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.sharedButton.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.sharedButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sharedButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sharedButton.TabIndex = 6;
             this.sharedButton.Values.Text = "Chia sẻ cây";
             this.sharedButton.Click += new System.EventHandler(this.shareButton_Click);
@@ -228,7 +239,7 @@ namespace WinformFamilyTree
             this.customButton.Common.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.customButton.Common.StateCommon.Border.Rounding = 20;
             this.customButton.Common.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.customButton.Common.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton.Common.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // memberListButton
             // 
@@ -241,7 +252,7 @@ namespace WinformFamilyTree
             this.memberListButton.OverrideDefault.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.memberListButton.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.memberListButton.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.memberListButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberListButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memberListButton.Palette = this.customButton;
             this.memberListButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.memberListButton.Size = new System.Drawing.Size(285, 49);
@@ -252,12 +263,12 @@ namespace WinformFamilyTree
             this.memberListButton.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.memberListButton.StatePressed.Content.ShortText.ColorAngle = 90F;
             this.memberListButton.StatePressed.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
-            this.memberListButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberListButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memberListButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.memberListButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
             this.memberListButton.StateTracking.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.memberListButton.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.memberListButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberListButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memberListButton.TabIndex = 5;
             this.memberListButton.Values.Text = "Danh sách thành viên";
             this.memberListButton.Click += new System.EventHandler(this.memberListButton_Click);
@@ -273,7 +284,7 @@ namespace WinformFamilyTree
             this.viewBiographyButton.OverrideDefault.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.viewBiographyButton.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.viewBiographyButton.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.viewBiographyButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewBiographyButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewBiographyButton.Palette = this.customButton;
             this.viewBiographyButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.viewBiographyButton.Size = new System.Drawing.Size(285, 49);
@@ -284,12 +295,12 @@ namespace WinformFamilyTree
             this.viewBiographyButton.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.viewBiographyButton.StatePressed.Content.ShortText.ColorAngle = 90F;
             this.viewBiographyButton.StatePressed.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
-            this.viewBiographyButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewBiographyButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewBiographyButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.viewBiographyButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
             this.viewBiographyButton.StateTracking.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.viewBiographyButton.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.viewBiographyButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewBiographyButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewBiographyButton.TabIndex = 4;
             this.viewBiographyButton.Values.Text = "Xem tiểu sử";
             this.viewBiographyButton.Click += new System.EventHandler(this.viewBiographyButton_Click);
@@ -305,7 +316,7 @@ namespace WinformFamilyTree
             this.homeScreenButton.OverrideDefault.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.homeScreenButton.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.homeScreenButton.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.homeScreenButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeScreenButton.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeScreenButton.Palette = this.customButton;
             this.homeScreenButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.homeScreenButton.Size = new System.Drawing.Size(285, 49);
@@ -316,12 +327,12 @@ namespace WinformFamilyTree
             this.homeScreenButton.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.homeScreenButton.StatePressed.Content.ShortText.ColorAngle = 90F;
             this.homeScreenButton.StatePressed.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
-            this.homeScreenButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeScreenButton.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeScreenButton.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.homeScreenButton.StateTracking.Back.Color2 = System.Drawing.Color.White;
             this.homeScreenButton.StateTracking.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.homeScreenButton.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.homeScreenButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeScreenButton.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeScreenButton.TabIndex = 3;
             this.homeScreenButton.Values.Text = "Màn hình chính";
             this.homeScreenButton.Click += new System.EventHandler(this.homeScreenButton_Click);
@@ -336,16 +347,17 @@ namespace WinformFamilyTree
             this.wrappedUserLayout.Controls.Add(this.borderEdge);
             this.wrappedUserLayout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.wrappedUserLayout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wrappedUserLayout.Location = new System.Drawing.Point(82, 0);
+            this.wrappedUserLayout.Location = new System.Drawing.Point(86, 0);
             this.wrappedUserLayout.Margin = new System.Windows.Forms.Padding(0);
             this.wrappedUserLayout.Name = "wrappedUserLayout";
-            this.wrappedUserLayout.Size = new System.Drawing.Size(158, 213);
+            this.wrappedUserLayout.Size = new System.Drawing.Size(150, 215);
             this.wrappedUserLayout.TabIndex = 2;
             // 
             // AvatarProfilePicture
             // 
             this.AvatarProfilePicture.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.AvatarProfilePicture.Location = new System.Drawing.Point(4, 20);
+            this.AvatarProfilePicture.Enabled = false;
+            this.AvatarProfilePicture.Location = new System.Drawing.Point(0, 20);
             this.AvatarProfilePicture.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.AvatarProfilePicture.Name = "AvatarProfilePicture";
             this.AvatarProfilePicture.Size = new System.Drawing.Size(150, 150);
@@ -369,19 +381,19 @@ namespace WinformFamilyTree
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Palette = this.customFont;
             this.userNameLabel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.userNameLabel.Size = new System.Drawing.Size(158, 24);
+            this.userNameLabel.Size = new System.Drawing.Size(149, 23);
             this.userNameLabel.TabIndex = 2;
             this.userNameLabel.Values.Text = "Người dùng khách";
             // 
             // customFont
             // 
             this.customFont.Common.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.customFont.Common.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customFont.Common.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // borderEdge
             // 
             this.borderEdge.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.borderEdge.Location = new System.Drawing.Point(29, 204);
+            this.borderEdge.Location = new System.Drawing.Point(25, 203);
             this.borderEdge.Margin = new System.Windows.Forms.Padding(0);
             this.borderEdge.Name = "borderEdge";
             this.borderEdge.Size = new System.Drawing.Size(100, 5);
@@ -391,62 +403,6 @@ namespace WinformFamilyTree
             this.borderEdge.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
             this.borderEdge.StateCommon.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.borderEdge.StateCommon.Width = 5;
-            // 
-            // seachGroupBox
-            // 
-            this.seachGroupBox.Location = new System.Drawing.Point(1027, 53);
-            this.seachGroupBox.Name = "seachGroupBox";
-            // 
-            // seachGroupBox.Panel
-            // 
-            this.seachGroupBox.Panel.Controls.Add(this.wrappedSearchBox);
-            this.seachGroupBox.Size = new System.Drawing.Size(212, 44);
-            this.seachGroupBox.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.seachGroupBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
-            this.seachGroupBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.seachGroupBox.StateCommon.Border.Rounding = 20;
-            this.seachGroupBox.StateCommon.Border.Width = 2;
-            this.seachGroupBox.TabIndex = 11;
-            // 
-            // wrappedSearchBox
-            // 
-            this.wrappedSearchBox.BackColor = System.Drawing.Color.Transparent;
-            this.wrappedSearchBox.Controls.Add(this.searchIcon);
-            this.wrappedSearchBox.Controls.Add(this.searchBox);
-            this.wrappedSearchBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wrappedSearchBox.Location = new System.Drawing.Point(0, 0);
-            this.wrappedSearchBox.Margin = new System.Windows.Forms.Padding(0);
-            this.wrappedSearchBox.Name = "wrappedSearchBox";
-            this.wrappedSearchBox.Size = new System.Drawing.Size(194, 26);
-            this.wrappedSearchBox.TabIndex = 0;
-            // 
-            // searchIcon
-            // 
-            this.searchIcon.Image = global::WinformFamilyTree.Properties.Resources.search;
-            this.searchIcon.Location = new System.Drawing.Point(0, 0);
-            this.searchIcon.Margin = new System.Windows.Forms.Padding(0);
-            this.searchIcon.Name = "searchIcon";
-            this.searchIcon.Size = new System.Drawing.Size(25, 25);
-            this.searchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.searchIcon.TabIndex = 0;
-            this.searchIcon.TabStop = false;
-            // 
-            // searchBox
-            // 
-            this.searchBox.Location = new System.Drawing.Point(25, 0);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(0);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(163, 27);
-            this.searchBox.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.searchBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.searchBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.searchBox.StateCommon.Content.Color1 = System.Drawing.Color.White;
-            this.searchBox.StateCommon.Content.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBox.TabIndex = 10;
             // 
             // workspaceGroupBox
             // 
@@ -471,22 +427,25 @@ namespace WinformFamilyTree
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.workspaceGroupBox.StateCommon.Border.Rounding = 20;
             this.workspaceGroupBox.StateCommon.Border.Width = 2;
-            this.workspaceGroupBox.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.workspaceGroupBox.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.workspaceGroupBox.StateCommon.Content.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.workspaceGroupBox.TabIndex = 12;
             this.workspaceGroupBox.Values.Heading = "Tổng quan";
             // 
             // memberListScreen
             // 
+            this.memberListScreen.BackColor = System.Drawing.Color.White;
             this.memberListScreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.memberListScreen.Location = new System.Drawing.Point(0, 0);
             this.memberListScreen.Margin = new System.Windows.Forms.Padding(0);
             this.memberListScreen.Name = "memberListScreen";
-            this.memberListScreen.Size = new System.Drawing.Size(844, 499);
+            this.memberListScreen.Size = new System.Drawing.Size(844, 500);
             this.memberListScreen.TabIndex = 2;
             // 
             // homeScreen
             // 
+            this.homeScreen.AutoScroll = true;
+            this.homeScreen.BackColor = System.Drawing.Color.White;
             this.homeScreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.homeScreen.Location = new System.Drawing.Point(0, 0);
             this.homeScreen.Margin = new System.Windows.Forms.Padding(0);
@@ -497,22 +456,129 @@ namespace WinformFamilyTree
             // 
             // biographyScreen
             // 
+            this.biographyScreen.BackColor = System.Drawing.Color.White;
             this.biographyScreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.biographyScreen.Location = new System.Drawing.Point(0, 0);
             this.biographyScreen.Margin = new System.Windows.Forms.Padding(0);
             this.biographyScreen.Name = "biographyScreen";
-            this.biographyScreen.Size = new System.Drawing.Size(844, 499);
+            this.biographyScreen.Size = new System.Drawing.Size(844, 500);
             this.biographyScreen.TabIndex = 1;
+            this.biographyScreen.Load += new System.EventHandler(this.biographyScreen_Load);
             // 
             // sharedScreen
             // 
+            this.sharedScreen.BackColor = System.Drawing.Color.White;
             this.sharedScreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sharedScreen.Location = new System.Drawing.Point(0, 0);
             this.sharedScreen.Margin = new System.Windows.Forms.Padding(0);
             this.sharedScreen.Name = "sharedScreen";
-            this.sharedScreen.Size = new System.Drawing.Size(844, 499);
+            this.sharedScreen.Size = new System.Drawing.Size(844, 500);
             this.sharedScreen.TabIndex = 3;
             this.sharedScreen.Load += new System.EventHandler(this.sharedScreen_Load);
+            // 
+            // searchBoxContainer
+            // 
+            this.searchBoxContainer.Controls.Add(this.searchGroupBox);
+            this.searchBoxContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchBoxContainer.Location = new System.Drawing.Point(1027, 53);
+            this.searchBoxContainer.Name = "searchBoxContainer";
+            this.searchBoxContainer.Size = new System.Drawing.Size(212, 44);
+            this.searchBoxContainer.TabIndex = 13;
+            // 
+            // searchGroupBox
+            // 
+            this.searchGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.searchGroupBox.Name = "searchGroupBox";
+            // 
+            // searchGroupBox.Panel
+            // 
+            this.searchGroupBox.Panel.Controls.Add(this.wrappedSearchBox);
+            this.searchGroupBox.Size = new System.Drawing.Size(212, 44);
+            this.searchGroupBox.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.searchGroupBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
+            this.searchGroupBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.searchGroupBox.StateCommon.Border.Rounding = 20;
+            this.searchGroupBox.StateCommon.Border.Width = 2;
+            this.searchGroupBox.TabIndex = 11;
+            // 
+            // wrappedSearchBox
+            // 
+            this.wrappedSearchBox.BackColor = System.Drawing.Color.Transparent;
+            this.wrappedSearchBox.Controls.Add(this.searchIcon);
+            this.wrappedSearchBox.Controls.Add(this.SearchComboBox);
+            this.wrappedSearchBox.Controls.Add(this.searchBox);
+            this.wrappedSearchBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wrappedSearchBox.Location = new System.Drawing.Point(0, 0);
+            this.wrappedSearchBox.Margin = new System.Windows.Forms.Padding(0);
+            this.wrappedSearchBox.Name = "wrappedSearchBox";
+            this.wrappedSearchBox.Size = new System.Drawing.Size(194, 26);
+            this.wrappedSearchBox.TabIndex = 0;
+            // 
+            // searchIcon
+            // 
+            this.searchIcon.Image = global::WinformFamilyTree.Properties.Resources.search;
+            this.searchIcon.Location = new System.Drawing.Point(0, 0);
+            this.searchIcon.Margin = new System.Windows.Forms.Padding(0);
+            this.searchIcon.Name = "searchIcon";
+            this.searchIcon.Size = new System.Drawing.Size(25, 25);
+            this.searchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.searchIcon.TabIndex = 0;
+            this.searchIcon.TabStop = false;
+            // 
+            // SearchComboBox
+            // 
+            this.SearchComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.SearchComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.SearchComboBox.DropDownWidth = 163;
+            this.SearchComboBox.Location = new System.Drawing.Point(28, 3);
+            this.SearchComboBox.Name = "SearchComboBox";
+            this.SearchComboBox.Size = new System.Drawing.Size(163, 21);
+            this.SearchComboBox.TabIndex = 11;
+            this.SearchComboBox.SelectionChangeCommitted += new System.EventHandler(this.SearchComboBox_SelectionChangeCommitted);
+            this.SearchComboBox.TextChanged += new System.EventHandler(this.SearchComboBox_TextChanged);
+            // 
+            // searchBox
+            // 
+            this.searchBox.Location = new System.Drawing.Point(0, 27);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(0);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(163, 26);
+            this.searchBox.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.searchBox.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.searchBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.searchBox.StateCommon.Content.Color1 = System.Drawing.Color.White;
+            this.searchBox.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBox.TabIndex = 10;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Controls.Add(this.containerLayout);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1264, 681);
+            this.MainPanel.TabIndex = 13;
+            // 
+            // memberDataSet
+            // 
+            this.memberDataSet.DataSetName = "memberDataSet";
+            this.memberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblmemberBindingSource
+            // 
+            this.tblmemberBindingSource.DataMember = "tbl_member";
+            this.tblmemberBindingSource.DataSource = this.memberDataSet;
+            // 
+            // tbl_memberTableAdapter
+            // 
+            this.tbl_memberTableAdapter.ClearBeforeFill = true;
             // 
             // familyTree
             // 
@@ -520,11 +586,13 @@ namespace WinformFamilyTree
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.containerLayout);
+            this.Controls.Add(this.MainPanel);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.tblmemberBindingSource, "ID", true));
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximizeBox = false;
             this.Name = "familyTree";
             this.Palette = this.customForm;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
@@ -541,17 +609,22 @@ namespace WinformFamilyTree
             this.wrappedNavButtonLayout.ResumeLayout(false);
             this.wrappedUserLayout.ResumeLayout(false);
             this.wrappedUserLayout.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.seachGroupBox.Panel)).EndInit();
-            this.seachGroupBox.Panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.seachGroupBox)).EndInit();
-            this.seachGroupBox.ResumeLayout(false);
-            this.wrappedSearchBox.ResumeLayout(false);
-            this.wrappedSearchBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workspaceGroupBox.Panel)).EndInit();
             this.workspaceGroupBox.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.workspaceGroupBox)).EndInit();
             this.workspaceGroupBox.ResumeLayout(false);
+            this.searchBoxContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.searchGroupBox.Panel)).EndInit();
+            this.searchGroupBox.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.searchGroupBox)).EndInit();
+            this.searchGroupBox.ResumeLayout(false);
+            this.wrappedSearchBox.ResumeLayout(false);
+            this.wrappedSearchBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchComboBox)).EndInit();
+            this.MainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.memberDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblmemberBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -575,12 +648,18 @@ namespace WinformFamilyTree
         private ComponentFactory.Krypton.Toolkit.KryptonButton sharedButton;
         private ComponentFactory.Krypton.Toolkit.KryptonButton memberListButton;
         private ComponentFactory.Krypton.Toolkit.KryptonButton viewBiographyButton;
-        private ComponentFactory.Krypton.Toolkit.KryptonGroup seachGroupBox;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroup searchGroupBox;
         private FlowLayoutPanel wrappedSearchBox;
         private PictureBox searchIcon;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox searchBox;
         private ComponentFactory.Krypton.Toolkit.KryptonGroupBox workspaceGroupBox;
         private ComponentFactory.Krypton.Toolkit.KryptonPalette customForm;
+        private Panel MainPanel;
+        private Panel searchBoxContainer;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox SearchComboBox;
+        private memberDataSet memberDataSet;
+        private BindingSource tblmemberBindingSource;
+        private memberDataSetTableAdapters.tbl_memberTableAdapter tbl_memberTableAdapter;
     }
 }
 
