@@ -227,6 +227,31 @@ namespace WinformFamilyTree.TreeClasses
             return isSuccess;
         }
 
+        public bool delPartner(int spouseID)
+        {
+            // Creating a default return type and setting its value to false
+            bool isSuccess = false;
+            // Step 1: Database connection
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            try
+            {
+                conn.Open();
+                // Creating SQL Command using sql and conn
+                string sql = "UPDATE RELATIONSHIP_SPOUSE SET MemberID2 = null WHERE SpouseID = @SpouseID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@SpouseID", spouseID);
+                int rows = cmd.ExecuteNonQuery();
+                // If the query run sucessfully, the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0) { isSuccess = true; }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+            return isSuccess;
+        }
+
         public int numMember()
         {
             SqlConnection conn = new SqlConnection(myConnectionString);
