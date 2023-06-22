@@ -228,7 +228,7 @@
             // deterRelationshipButton
             // 
             this.deterRelationshipButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.deterRelationshipButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deterRelationshipButton.Cursor = System.Windows.Forms.Cursors.No;
             this.deterRelationshipButton.Location = new System.Drawing.Point(40, 171);
             this.deterRelationshipButton.Margin = new System.Windows.Forms.Padding(0);
             this.deterRelationshipButton.Name = "deterRelationshipButton";
@@ -238,7 +238,6 @@
             this.deterRelationshipButton.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.deterRelationshipButton.TabIndex = 9;
             this.deterRelationshipButton.Values.Text = "Tìm mối liên hệ";
-            this.deterRelationshipButton.Click += new System.EventHandler(this.deterRelationshipButton_Click);
             // 
             // popupFunction
             // 

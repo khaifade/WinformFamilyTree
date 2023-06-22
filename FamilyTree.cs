@@ -221,7 +221,7 @@ namespace WinformFamilyTree
         }
         public void refreshHomeScreen()
         {
-            homeScreenButton.PerformClick();
+            HomeScreen.Instance.Update();
         }
 
         private void searchBox_TextChanged(object sender, EventArgs e)

@@ -70,17 +70,6 @@ namespace WinformFamilyTree.UI
 
         async private void deterRelationshipButton_Click(object sender, EventArgs e)
         {
-            this.Close();
-            await Task.Delay(100);
-            HomeScreen.Instance.deterMessage.Visible = true;
-            HomeScreen.Instance.deterMessage.BringToFront();
-            // TODO: choose another member to determine relationship
-
-            // Then show Dialog between them.
-            var relationship = new DeterRelationshipDialog();
-            await Task.Delay(1000);
-            HomeScreen.Instance.deterMessage.Visible = false;
-            relationship.ShowDialog();
 
         }
     }

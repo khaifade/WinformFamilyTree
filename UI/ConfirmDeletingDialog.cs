@@ -95,8 +95,8 @@ namespace WinformFamilyTree.UI
             {
                 member.Delete(listMemberNeedDel[i]);
             }
-            MessageBox.Show("xoá thành công!");
-            
+            //MessageBox.Show("xoá thành công!");
+            HomeScreen.Instance.Update();
 
 
             this.Close();

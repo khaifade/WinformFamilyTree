@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinformFamilyTree.TreeClasses;
+using WinformFamilyTree.Properties;
 
 namespace WinformFamilyTree.UI
 {
@@ -18,7 +19,7 @@ namespace WinformFamilyTree.UI
 
         int rootID;
         string type;
-
+        bool imageChanged = false;
         int curID;
 
         MemberClass member;
@@ -28,13 +29,6 @@ namespace WinformFamilyTree.UI
             InitializeComponent();
             cancelFormButton.Click += cancelFormButtonFirstTime_Click;
         }
-
-        //public MemberInfoForm(MemberClass member)
-        //{
-        //    this.member = member;
-        //    InitializeComponent();
-        //    cancelFormButton.Click += cancelFormButtonFirstTime_Click;
-        //}
         public MemberInfoForm(string type, int rootID)
         {
 
@@ -44,15 +38,14 @@ namespace WinformFamilyTree.UI
             if (type == "parent")
             {
                 relationshipComboBox.Text = "Bố/Mẹ";
-
             }
             if (type == "spouse")
             {
-                relationshipComboBox.Text = "Vợ/Chồng" ;
+                relationshipComboBox.Text = "Vợ/Chồng";
             }
             if (type == "child")
             {
-                relationshipComboBox.Text = "Con cái" ;
+                relationshipComboBox.Text = "Con cái";
             }
         }
         public MemberInfoForm(MemberClass member)
@@ -77,6 +70,7 @@ namespace WinformFamilyTree.UI
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 attachImage.Image = new Bitmap(openFileDialog.FileName);
+                imageChanged = true;
             }
         }
         private void cancelFormButton_Click(object sender, EventArgs e)
@@ -111,7 +105,7 @@ namespace WinformFamilyTree.UI
                 member.DateOfDeath = dateOfDeathBox.Value;
                 member.PlaceOfOrigin = placeOfOriginTextBox.Text;
                 member.Biography = biographyRichTextBox.Text;
-                member.proFilePicture = getPicture();
+                member.proFilePicture = getPicture(member.Gender);
 
                 if (!aliveCheckBox.Checked)
                 {
@@ -126,7 +120,6 @@ namespace WinformFamilyTree.UI
                         this.Hide();
                         familyTree.instance.refreshHomeScreen();
                         familyTree.instance.Controls.Remove(this);
-                        HomeScreen.Instance.Update();
                     }
                     else
                     {
@@ -137,18 +130,36 @@ namespace WinformFamilyTree.UI
                 {
                     if (this.type == "spouse") // add spouse 
                     {
-                        if (member.Insert(member) && member.InsertSpouseRel(rootID, member.getMaxMemberID()))
+                        if (member.getSpouseID(this.rootID) == -1)
                         {
-                            MessageBox.Show("Thêm thành công!");
-                            this.Hide();
-                            familyTree.instance.refreshHomeScreen();
-                            familyTree.instance.Controls.Remove(this);
-                            HomeScreen.Instance.Update();
+                            if (member.Insert(member) && member.InsertSpouseRel(rootID, member.getMaxMemberID()))
+                            {
+                                MessageBox.Show("Thêm thành công!");
+                                this.Hide();
+                                familyTree.instance.refreshHomeScreen();
+                                familyTree.instance.Controls.Remove(this);
+                            }
+                            else
+                            {
+                                member.Delete(member.getMemberID(member));
+                                MessageBox.Show("Lỗi, hãy thử lại!");
+                            }
+
                         }
                         else
                         {
-                            member.Delete(member.getMemberID(member));
-                            MessageBox.Show("Lỗi, hãy thử lại!");
+                            if (member.Insert(member) && member.changePartner(member.getMemberID(member), rootID))
+                            {
+                                MessageBox.Show("Thêm thành công!");
+                                this.Hide();
+                                familyTree.instance.refreshHomeScreen();
+                                familyTree.instance.Controls.Remove(this);
+                            }
+                            else
+                            {
+                                member.Delete(member.getMemberID(member));
+                                MessageBox.Show("Lỗi, hãy thử lại!");
+                            }
                         }
                     }
                     else if (this.type == "child") // add child
@@ -159,7 +170,6 @@ namespace WinformFamilyTree.UI
                             this.Hide();
                             familyTree.instance.refreshHomeScreen();
                             familyTree.instance.Controls.Remove(this);
-                            HomeScreen.Instance.Update();
                         }
                         else
                         {
@@ -174,8 +184,8 @@ namespace WinformFamilyTree.UI
                             MessageBox.Show("Sửa thành công!");
                             this.Hide();
                             familyTree.instance.refreshHomeScreen();
+                            BiographyViewScreen.mainPanel.Update();
                             familyTree.instance.Controls.Remove(this);
-                            HomeScreen.Instance.Update();
                         }
                         else
                         {
@@ -206,11 +216,26 @@ namespace WinformFamilyTree.UI
             }
         }
 
-        private byte[] getPicture()
+        private byte[] getPicture(string gender)
         {
+            if (imageChanged == false)
+            {
+                if (gender == "Nam")
+                {
+                    attachImage.Image = Resources.male;
+                }
+                else if (gender == "Nữ")
+                {
+                    attachImage.Image = Resources.female;
+                }
+            }
+
             MemoryStream stream = new MemoryStream();
             attachImage.Image.Save(stream, attachImage.Image.RawFormat);
-            return stream.GetBuffer();
+            Byte[] bytBLOBData = new Byte[stream.Length];
+            stream.Position = 0;
+            stream.Read(bytBLOBData, 0, Convert.ToInt32(stream.Length));
+            return bytBLOBData;
         }
     }
 }

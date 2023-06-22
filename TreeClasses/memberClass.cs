@@ -251,6 +251,31 @@ namespace WinformFamilyTree.TreeClasses
             finally { conn.Close(); }
             return isSuccess;
         }
+        public bool changePartner(int partnerID, int rootID)
+        {
+            // Creating a default return type and setting its value to false
+            bool isSuccess = false;
+            // Step 1: Database connection
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            try
+            {
+                conn.Open();
+                // Creating SQL Command using sql and conn
+                string sql = "UPDATE RELATIONSHIP_SPOUSE SET MemberID2 = @PartnerID WHERE MemberID1 = @RootID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@PartnerID", partnerID);
+                cmd.Parameters.AddWithValue("@RootID", rootID);
+                int rows = cmd.ExecuteNonQuery();
+                // If the query run sucessfully, the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0) { isSuccess = true; }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+            return isSuccess;
+        }
 
         public int numMember()
         {
@@ -535,7 +560,11 @@ namespace WinformFamilyTree.TreeClasses
             {
                 if (dt.Rows[0].Field<int>(0) == memberID)
                 {
-                    return dt.Rows[0].Field<int>(1);
+                    try
+                    {
+                        return dt.Rows[0].Field<int>(1);
+                    }
+                    catch { return -1; }
                 }
                 return dt.Rows[0].Field<int>(0);
             }
@@ -681,5 +710,30 @@ namespace WinformFamilyTree.TreeClasses
             finally { conn.Close(); }
             return dt;
         }
+        public byte[] RetrieveImage(int memberID)
+        {
+            byte[] imageBytes = null;
+            using (SqlConnection conn = new SqlConnection(myConnectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT MemberProfilePicture FROM MEMBER WHERE MemberID = @memberID", conn))
+                {
+                    cmd.Parameters.AddWithValue("@memberID", memberID);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SequentialAccess))
+                    {
+                        if (reader.Read())
+                        {
+                            long bufferSize = reader.GetBytes(0, 0, null, 0, 0); // Get the size of the image
+                            imageBytes = new byte[bufferSize];
+                            reader.GetBytes(0, 0, imageBytes, 0, (int)bufferSize);
+                        }
+                    }
+                }
+            }
+
+            return imageBytes;
+        }
+
     }
 }

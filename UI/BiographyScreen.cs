@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +18,14 @@ namespace WinformFamilyTree
     {
         // Màn hình khởi tạo khi không có thành viên 
         MemberClass member;
+        static public Panel mainPanel;
+
         public BiographyViewScreen()
         {
             InitializeComponent();
             // TODO: Ẩn hết các object, chỉ hiện một thông báo tìm kiếm thành viên trên thanh tìm kiếm
             MainPanel.Visible = false;
+            mainPanel = MainPanel;
         }
 
         // Màn hình khởi tạo khi truy xuất tiểu sử 1 thành viên từ màn hình chính
@@ -30,6 +34,7 @@ namespace WinformFamilyTree
 
             InitializeComponent();
             MainPanel.Visible = true;
+            mainPanel = MainPanel;
             //MemberClass member = new MemberClass();
             //member = member.SelectMember(memberID);
             this.member = member;
@@ -46,7 +51,18 @@ namespace WinformFamilyTree
             placeOfOriginText.Text = member.PlaceOfOrigin;
             biographyText.Text = member.Biography;
             // convert AvatarProfilePicture to picture
-            //AvatarProfilePicture = member.proFilePicture;
+
+            byte[] imageBytes = this.member.RetrieveImage(member.ID);
+            if (imageBytes != null)
+            {
+                using (MemoryStream ms = new MemoryStream(imageBytes))
+                {
+                    Image image = Image.FromStream(ms, true);
+                    Image resizedImage = memberNode.ResizeImage(image, 150, 150);
+                    AvatarProfilePicture.StateCommon.Back.Image = resizedImage;
+                    image.Dispose();
+                }
+            }
         }
 
         private void editInfoButton_Click(object sender, EventArgs e)
