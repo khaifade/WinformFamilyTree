@@ -270,17 +270,17 @@ namespace WinformFamilyTree
                     SpouseNode.Name = "node" + ChildPartnerID.ToString();
                     childFlowPannel.Controls.Add(SpouseNode);
                     curIdx++;
-                    int lastChildIdx = DFS(ref Gen, childID, x_layout + 250, curNodeY, ChildSpouseID);
-                    if(lastChildIdx >= 2) 
+                    int offset = DFS(ref Gen, childID, x_layout + 250, curNodeY, ChildSpouseID) - curNodeY - 150;
+                    if(offset > 0) 
                     {
-                        childFlowPannel.Controls[curIdx].Margin = new Padding(0, 0, 0, (lastChildIdx - 1) * 150);
-                        curNodeY += (lastChildIdx - 1) * 150;
+                        childFlowPannel.Controls[curIdx].Margin = new Padding(0, 0, 0, offset);
+                        curNodeY += offset;
                     }
                     curNodeY += 150;
                 }
             }
             Gen.Add(childFlowPannel);
-            return curIdx;
+            return curNodeY;
         }
         public void Update()
         {
