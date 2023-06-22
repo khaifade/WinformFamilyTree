@@ -80,7 +80,10 @@ namespace WinformFamilyTree
             int rootMemID = member.getMinMemberID();
             var node0 = new memberNode(rootMemID);
             node0.Name = "node" + rootMemID.ToString();
+
             FlowLayoutPanel gen0 = new FlowLayoutPanel();
+            
+            
 
             int[] MemIDToGen = Enumerable.Repeat(0, member.getMaxMemberID() + 1).ToArray();
 
@@ -91,11 +94,23 @@ namespace WinformFamilyTree
             gen0.Location = new Point(x_layout, gen0.Location.Y);
             //gen0.BackColor = Color.Red;
             x_layout += 250;
+            
 
             Gen.Add(gen0);
-            Gen[0].Controls.Add(node0);
 
-            // list of member which was explored
+            Gen[0].Controls.Add(node0);
+            int SpouseID = member.getSpouseID(rootMemID);
+            if (SpouseID >= 0)
+            {
+                int PartnerID = member.getMemberPartner(SpouseID, rootMemID);
+                memberNode SpouseNode = new memberNode(PartnerID);
+                SpouseNode.infoBar.StateCommon.Back.Color1 = Color.FromArgb(32, 191, 85);
+                SpouseNode.profilePicture.StateCommon.Border.Color1 = Color.FromArgb(32, 191, 85);
+                SpouseNode.Name = "node" + PartnerID.ToString();
+                Gen[0].Controls.Add(SpouseNode);
+            }
+
+            /*// list of member which was explored
             // explored = true means that all relationship of this member was iterated and added to correct gen.
             bool[] exploredMem = Enumerable.Repeat(false, member.getMaxMemberID() + 1).ToArray();
 
@@ -189,7 +204,7 @@ namespace WinformFamilyTree
                             this.mainPanel.Refresh();
 
                             // adding space if adding child at any random parent.
-                            /*
+                            
                             int numMemOfCurrentGen = Gen[MemIDToGen[childID]].Controls.Count;
                             int numMemOfPreviousGen = Gen[MemIDToGen[i]].Controls.Count;
                             var parentUc = Gen[MemIDToGen[i]].Controls.Find("node" + i.ToString(), true)[0];
@@ -217,16 +232,55 @@ namespace WinformFamilyTree
                                 }
                                 Gen[MemIDToGen[childID]].ResumeLayout();
                             }
-                            */
+                            
 
                         }
                     }
                 }
-            }
-
+            }*/
+            DFS(ref Gen, rootMemID, x_layout, 0 , member.getSpouseID(member.getMinMemberID()));
             // Add the list of panel to screen
             this.mainPanel.Controls.AddRange(Gen.ToArray());
 
+        }
+        private int DFS(ref List<FlowLayoutPanel> Gen, int nodeID,int x_layout, int cur_y, int SpouseID)
+        {
+            MemberClass member = new MemberClass();
+            FlowLayoutPanel childFlowPannel = new FlowLayoutPanel();
+            childFlowPannel.AutoSize = true;
+            childFlowPannel.FlowDirection = FlowDirection.TopDown;
+            childFlowPannel.Location = new Point(x_layout, cur_y);
+            int[] ChildList = member.getAllChildID(SpouseID);
+            int curIdx = -1;
+            int curNodeY = cur_y-150;
+            foreach (int childID in ChildList)
+            {
+                memberNode ChildNode = new memberNode(childID);
+                ChildNode.Name = "node" + childID.ToString();
+                curIdx++;
+                curNodeY += 150;
+                childFlowPannel.Controls.Add(ChildNode);
+                int ChildSpouseID = member.getSpouseID(childID);
+                if (ChildSpouseID >= 0)
+                {
+                    int ChildPartnerID = member.getMemberPartner(ChildSpouseID, childID);
+                    memberNode SpouseNode = new memberNode(ChildPartnerID);
+                    SpouseNode.infoBar.StateCommon.Back.Color1 = Color.FromArgb(32, 191, 85);
+                    SpouseNode.profilePicture.StateCommon.Border.Color1 = Color.FromArgb(32, 191, 85);
+                    SpouseNode.Name = "node" + ChildPartnerID.ToString();
+                    childFlowPannel.Controls.Add(SpouseNode);
+                    curIdx++;
+                    int lastChildIdx = DFS(ref Gen, childID, x_layout + 250, curNodeY, ChildSpouseID);
+                    if(lastChildIdx >= 2) 
+                    {
+                        childFlowPannel.Controls[curIdx].Margin = new Padding(0, 0, 0, (lastChildIdx - 1) * 150);
+                        curNodeY += (lastChildIdx - 1) * 150;
+                    }
+                    curNodeY += 150;
+                }
+            }
+            Gen.Add(childFlowPannel);
+            return curIdx;
         }
         public void Update()
         {
