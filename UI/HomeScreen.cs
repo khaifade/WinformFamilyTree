@@ -24,7 +24,7 @@ namespace WinformFamilyTree
         public static HomeScreen Instance { get; private set; }
         public KryptonButton deterMessage;
         public Panel mainPanel;
-        
+
         // These point is used for drawing relationship
         private List<Line> lines = new List<Line>();
         public HomeScreen()
@@ -97,7 +97,7 @@ namespace WinformFamilyTree
                 Gen[0].Controls.Add(SpouseNode);
             }
 
-            DFS(ref Gen, rootMemID, x_layout, 0, member.getSpouseID(member.getMinMemberID()),parentPoint);
+            DFS(ref Gen, rootMemID, x_layout, 0, member.getSpouseID(member.getMinMemberID()), parentPoint);
             // Add the list of panel to screen
             this.mainPanel.Refresh();
             this.mainPanel.Controls.AddRange(Gen.ToArray());
@@ -150,10 +150,10 @@ namespace WinformFamilyTree
                         childFlowPannel.Controls[curIdx].Margin = new Padding(0, 0, 0, offset);
                         curNodeY += offset;
                     }
-                    
+
                 }
             }
-            
+
             Gen.Add(childFlowPannel);
             return curNodeY;
         }
@@ -165,11 +165,11 @@ namespace WinformFamilyTree
         public void FindNode(string NodeID)
         {
             UnfocusNode();
-            foreach(FlowLayoutPanel curGen in Gen)
+            foreach (FlowLayoutPanel curGen in Gen)
             {
-                foreach(memberNode curNode in curGen.Controls)
+                foreach (memberNode curNode in curGen.Controls)
                 {
-                    if(curNode.Name == "node" + NodeID)
+                    if (curNode.Name == "node" + NodeID)
                     {
                         curNode.BackColor = Color.Red;
                         curNode.Focus();
@@ -181,7 +181,7 @@ namespace WinformFamilyTree
         }
         public void UnfocusNode()
         {
-            if(curFocusNode != null)
+            if (curFocusNode != null)
                 curFocusNode.BackColor = Color.Empty;
         }
         protected void DrawRel(Point p1, Point p2)

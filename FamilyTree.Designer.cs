@@ -49,20 +49,20 @@ namespace WinformFamilyTree
             this.customFont = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.borderEdge = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
             this.workspaceGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.memberListScreen = new WinformFamilyTree.MemberListScreen();
+            this.homeScreen = new WinformFamilyTree.HomeScreen();
+            this.biographyScreen = new WinformFamilyTree.BiographyViewScreen();
+            this.sharedScreen = new WinformFamilyTree.SharedScreen();
             this.searchBoxContainer = new System.Windows.Forms.Panel();
             this.searchGroupBox = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
             this.searchIcon = new System.Windows.Forms.PictureBox();
-            this.SearchComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.searchBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.SearchComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.customForm = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.MainPanel = new System.Windows.Forms.Panel();
             this.memberDataSet = new WinformFamilyTree.memberDataSet();
             this.tblmemberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_memberTableAdapter = new WinformFamilyTree.memberDataSetTableAdapters.tbl_memberTableAdapter();
-            this.memberListScreen = new WinformFamilyTree.MemberListScreen();
-            this.homeScreen = new WinformFamilyTree.HomeScreen();
-            this.biographyScreen = new WinformFamilyTree.BiographyViewScreen();
-            this.sharedScreen = new WinformFamilyTree.SharedScreen();
             this.containerLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navGroupBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navGroupBox.Panel)).BeginInit();
@@ -125,7 +125,6 @@ namespace WinformFamilyTree
             this.containerLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.containerLayout.Size = new System.Drawing.Size(1264, 681);
             this.containerLayout.TabIndex = 9;
-            this.containerLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // navGroupBox
             // 
@@ -430,6 +429,49 @@ namespace WinformFamilyTree
             this.workspaceGroupBox.TabIndex = 12;
             this.workspaceGroupBox.Values.Heading = "Tổng quan";
             // 
+            // memberListScreen
+            // 
+            this.memberListScreen.BackColor = System.Drawing.Color.White;
+            this.memberListScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.memberListScreen.Location = new System.Drawing.Point(0, 0);
+            this.memberListScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.memberListScreen.Name = "memberListScreen";
+            this.memberListScreen.Size = new System.Drawing.Size(844, 500);
+            this.memberListScreen.TabIndex = 2;
+            // 
+            // homeScreen
+            // 
+            this.homeScreen.AutoScroll = true;
+            this.homeScreen.BackColor = System.Drawing.Color.White;
+            this.homeScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.homeScreen.Location = new System.Drawing.Point(0, 0);
+            this.homeScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.homeScreen.MaximumSize = new System.Drawing.Size(844, 499);
+            this.homeScreen.Name = "homeScreen";
+            this.homeScreen.Size = new System.Drawing.Size(844, 499);
+            this.homeScreen.TabIndex = 0;
+            // 
+            // biographyScreen
+            // 
+            this.biographyScreen.BackColor = System.Drawing.Color.White;
+            this.biographyScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.biographyScreen.Location = new System.Drawing.Point(0, 0);
+            this.biographyScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.biographyScreen.Name = "biographyScreen";
+            this.biographyScreen.Size = new System.Drawing.Size(844, 500);
+            this.biographyScreen.TabIndex = 1;
+            // 
+            // sharedScreen
+            // 
+            this.sharedScreen.BackColor = System.Drawing.Color.White;
+            this.sharedScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sharedScreen.Location = new System.Drawing.Point(0, 0);
+            this.sharedScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.sharedScreen.Name = "sharedScreen";
+            this.sharedScreen.Size = new System.Drawing.Size(844, 500);
+            this.sharedScreen.TabIndex = 3;
+            this.sharedScreen.Load += new System.EventHandler(this.sharedScreen_Load);
+            // 
             // searchBoxContainer
             // 
             this.searchBoxContainer.Controls.Add(this.searchGroupBox);
@@ -472,19 +514,6 @@ namespace WinformFamilyTree
             this.searchIcon.TabIndex = 0;
             this.searchIcon.TabStop = false;
             // 
-            // SearchComboBox
-            // 
-            this.SearchComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.SearchComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.SearchComboBox.DropDownWidth = 163;
-            this.SearchComboBox.Location = new System.Drawing.Point(28, 2);
-            this.SearchComboBox.Name = "SearchComboBox";
-            this.SearchComboBox.Size = new System.Drawing.Size(163, 21);
-            this.SearchComboBox.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.SearchComboBox.TabIndex = 11;
-            this.SearchComboBox.SelectionChangeCommitted += new System.EventHandler(this.SearchComboBox_SelectionChangeCommitted);
-            this.SearchComboBox.TextChanged += new System.EventHandler(this.SearchComboBox_TextChanged);
-            // 
             // searchBox
             // 
             this.searchBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -501,6 +530,18 @@ namespace WinformFamilyTree
             this.searchBox.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBox.TabIndex = 10;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            // 
+            // SearchComboBox
+            // 
+            this.SearchComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.SearchComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.SearchComboBox.DropDownWidth = 163;
+            this.SearchComboBox.Location = new System.Drawing.Point(28, 2);
+            this.SearchComboBox.Name = "SearchComboBox";
+            this.SearchComboBox.Size = new System.Drawing.Size(163, 21);
+            this.SearchComboBox.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.SearchComboBox.TabIndex = 11;
+            this.SearchComboBox.SelectionChangeCommitted += new System.EventHandler(this.SearchComboBox_SelectionChangeCommitted);
             // 
             // MainPanel
             // 
@@ -525,50 +566,6 @@ namespace WinformFamilyTree
             // tbl_memberTableAdapter
             // 
             this.tbl_memberTableAdapter.ClearBeforeFill = true;
-            // 
-            // memberListScreen
-            // 
-            this.memberListScreen.BackColor = System.Drawing.Color.White;
-            this.memberListScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.memberListScreen.Location = new System.Drawing.Point(0, 0);
-            this.memberListScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.memberListScreen.Name = "memberListScreen";
-            this.memberListScreen.Size = new System.Drawing.Size(844, 500);
-            this.memberListScreen.TabIndex = 2;
-            // 
-            // homeScreen
-            // 
-            this.homeScreen.AutoScroll = true;
-            this.homeScreen.BackColor = System.Drawing.Color.White;
-            this.homeScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homeScreen.Location = new System.Drawing.Point(0, 0);
-            this.homeScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.homeScreen.MaximumSize = new System.Drawing.Size(844, 499);
-            this.homeScreen.Name = "homeScreen";
-            this.homeScreen.Size = new System.Drawing.Size(844, 499);
-            this.homeScreen.TabIndex = 0;
-            // 
-            // biographyScreen
-            // 
-            this.biographyScreen.BackColor = System.Drawing.Color.White;
-            this.biographyScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.biographyScreen.Location = new System.Drawing.Point(0, 0);
-            this.biographyScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.biographyScreen.Name = "biographyScreen";
-            this.biographyScreen.Size = new System.Drawing.Size(844, 500);
-            this.biographyScreen.TabIndex = 1;
-            this.biographyScreen.Load += new System.EventHandler(this.biographyScreen_Load);
-            // 
-            // sharedScreen
-            // 
-            this.sharedScreen.BackColor = System.Drawing.Color.White;
-            this.sharedScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sharedScreen.Location = new System.Drawing.Point(0, 0);
-            this.sharedScreen.Margin = new System.Windows.Forms.Padding(0);
-            this.sharedScreen.Name = "sharedScreen";
-            this.sharedScreen.Size = new System.Drawing.Size(844, 500);
-            this.sharedScreen.TabIndex = 3;
-            this.sharedScreen.Load += new System.EventHandler(this.sharedScreen_Load);
             // 
             // familyTree
             // 
