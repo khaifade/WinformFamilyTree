@@ -77,6 +77,7 @@ namespace WinformFamilyTree
             memberListScreen.Hide();
             sharedScreen.Hide();
             homeScreen.BringToFront();
+            homeScreenButton.PerformClick();
             
         }
         public void AddUserControl(UserControl userControl)
