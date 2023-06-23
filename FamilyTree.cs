@@ -231,25 +231,24 @@ namespace WinformFamilyTree
 
         private void SearchComboBox_TextChanged(object sender, EventArgs e)
         {
-            
             KryptonComboBox cb = (KryptonComboBox)sender;
             MemberClass member = new MemberClass();
-            string curName = cb.Text;
-            instance.ActiveControl = null;
-            cb.DataSource = member.FindFromName_ID(SearchComboBox.Text);
-            cb.DisplayMember = "MemberName";
-            cb.ValueMember = "MemberID";
-            cb.TextChanged -= SearchComboBox_TextChanged;
-            cb.Text = curName;
-            cb.Focus();
-            cb.Select(cb.Text.Length, 0);
-            //cb.DroppedDown = true;
-            cb.TextChanged += SearchComboBox_TextChanged;
-        }
-
-        private void SearchComboBox_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            
+            if (string.IsNullOrEmpty(cb.Text))
+                homeScreen.UnfocusNode();
+            else
+            {
+                string curName = cb.Text;
+                instance.ActiveControl = null;
+                cb.DataSource = member.FindFromName_ID(SearchComboBox.Text);
+                cb.DisplayMember = "MemberName";
+                cb.ValueMember = "MemberID";
+                cb.TextChanged -= SearchComboBox_TextChanged;
+                cb.Text = curName;
+                cb.Focus();
+                cb.Select(cb.Text.Length, 0);
+                //cb.DroppedDown = true;
+                cb.TextChanged += SearchComboBox_TextChanged;
+            }
         }
 
         private void biographyScreen_Load(object sender, EventArgs e)
@@ -260,6 +259,12 @@ namespace WinformFamilyTree
         private void familyTree_FormClosing(object sender, FormClosingEventArgs e)
         {
             Settings.Default.Save();
+        }
+
+        private void SearchComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            KryptonComboBox cb = (KryptonComboBox)sender;
+            homeScreen.FindNode(cb.SelectedValue.ToString());
         }
     }
 }

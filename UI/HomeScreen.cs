@@ -18,13 +18,13 @@ namespace WinformFamilyTree
 {
     public partial class HomeScreen : UserControl
     {
+        private memberNode curFocusNode = null;
         private int numMem;
-        private int x = 0;
-        private int y = 0;
+        private List<FlowLayoutPanel> Gen;
         public static HomeScreen Instance { get; private set; }
         public KryptonButton deterMessage;
         public Panel mainPanel;
-
+        
         // These point is used for drawing relationship
         private List<Line> lines = new List<Line>();
         public HomeScreen()
@@ -39,15 +39,13 @@ namespace WinformFamilyTree
             Instance = this;
             mainPanel = MainPanel;
             mainPanel.AutoScroll = true;
-            // TODO: Get member's name, member's brithYear & member's profile picture from database of each MemberNode
 
             MemberClass member = new MemberClass();
 
             numMem = member.numMember();
 
             // List of gen is used to manage each flow panel of each generation.
-            List<FlowLayoutPanel> Gen = new List<FlowLayoutPanel>();
-
+            Gen = new List<FlowLayoutPanel>();
             // `x_layout` is used to set location of a new gen horizontally.
             int x_layout = 0;
 
@@ -115,6 +113,7 @@ namespace WinformFamilyTree
                 int ChildSpouseID = member.getSpouseID(childID);
                 if (ChildSpouseID >= 0)
                 {
+                    int offset = DFS(ref Gen, childID, x_layout + 250, curNodeY, ChildSpouseID) - curNodeY - 150;
                     int ChildPartnerID = member.getMemberPartner(ChildSpouseID, childID);
                     if (ChildPartnerID >= 0)
                     {
@@ -124,14 +123,14 @@ namespace WinformFamilyTree
                         SpouseNode.Name = "node" + ChildPartnerID.ToString();
                         childFlowPannel.Controls.Add(SpouseNode);
                         curIdx++;
-                        int offset = DFS(ref Gen, childID, x_layout + 250, curNodeY, ChildSpouseID) - curNodeY - 150;
-                        if (offset > 0)
-                        {
-                            childFlowPannel.Controls[curIdx].Margin = new Padding(0, 0, 0, offset);
-                            curNodeY += offset;
-                        }
                         curNodeY += 150;
                     }
+                    if (offset > 0)
+                    {
+                        childFlowPannel.Controls[curIdx].Margin = new Padding(0, 0, 0, offset);
+                        curNodeY += offset;
+                    }
+                    
                 }
             }
             Gen.Add(childFlowPannel);
@@ -139,7 +138,30 @@ namespace WinformFamilyTree
         }
         public void Update()
         {
+            Gen.Clear();
             Load();
+        }
+        public void FindNode(string NodeID)
+        {
+            UnfocusNode();
+            foreach(FlowLayoutPanel curGen in Gen)
+            {
+                foreach(memberNode curNode in curGen.Controls)
+                {
+                    if(curNode.Name == "node" + NodeID)
+                    {
+                        curNode.BackColor = Color.Red;
+                        curNode.Focus();
+                        curFocusNode = curNode;
+                        break;
+                    }
+                }
+            }
+        }
+        public void UnfocusNode()
+        {
+            if(curFocusNode != null)
+                curFocusNode.BackColor = Color.Empty;
         }
         protected void DrawRel(Point p1, Point p2)
         {
