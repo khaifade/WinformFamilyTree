@@ -97,8 +97,17 @@ namespace WinformFamilyTree.TreeClasses
             {
                 conn.Open();
                 // Creating SQL Command using sql and conn
-                string sql = "INSERT INTO MEMBER (FirstName, LastName, Gender, DateOfBirth, PlaceOfOrigin, Biography, MemberProfilePicture) VALUES(@FirstName, @LastName, @Gender, @DateOfBirth, @PlaceOfOrigin, @Biography, @MemberProfilePicture)";
-                SqlCommand cmd = new SqlCommand(sql, conn);
+                string sql_null = "INSERT INTO MEMBER (FirstName, LastName, Gender, DateOfBirth, PlaceOfOrigin, Biography, MemberProfilePicture) VALUES(@FirstName, @LastName, @Gender, @DateOfBirth, @PlaceOfOrigin, @Biography, @MemberProfilePicture)";
+                string sql = "INSERT INTO MEMBER (FirstName, LastName, Gender, DateOfBirth, DateOfDeath, PlaceOfOrigin, Biography, MemberProfilePicture) VALUES(@FirstName, @LastName, @Gender, @DateOfBirth, @DateOfDeath, @PlaceOfOrigin, @Biography, @MemberProfilePicture)";
+                SqlCommand cmd;
+                if (c.DateOfDeath == null)
+                {
+                    cmd = new SqlCommand(sql_null, conn);
+                } else
+                {
+                    cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@DateOfDeath", c.DateOfDeath);
+                }
                 cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", c.LastName);
                 cmd.Parameters.AddWithValue("@Gender", c.Gender);
@@ -181,12 +190,22 @@ namespace WinformFamilyTree.TreeClasses
                 // Creating SQL Command using sql and conn
 
                 string sql = "UPDATE MEMBER SET FirstName = @FirstName, LastName = @LastName, DateOfBirth = @DateOfBirth, DateOfDeath = @DateOfDeath, Gender = @Gender, PlaceOfOrigin = @PlaceOfOrigin, Biography = @Biography, MemberProfilePicture = @MemberProfilePicture WHERE MemberID = @MemberID";
-                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                string sql_null = "UPDATE MEMBER SET FirstName = @FirstName, LastName = @LastName, DateOfBirth = @DateOfBirth, DateOfDeath = NULL, Gender = @Gender, PlaceOfOrigin = @PlaceOfOrigin, Biography = @Biography, MemberProfilePicture = @MemberProfilePicture WHERE MemberID = @MemberID";
+                SqlCommand cmd;
+                if (c.DateOfDeath != null)
+                {
+                    cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@DateOfDeath", c.DateOfDeath);
+                }
+                else
+                {
+                    cmd = new SqlCommand(sql_null, conn);
+                }
                 cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", c.LastName);
                 cmd.Parameters.AddWithValue("@Gender", c.Gender);
                 cmd.Parameters.AddWithValue("@DateOfBirth", c.DateOfBirth);
-                cmd.Parameters.AddWithValue("@DateOfDeath", c.DateOfDeath);
                 cmd.Parameters.AddWithValue("@PlaceOfOrigin", c.PlaceOfOrigin);
                 cmd.Parameters.AddWithValue("@Biography", c.Biography);
                 cmd.Parameters.AddWithValue("@MemberID", c.ID);
@@ -293,14 +312,14 @@ namespace WinformFamilyTree.TreeClasses
                 int rows = cmd.ExecuteNonQuery();
                 adapter.Fill(dt);
                 count = dt.Rows[0].Field<int>(0);
-                
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
             finally { conn.Close(); }
-            
+
             return count;
         }
 
@@ -315,7 +334,7 @@ namespace WinformFamilyTree.TreeClasses
                 string sql = "SELECT MemberID FROM MEMBER WHERE FirstName = @FirstName AND LastName = @LastName";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@FirstName", member.FirstName);
-                cmd.Parameters.AddWithValue("@LastName",member.LastName);
+                cmd.Parameters.AddWithValue("@LastName", member.LastName);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 int rows = cmd.ExecuteNonQuery();
                 adapter.Fill(dt);
@@ -488,11 +507,11 @@ namespace WinformFamilyTree.TreeClasses
                 Console.WriteLine(ex.Message);
             }
             finally { conn.Close(); }
-            
+
             // if the query is empty, dt is have no rows and opposite
             if (dt.Rows.Count > 0)
             {
-                for(int i=0; i<dt.Rows.Count; i++)
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     array[arrayIndex] = dt.Rows[i].Field<int>(0);
                     arrayIndex++;
@@ -673,7 +692,7 @@ namespace WinformFamilyTree.TreeClasses
             {
                 conn.Open();
                 // Creating SQL Command using sql and connection
-                string sql = "SELECT * FROM MEMBER WHERE CONCAT(LastName,' ',FirstName) LIKE '%" + queryStr  + "%'";
+                string sql = "SELECT * FROM MEMBER WHERE CONCAT(LastName,' ',FirstName) LIKE '%" + queryStr + "%'";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 // Creating Adapter using cmd
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -687,7 +706,7 @@ namespace WinformFamilyTree.TreeClasses
             finally { conn.Close(); }
             return dt;
         }
-        
+
         public DataTable FindFromName_ID(string queryStr)
         {
             // Step 1: Database connection

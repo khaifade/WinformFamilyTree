@@ -630,8 +630,6 @@
             // aliveCheckBox
             // 
             this.aliveCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.aliveCheckBox.Checked = true;
-            this.aliveCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.aliveCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.aliveCheckBox.Location = new System.Drawing.Point(0, 30);
             this.aliveCheckBox.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
@@ -658,7 +656,7 @@
             this.dateOfDeathBox.StateCommon.Border.Rounding = 20;
             this.dateOfDeathBox.StateCommon.Border.Width = 2;
             this.dateOfDeathBox.TabIndex = 11;
-            this.dateOfDeathBox.ValueNullable = new System.DateTime(3000, 1, 1, 0, 0, 0, 0);
+            this.dateOfDeathBox.ValueNullable = new System.DateTime(((long)(0)));
             // 
             // flowLayoutPanel5
             // 
@@ -706,7 +704,7 @@
             this.dateOfBirthBox.StateCommon.Border.Rounding = 20;
             this.dateOfBirthBox.StateCommon.Border.Width = 2;
             this.dateOfBirthBox.TabIndex = 11;
-            this.dateOfBirthBox.ValueNullable = new System.DateTime(2023, 6, 6, 0, 0, 0, 0);
+            this.dateOfBirthBox.ValueNullable = new System.DateTime(((long)(0)));
             // 
             // formLabel
             // 

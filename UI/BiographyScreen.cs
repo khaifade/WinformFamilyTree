@@ -46,11 +46,12 @@ namespace WinformFamilyTree
                 dataOfDeathText.Text = member.DateOfDeath.Value.Day.ToString() + "/" + member.DateOfDeath.Value.Day.ToString() + "/" + member.DateOfDeath.Value.Year.ToString();
             } else
             {
-                dataOfDeathText.Text = "không xác định";
+                dataOfDeathText.Text = "Không xác định";
             }
             placeOfOriginText.Text = member.PlaceOfOrigin;
             biographyText.Text = member.Biography;
             // convert AvatarProfilePicture to picture
+
 
             byte[] imageBytes = this.member.RetrieveImage(member.ID);
             if (imageBytes != null)
@@ -64,7 +65,6 @@ namespace WinformFamilyTree
                 }
             }
         }
-
         private void editInfoButton_Click(object sender, EventArgs e)
         {
             var ucMemberInfoForm = new MemberInfoForm(member);
