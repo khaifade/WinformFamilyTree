@@ -20,8 +20,8 @@ namespace WinformFamilyTree.TreeClasses
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Gender { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public DateTime DateOfDeath { get; set; }
+        public Nullable<DateTime> DateOfBirth { get; set; }
+        public Nullable<DateTime> DateOfDeath { get; set; }
         public string PlaceOfOrigin { get; set; }
         public string Biography { get; set; }
         public byte[] proFilePicture { get; set; }
@@ -72,8 +72,8 @@ namespace WinformFamilyTree.TreeClasses
                 member.ID = memberID;
                 member.FirstName = dt.Rows[0].Field<string>(1);
                 member.LastName = dt.Rows[0].Field<string>(2);
-                member.DateOfBirth = dt.Rows[0].Field<DateTime>(3);
-                member.DateOfDeath = dt.Rows[0].Field<DateTime>(4);
+                member.DateOfBirth = dt.Rows[0].Field<DateTime?>(3);
+                member.DateOfDeath = dt.Rows[0].Field<DateTime?>(4);
                 member.Gender = dt.Rows[0].Field<string>(5);
                 member.PlaceOfOrigin = dt.Rows[0].Field<string>(6);
                 member.Biography = dt.Rows[0].Field<string>(7);
@@ -97,13 +97,14 @@ namespace WinformFamilyTree.TreeClasses
             {
                 conn.Open();
                 // Creating SQL Command using sql and conn
-                string sql = "INSERT INTO MEMBER (FirstName, LastName, Gender, DateOfBirth, PlaceOfOrigin, MemberProfilePicture) VALUES(@FirstName, @LastName, @Gender, @DateOfBirth, @PlaceOfOrigin, @MemberProfilePicture)";
+                string sql = "INSERT INTO MEMBER (FirstName, LastName, Gender, DateOfBirth, PlaceOfOrigin, Biography, MemberProfilePicture) VALUES(@FirstName, @LastName, @Gender, @DateOfBirth, @PlaceOfOrigin, @Biography, @MemberProfilePicture)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", c.LastName);
                 cmd.Parameters.AddWithValue("@Gender", c.Gender);
                 cmd.Parameters.AddWithValue("@DateOfBirth", c.DateOfBirth);
                 cmd.Parameters.AddWithValue("@PlaceOfOrigin", c.PlaceOfOrigin);
+                cmd.Parameters.AddWithValue("@Biography", c.Biography);
                 cmd.Parameters.AddWithValue("@MemberProfilePicture", c.proFilePicture);
                 int rows = cmd.ExecuteNonQuery();
                 // If the query run sucessfully, the value of rows will be greater than 0 else its value will be 0

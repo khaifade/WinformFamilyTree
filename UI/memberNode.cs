@@ -45,7 +45,7 @@ namespace WinformFamilyTree.UI
 
             }
             memberNameLabel.Text = member.FirstName;
-            memberBirthYearLabel.Text = member.DateOfBirth.Year.ToString();
+            memberBirthYearLabel.Text = member.DateOfBirth.Value.Year.ToString();
         }
 
         private void memberProfilePicture_Click(object sender, EventArgs e)

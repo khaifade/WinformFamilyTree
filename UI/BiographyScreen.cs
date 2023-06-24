@@ -40,10 +40,10 @@ namespace WinformFamilyTree
             this.member = member;
             fullNameText.Text = member.LastName + " " + member.FirstName;
             genderText.Text = member.Gender;
-            dateOfBirthText.Text = member.DateOfBirth.Day.ToString() + "/" + member.DateOfBirth.Month.ToString() + "/" + member.DateOfBirth.Year.ToString();
-            if(member.DateOfDeath != null)
+            dateOfBirthText.Text = member.DateOfBirth.Value.Day.ToString() + "/" + member.DateOfBirth.Value.Month.ToString() + "/" + member.DateOfBirth.Value.Year.ToString();
+            if(member.DateOfDeath.HasValue)
             { 
-                dataOfDeathText.Text = member.DateOfDeath.Day.ToString() + "/" + member.DateOfDeath.Month.ToString() + "/" + member.DateOfDeath.Year.ToString();
+                dataOfDeathText.Text = member.DateOfDeath.Value.Day.ToString() + "/" + member.DateOfDeath.Value.Day.ToString() + "/" + member.DateOfDeath.Value.Year.ToString();
             } else
             {
                 dataOfDeathText.Text = "không xác định";

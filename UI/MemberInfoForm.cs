@@ -54,7 +54,7 @@ namespace WinformFamilyTree.UI
             lastNameTextBox.Text = member.LastName;
             firstNameTextBox.Text = member.FirstName;
             genderComboBox.Text = member.Gender;
-            dateOfBirthBox.Value = member.DateOfBirth;
+            dateOfBirthBox.Value = member.DateOfBirth.Value;
             placeOfOriginTextBox.Text = member.PlaceOfOrigin;
             biographyRichTextBox.Text = member.Biography;
             curID = member.ID;
