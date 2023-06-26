@@ -77,7 +77,7 @@
             this.memberNameLabel.Name = "memberNameLabel";
             this.memberNameLabel.Size = new System.Drawing.Size(120, 28);
             this.memberNameLabel.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
-            this.memberNameLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberNameLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold);
             this.memberNameLabel.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.memberNameLabel.TabIndex = 0;
             this.memberNameLabel.Values.Text = "Lê Quý Gia";

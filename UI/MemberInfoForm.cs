@@ -19,6 +19,7 @@ namespace WinformFamilyTree.UI
 
         int rootID;
         string type;
+        bool imageChanged = false;
         int curID;
         string image;
 
@@ -77,8 +78,8 @@ namespace WinformFamilyTree.UI
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                attachImage.ImageLocation = openFileDialog.FileName;
-                this.image = openFileDialog.FileName;
+                attachImage.Image = new Bitmap(openFileDialog.FileName);
+                imageChanged = true;
             }
         }
         private void cancelFormButton_Click(object sender, EventArgs e)
@@ -113,7 +114,14 @@ namespace WinformFamilyTree.UI
                 member.DateOfDeath = dateOfDeathBox.Value;
                 member.PlaceOfOrigin = placeOfOriginTextBox.Text;
                 member.Biography = biographyRichTextBox.Text;
-                member.proFilePicture = Image2Byte(image);
+                if (member.RetrieveImage(curID) != null && imageChanged == false)
+                {
+                    member.proFilePicture = member.RetrieveImage(curID);
+                }
+                else
+                {
+                    member.proFilePicture = getPicture(member.Gender);
+                }
 
                 if (!aliveCheckBox.Checked)
                 {
@@ -203,30 +211,28 @@ namespace WinformFamilyTree.UI
 
             }
         }
-            
-        private byte[] Image2Byte(string Fullfilename)
+
+        private byte[] getPicture(string gender)
         {
-            
-            FileStream fs;
-            BinaryReader br;
-            byte[] imgbyte;
-
-            if (!File.Exists(Fullfilename)) 
+            if (imageChanged == false)
             {
-                string currentDirectory = Directory.GetCurrentDirectory();
-                currentDirectory = currentDirectory.Substring(0,currentDirectory.Length - 10);
-                currentDirectory = currentDirectory.Replace("\'bin\'debug", "");
-                string relativePath = "\\Resources\\chu-chim-canh-cut-con-nhin-cute-de-thuong_113124382.jpg";
-                Fullfilename = currentDirectory+relativePath;
+                if (gender == "Nam")
+                {
+                    attachImage.Image = Resources.male;
+                }
+                else if (gender == "Nữ")
+                {
+                    attachImage.Image = Resources.female;
+                }
             }
-            fs = new FileStream(Fullfilename, FileMode.Open);
-            br = new BinaryReader(fs);
-            imgbyte = new byte[fs.Length];
-            imgbyte = br.ReadBytes(Convert.ToInt32((fs.Length)));
-            br.Close(); fs.Close();
-            return imgbyte;
+            MemoryStream stream = new MemoryStream();
+            attachImage.Image.Save(stream, attachImage.Image.RawFormat);
+            Byte[] bytBLOBData = new Byte[stream.Length];
+            stream.Position = 0;
+            stream.Read(bytBLOBData, 0, Convert.ToInt32(stream.Length));
+            return bytBLOBData;
 
-            
+
         }
 
 

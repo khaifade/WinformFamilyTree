@@ -97,8 +97,18 @@ namespace WinformFamilyTree.TreeClasses
             {
                 conn.Open();
                 // Creating SQL Command using sql and conn
-                string sql = @"INSERT INTO MEMBER (FirstName, LastName, Gender, DateOfBirth, DateOfDeath, PlaceOfOrigin, Biography, MemberProfilePicture) VALUES(@FirstName, @LastName, @Gender, @DateOfBirth, @DateOfDeath, @PlaceOfOrigin, @Biography, @MemberProfilePicture)";
-                SqlCommand cmd = new SqlCommand(sql, conn);
+                string sql_null = "INSERT INTO MEMBER (FirstName, LastName, Gender, DateOfBirth, PlaceOfOrigin, Biography, MemberProfilePicture) VALUES(@FirstName, @LastName, @Gender, @DateOfBirth, @PlaceOfOrigin, @Biography, @MemberProfilePicture)";
+                string sql = "INSERT INTO MEMBER (FirstName, LastName, Gender, DateOfBirth, DateOfDeath, PlaceOfOrigin, Biography, MemberProfilePicture) VALUES(@FirstName, @LastName, @Gender, @DateOfBirth, @DateOfDeath, @PlaceOfOrigin, @Biography, @MemberProfilePicture)";
+                SqlCommand cmd;
+                if (c.DateOfDeath == null)
+                {
+                    cmd = new SqlCommand(sql_null, conn);
+                }
+                else
+                {
+                    cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@DateOfDeath", c.DateOfDeath);
+                }
                 cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", c.LastName);
                 cmd.Parameters.AddWithValue("@Gender", c.Gender);
