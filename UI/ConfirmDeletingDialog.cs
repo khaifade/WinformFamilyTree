@@ -33,8 +33,11 @@ namespace WinformFamilyTree.UI
             Array.Clear(listMemberNeedDel,0,listMemberNeedDel.Length);
             int[] listRelSpouseNeedDel = new int[numMembers]; // mảng lưu các mối quan hệ vợ chồng cần phải xoá
             Array.Clear(listRelSpouseNeedDel, 0, listRelSpouseNeedDel.Length);
+            int[] listRelSpouseNeedChange = new int[numMembers];
+            Array.Clear(listRelSpouseNeedChange, 0, listRelSpouseNeedDel.Length);
             int MemberIndex = 0; // index của listMemberNeedDel
             int RelSpouseIndex = 0; // index của listRelSpouseNeedDel
+            int RelSpouseChangeIndex = 0;
 
             int[] listMemberCheck = new int[numMembers]; // mảng chứa ID các thành viên cần kiểm tra
             int memberCheckIndex = 0;
@@ -65,16 +68,20 @@ namespace WinformFamilyTree.UI
                 {
                     if (spouseID != -1) 
                     {
-                        listRelSpouseNeedDel[RelSpouseIndex] = spouseID;
-                        RelSpouseIndex++;
+                        listRelSpouseNeedChange[RelSpouseChangeIndex] = spouseID;
+                        RelSpouseChangeIndex++;
                     }
                 }
                 
             }
              
             member.delParent(member.ID);
+            for (int i = 0; i < RelSpouseChangeIndex; i++)
+            {
+                member.delPartner(listRelSpouseNeedChange[i]);
+            }
             // xoá các mối liên hệ giữa cha mẹ và con 
-            for(int i = 0; i< RelSpouseIndex; i++)
+            for (int i = 0; i< RelSpouseIndex; i++)
             {
                 member.delChild(listRelSpouseNeedDel[i]);                        
             }
@@ -88,8 +95,8 @@ namespace WinformFamilyTree.UI
             {
                 member.Delete(listMemberNeedDel[i]);
             }
-            MessageBox.Show("xoá thành công!");
-            
+            //MessageBox.Show("xoá thành công!");
+            HomeScreen.Instance.Update();
 
 
             this.Close();

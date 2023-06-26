@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberInfoForm));
             this.cancelFormButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.genderLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -584,9 +583,9 @@
             // 
             this.attachImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.attachImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.attachImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("attachImage.ErrorImage")));
+            this.attachImage.ErrorImage = global::WinformFamilyTree.Properties.Resources.attach_image_icon;
             this.attachImage.Image = global::WinformFamilyTree.Properties.Resources.attach_image_icon;
-            this.attachImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("attachImage.InitialImage")));
+            this.attachImage.InitialImage = global::WinformFamilyTree.Properties.Resources.attach_image_icon;
             this.attachImage.Location = new System.Drawing.Point(0, 22);
             this.attachImage.Margin = new System.Windows.Forms.Padding(0);
             this.attachImage.Name = "attachImage";
@@ -631,7 +630,7 @@
             // aliveCheckBox
             // 
             this.aliveCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.aliveCheckBox.Cursor = System.Windows.Forms.Cursors.PanSE;
+            this.aliveCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.aliveCheckBox.Location = new System.Drawing.Point(0, 30);
             this.aliveCheckBox.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.aliveCheckBox.Name = "aliveCheckBox";
@@ -657,7 +656,7 @@
             this.dateOfDeathBox.StateCommon.Border.Rounding = 20;
             this.dateOfDeathBox.StateCommon.Border.Width = 2;
             this.dateOfDeathBox.TabIndex = 11;
-            this.dateOfDeathBox.ValueNullable = new System.DateTime(3000, 1, 1, 0, 0, 0, 0);
+            this.dateOfDeathBox.ValueNullable = new System.DateTime(((long)(0)));
             // 
             // flowLayoutPanel5
             // 
@@ -705,7 +704,7 @@
             this.dateOfBirthBox.StateCommon.Border.Rounding = 20;
             this.dateOfBirthBox.StateCommon.Border.Width = 2;
             this.dateOfBirthBox.TabIndex = 11;
-            this.dateOfBirthBox.ValueNullable = new System.DateTime(2023, 6, 6, 0, 0, 0, 0);
+            this.dateOfBirthBox.ValueNullable = new System.DateTime(((long)(0)));
             // 
             // formLabel
             // 

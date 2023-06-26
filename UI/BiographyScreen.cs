@@ -18,11 +18,14 @@ namespace WinformFamilyTree
     {
         // Màn hình khởi tạo khi không có thành viên 
         MemberClass member;
+        static public Panel mainPanel;
+
         public BiographyViewScreen()
         {
             InitializeComponent();
             // TODO: Ẩn hết các object, chỉ hiện một thông báo tìm kiếm thành viên trên thanh tìm kiếm
             MainPanel.Visible = false;
+            mainPanel = MainPanel;
         }
 
         // Màn hình khởi tạo khi truy xuất tiểu sử 1 thành viên từ màn hình chính
@@ -31,18 +34,19 @@ namespace WinformFamilyTree
 
             InitializeComponent();
             MainPanel.Visible = true;
+            mainPanel = MainPanel;
             //MemberClass member = new MemberClass();
             //member = member.SelectMember(memberID);
             this.member = member;
             fullNameText.Text = member.LastName + " " + member.FirstName;
             genderText.Text = member.Gender;
-            dateOfBirthText.Text = member.DateOfBirth.Day.ToString() + "/" + member.DateOfBirth.Month.ToString() + "/" + member.DateOfBirth.Year.ToString();
-            if(member.DateOfDeath != null)
+            dateOfBirthText.Text = member.DateOfBirth.Value.Day.ToString() + "/" + member.DateOfBirth.Value.Month.ToString() + "/" + member.DateOfBirth.Value.Year.ToString();
+            if(member.DateOfDeath.HasValue)
             { 
-                dataOfDeathText.Text = member.DateOfDeath.Day.ToString() + "/" + member.DateOfDeath.Month.ToString() + "/" + member.DateOfDeath.Year.ToString();
+                dataOfDeathText.Text = member.DateOfDeath.Value.Day.ToString() + "/" + member.DateOfDeath.Value.Day.ToString() + "/" + member.DateOfDeath.Value.Year.ToString();
             } else
             {
-                dataOfDeathText.Text = "không xác định";
+                dataOfDeathText.Text = "Không xác định";
             }
             placeOfOriginText.Text = member.PlaceOfOrigin;
             biographyText.Text = member.Biography;
@@ -53,9 +57,20 @@ namespace WinformFamilyTree
             //    image.Dispose();
             //}
             // convert AvatarProfilePicture to picture
-            //AvatarProfilePicture = member.proFilePicture;
-        }
 
+
+            byte[] imageBytes = this.member.RetrieveImage(member.ID);
+            if (imageBytes != null)
+            {
+                using (MemoryStream ms = new MemoryStream(imageBytes))
+                {
+                    Image image = Image.FromStream(ms, true);
+                    Image resizedImage = memberNode.ResizeImage(image, 150, 150);
+                    AvatarProfilePicture.StateCommon.Back.Image = resizedImage;
+                    image.Dispose();
+                }
+            }
+        }
         private void editInfoButton_Click(object sender, EventArgs e)
         {
             var ucMemberInfoForm = new MemberInfoForm(member);

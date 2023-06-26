@@ -150,7 +150,7 @@
             // addParentButton
             // 
             this.addParentButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.addParentButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addParentButton.Cursor = System.Windows.Forms.Cursors.No;
             this.addParentButton.Location = new System.Drawing.Point(40, 70);
             this.addParentButton.Margin = new System.Windows.Forms.Padding(0);
             this.addParentButton.Name = "addParentButton";
@@ -160,7 +160,6 @@
             this.addParentButton.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.addParentButton.TabIndex = 5;
             this.addParentButton.Values.Text = "Thêm bố/mẹ";
-            this.addParentButton.Click += new System.EventHandler(this.addMember_Click);
             // 
             // icon_addParent
             // 
@@ -229,7 +228,7 @@
             // deterRelationshipButton
             // 
             this.deterRelationshipButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.deterRelationshipButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deterRelationshipButton.Cursor = System.Windows.Forms.Cursors.No;
             this.deterRelationshipButton.Location = new System.Drawing.Point(40, 171);
             this.deterRelationshipButton.Margin = new System.Windows.Forms.Padding(0);
             this.deterRelationshipButton.Name = "deterRelationshipButton";
@@ -239,7 +238,6 @@
             this.deterRelationshipButton.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.deterRelationshipButton.TabIndex = 9;
             this.deterRelationshipButton.Values.Text = "Tìm mối liên hệ";
-            this.deterRelationshipButton.Click += new System.EventHandler(this.deterRelationshipButton_Click);
             // 
             // popupFunction
             // 

@@ -20,8 +20,8 @@ namespace WinformFamilyTree.TreeClasses
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Gender { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public DateTime DateOfDeath { get; set; }
+        public Nullable<DateTime> DateOfBirth { get; set; }
+        public Nullable<DateTime> DateOfDeath { get; set; }
         public string PlaceOfOrigin { get; set; }
         public string Biography { get; set; }
         public byte[] proFilePicture { get; set; }
@@ -72,8 +72,8 @@ namespace WinformFamilyTree.TreeClasses
                 member.ID = memberID;
                 member.FirstName = dt.Rows[0].Field<string>(1);
                 member.LastName = dt.Rows[0].Field<string>(2);
-                member.DateOfBirth = dt.Rows[0].Field<DateTime>(3);
-                member.DateOfDeath = dt.Rows[0].Field<DateTime>(4);
+                member.DateOfBirth = dt.Rows[0].Field<DateTime?>(3);
+                member.DateOfDeath = dt.Rows[0].Field<DateTime?>(4);
                 member.Gender = dt.Rows[0].Field<string>(5);
                 member.PlaceOfOrigin = dt.Rows[0].Field<string>(6);
                 member.Biography = dt.Rows[0].Field<string>(7);
@@ -191,12 +191,22 @@ namespace WinformFamilyTree.TreeClasses
                 // Creating SQL Command using sql and conn
 
                 string sql = "UPDATE MEMBER SET FirstName = @FirstName, LastName = @LastName, DateOfBirth = @DateOfBirth, DateOfDeath = @DateOfDeath, Gender = @Gender, PlaceOfOrigin = @PlaceOfOrigin, Biography = @Biography, MemberProfilePicture = @MemberProfilePicture WHERE MemberID = @MemberID";
-                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                string sql_null = "UPDATE MEMBER SET FirstName = @FirstName, LastName = @LastName, DateOfBirth = @DateOfBirth, DateOfDeath = NULL, Gender = @Gender, PlaceOfOrigin = @PlaceOfOrigin, Biography = @Biography, MemberProfilePicture = @MemberProfilePicture WHERE MemberID = @MemberID";
+                SqlCommand cmd;
+                if (c.DateOfDeath != null)
+                {
+                    cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@DateOfDeath", c.DateOfDeath);
+                }
+                else
+                {
+                    cmd = new SqlCommand(sql_null, conn);
+                }
                 cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", c.LastName);
                 cmd.Parameters.AddWithValue("@Gender", c.Gender);
                 cmd.Parameters.AddWithValue("@DateOfBirth", c.DateOfBirth);
-                cmd.Parameters.AddWithValue("@DateOfDeath", c.DateOfDeath);
                 cmd.Parameters.AddWithValue("@PlaceOfOrigin", c.PlaceOfOrigin);
                 cmd.Parameters.AddWithValue("@Biography", c.Biography);
                 cmd.Parameters.AddWithValue("@MemberID", c.ID);
@@ -238,6 +248,56 @@ namespace WinformFamilyTree.TreeClasses
             return isSuccess;
         }
 
+        public bool delPartner(int spouseID)
+        {
+            // Creating a default return type and setting its value to false
+            bool isSuccess = false;
+            // Step 1: Database connection
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            try
+            {
+                conn.Open();
+                // Creating SQL Command using sql and conn
+                string sql = "UPDATE RELATIONSHIP_SPOUSE SET MemberID2 = null WHERE SpouseID = @SpouseID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@SpouseID", spouseID);
+                int rows = cmd.ExecuteNonQuery();
+                // If the query run sucessfully, the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0) { isSuccess = true; }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+            return isSuccess;
+        }
+        public bool changePartner(int partnerID, int rootID)
+        {
+            // Creating a default return type and setting its value to false
+            bool isSuccess = false;
+            // Step 1: Database connection
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            try
+            {
+                conn.Open();
+                // Creating SQL Command using sql and conn
+                string sql = "UPDATE RELATIONSHIP_SPOUSE SET MemberID2 = @PartnerID WHERE MemberID1 = @RootID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@PartnerID", partnerID);
+                cmd.Parameters.AddWithValue("@RootID", rootID);
+                int rows = cmd.ExecuteNonQuery();
+                // If the query run sucessfully, the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0) { isSuccess = true; }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+            return isSuccess;
+        }
+
         public int numMember()
         {
             SqlConnection conn = new SqlConnection(myConnectionString);
@@ -253,14 +313,14 @@ namespace WinformFamilyTree.TreeClasses
                 int rows = cmd.ExecuteNonQuery();
                 adapter.Fill(dt);
                 count = dt.Rows[0].Field<int>(0);
-                
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
             finally { conn.Close(); }
-            
+
             return count;
         }
 
@@ -275,7 +335,7 @@ namespace WinformFamilyTree.TreeClasses
                 string sql = "SELECT MemberID FROM MEMBER WHERE FirstName = @FirstName AND LastName = @LastName";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@FirstName", member.FirstName);
-                cmd.Parameters.AddWithValue("@LastName",member.LastName);
+                cmd.Parameters.AddWithValue("@LastName", member.LastName);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 int rows = cmd.ExecuteNonQuery();
                 adapter.Fill(dt);
@@ -320,6 +380,32 @@ namespace WinformFamilyTree.TreeClasses
             else { return -1; }
         }
 
+        public int getMinMemberID()
+        {
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            DataTable dt = new DataTable();
+            try
+            {
+                conn.Open();
+
+                string sql = "SELECT MIN(MemberID) FROM MEMBER";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                int rows = cmd.ExecuteNonQuery();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+            // if the query is empty, dt is have no rows and opposite
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0].Field<int>(0);
+            }
+            else { return -1; }
+        }
         public int getSpouseID(int memberID)
         {
             SqlConnection conn = new SqlConnection(myConnectionString);
@@ -422,11 +508,11 @@ namespace WinformFamilyTree.TreeClasses
                 Console.WriteLine(ex.Message);
             }
             finally { conn.Close(); }
-            
+
             // if the query is empty, dt is have no rows and opposite
             if (dt.Rows.Count > 0)
             {
-                for(int i=0; i<dt.Rows.Count; i++)
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     array[arrayIndex] = dt.Rows[i].Field<int>(0);
                     arrayIndex++;
@@ -435,6 +521,38 @@ namespace WinformFamilyTree.TreeClasses
             }
             else { return -1; }
 
+        }
+        public int[] getAllChildID(int parentID)
+        {
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            DataTable dt = new DataTable();
+            int[] children = new int[0];
+            try
+            {
+                conn.Open();
+
+                string sql = "SELECT ChildID FROM RELATIONSHIP_PARENT_CHILD WHERE ParentID = @ParentID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@ParentID", parentID);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                int rows = cmd.ExecuteNonQuery();
+                adapter.Fill(dt);
+                Array.Resize(ref children, dt.Rows.Count);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { conn.Close(); }
+
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    children[i] = dt.Rows[i].Field<int>(0);
+                }
+            }
+            return children;
         }
 
         public int getMemberPartner(int spouseID, int memberID)
@@ -463,7 +581,11 @@ namespace WinformFamilyTree.TreeClasses
             {
                 if (dt.Rows[0].Field<int>(0) == memberID)
                 {
-                    return dt.Rows[0].Field<int>(1);
+                    try
+                    {
+                        return dt.Rows[0].Field<int>(1);
+                    }
+                    catch { return -1; }
                 }
                 return dt.Rows[0].Field<int>(0);
             }
@@ -571,7 +693,7 @@ namespace WinformFamilyTree.TreeClasses
             {
                 conn.Open();
                 // Creating SQL Command using sql and connection
-                string sql = "SELECT * FROM MEMBER WHERE CONCAT(LastName,' ',FirstName) LIKE '%" + queryStr  + "%'";
+                string sql = "SELECT * FROM MEMBER WHERE CONCAT(LastName,' ',FirstName) LIKE '%" + queryStr + "%'";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 // Creating Adapter using cmd
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -585,7 +707,7 @@ namespace WinformFamilyTree.TreeClasses
             finally { conn.Close(); }
             return dt;
         }
-        
+
         public DataTable FindFromName_ID(string queryStr)
         {
             // Step 1: Database connection
@@ -609,5 +731,30 @@ namespace WinformFamilyTree.TreeClasses
             finally { conn.Close(); }
             return dt;
         }
+        public byte[] RetrieveImage(int memberID)
+        {
+            byte[] imageBytes = null;
+            using (SqlConnection conn = new SqlConnection(myConnectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT MemberProfilePicture FROM MEMBER WHERE MemberID = @memberID", conn))
+                {
+                    cmd.Parameters.AddWithValue("@memberID", memberID);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SequentialAccess))
+                    {
+                        if (reader.Read())
+                        {
+                            long bufferSize = reader.GetBytes(0, 0, null, 0, 0); // Get the size of the image
+                            imageBytes = new byte[bufferSize];
+                            reader.GetBytes(0, 0, imageBytes, 0, (int)bufferSize);
+                        }
+                    }
+                }
+            }
+
+            return imageBytes;
+        }
+
     }
 }

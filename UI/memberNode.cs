@@ -17,11 +17,13 @@ namespace WinformFamilyTree.UI
     public partial class memberNode : UserControl
     {
         public KryptonButton profilePicture { get; set; }
-        MemberClass member;
+        public KryptonGroupBox infoBar { get; set; }
+        public MemberClass member = new MemberClass();
         public memberNode()
         {
             InitializeComponent();
             profilePicture = memberProfilePicture;
+            infoBar = infoGroupBox;
         }
 
         public memberNode(int memberID)

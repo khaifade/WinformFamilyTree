@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinformFamilyTree.Properties;
 using WinformFamilyTree.TreeClasses;
+using WinformFamilyTree.Properties;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace WinformFamilyTree.UI
 {
@@ -30,13 +32,6 @@ namespace WinformFamilyTree.UI
             InitializeComponent();
             cancelFormButton.Click += cancelFormButtonFirstTime_Click;
         }
-
-        //public MemberInfoForm(MemberClass member)
-        //{
-        //    this.member = member;
-        //    InitializeComponent();
-        //    cancelFormButton.Click += cancelFormButtonFirstTime_Click;
-        //}
         public MemberInfoForm(string type, int rootID)
         {
 
@@ -46,16 +41,17 @@ namespace WinformFamilyTree.UI
             if (type == "parent")
             {
                 relationshipComboBox.Text = "Bố/Mẹ";
-
             }
             if (type == "spouse")
             {
-                relationshipComboBox.Text = "Vợ/Chồng" ;
+                relationshipComboBox.Text = "Vợ/Chồng";
             }
             if (type == "child")
             {
-                relationshipComboBox.Text = "Con cái" ;
+                relationshipComboBox.Text = "Con cái";
             }
+            dateOfBirthBox.Value = DateTime.Now;
+            dateOfDeathBox.Value = DateTime.Now.AddYears(200);
         }
         public MemberInfoForm(MemberClass member)
         {
@@ -63,10 +59,29 @@ namespace WinformFamilyTree.UI
             lastNameTextBox.Text = member.LastName;
             firstNameTextBox.Text = member.FirstName;
             genderComboBox.Text = member.Gender;
-            dateOfBirthBox.Value = member.DateOfBirth;
+            dateOfBirthBox.Value = member.DateOfBirth.Value;
+            if (member.DateOfDeath.HasValue == false)
+            {
+                aliveCheckBox.Checked = true;
+            }
+            else
+            {
+                dateOfDeathBox.Value = member.DateOfDeath.Value.AddYears(200);
+            }
             placeOfOriginTextBox.Text = member.PlaceOfOrigin;
             biographyRichTextBox.Text = member.Biography;
             curID = member.ID;
+            byte[] imageBytes = member.RetrieveImage(curID);
+            if (imageBytes != null)
+            {
+                using (MemoryStream ms = new MemoryStream(imageBytes))
+                {
+                    Image image = Image.FromStream(ms, true);
+                    Image resizedImage = memberNode.ResizeImage(image, 20, 20);
+                    attachImage.Image = resizedImage;
+                    image.Dispose();
+                }
+            }
             type = "edit";
             this.relationshipComboBox.Visible = false;
             this.relationshipLabel.Visible = false;
@@ -111,7 +126,6 @@ namespace WinformFamilyTree.UI
                 member.FirstName = firstNameTextBox.Text;
                 member.Gender = genderComboBox.Text;
                 member.DateOfBirth = dateOfBirthBox.Value;
-                member.DateOfDeath = dateOfDeathBox.Value;
                 member.PlaceOfOrigin = placeOfOriginTextBox.Text;
                 member.Biography = biographyRichTextBox.Text;
                 if (member.RetrieveImage(curID) != null && imageChanged == false)
@@ -123,9 +137,13 @@ namespace WinformFamilyTree.UI
                     member.proFilePicture = getPicture(member.Gender);
                 }
 
-                if (!aliveCheckBox.Checked)
+                if (aliveCheckBox.Checked == false)
                 {
                     member.DateOfDeath = dateOfDeathBox.Value;
+                }
+                else
+                {
+                    member.DateOfDeath = null;
                 }
                 // the first member do not have any relatonship
                 if (member.numMember() == 0)
@@ -146,22 +164,41 @@ namespace WinformFamilyTree.UI
                 {
                     if (this.type == "spouse") // add spouse 
                     {
-                        if (member.Insert(member) && member.InsertSpouseRel(rootID, member.getMemberID(member)))
+                        if (member.getSpouseID(this.rootID) == -1)
                         {
-                            MessageBox.Show("Thêm thành công!");
-                            this.Hide();
-                            familyTree.instance.refreshHomeScreen();
-                            familyTree.instance.Controls.Remove(this);
+                            if (member.Insert(member) && member.InsertSpouseRel(rootID, member.getMaxMemberID()))
+                            {
+                                MessageBox.Show("Thêm thành công!");
+                                this.Hide();
+                                familyTree.instance.refreshHomeScreen();
+                                familyTree.instance.Controls.Remove(this);
+                            }
+                            else
+                            {
+                                member.Delete(member.getMemberID(member));
+                                MessageBox.Show("Lỗi, hãy thử lại!");
+                            }
+
                         }
                         else
                         {
-                            member.Delete(member.getMemberID(member));
-                            MessageBox.Show("Lỗi, hãy thử lại!");
+                            if (member.Insert(member) && member.changePartner(member.getMemberID(member), rootID))
+                            {
+                                MessageBox.Show("Thêm thành công!");
+                                this.Hide();
+                                familyTree.instance.refreshHomeScreen();
+                                familyTree.instance.Controls.Remove(this);
+                            }
+                            else
+                            {
+                                member.Delete(member.getMemberID(member));
+                                MessageBox.Show("Lỗi, hãy thử lại!");
+                            }
                         }
                     }
                     else if (this.type == "child") // add child
                     {
-                        if (member.Insert(member) && member.InsertParentChildRel(member.getMemberID(member), member.getSpouseID(rootID)))
+                        if (member.Insert(member) && member.InsertParentChildRel(member.getMaxMemberID(), member.getSpouseID(rootID)))
                         {
                             MessageBox.Show("Thêm thành công!");
                             this.Hide();
@@ -176,11 +213,13 @@ namespace WinformFamilyTree.UI
                     }
                     else if (this.type == "edit") // edit member's info
                     {
+
                         if (member.Update(member))
                         {
                             MessageBox.Show("Sửa thành công!");
                             this.Hide();
                             familyTree.instance.refreshHomeScreen();
+                            familyTree.instance.refreshBiographyScreen(member);
                             familyTree.instance.Controls.Remove(this);
                         }
                         else
@@ -201,13 +240,13 @@ namespace WinformFamilyTree.UI
         {
             if (aliveCheckBox.Checked == true)
             {
-                dateOfDeathBox.Enabled = false;
-                DateTime dateOfDeath = new DateTime(3000, 01, 02);
-                dateOfDeathBox.Value = dateOfDeath;
+                dateOfDeathBox.Visible = false;
+
             }
             else
             {
-                dateOfDeathBox.Enabled = true;
+                dateOfDeathBox.Visible = true;
+                dateOfDeathBox.Value = dateOfBirthBox.Value.AddYears(200);
 
             }
         }
