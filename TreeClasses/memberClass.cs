@@ -103,8 +103,7 @@ namespace WinformFamilyTree.TreeClasses
                 if (c.DateOfDeath == null)
                 {
                     cmd = new SqlCommand(sql_null, conn);
-                }
-                else
+                } else
                 {
                     cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@DateOfDeath", c.DateOfDeath);

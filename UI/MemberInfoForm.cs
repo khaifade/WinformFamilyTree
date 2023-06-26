@@ -231,8 +231,6 @@ namespace WinformFamilyTree.UI
             stream.Position = 0;
             stream.Read(bytBLOBData, 0, Convert.ToInt32(stream.Length));
             return bytBLOBData;
-
-
         }
 
 
