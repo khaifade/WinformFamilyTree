@@ -59,17 +59,7 @@ namespace WinformFamilyTree
             var node0 = new memberNode(rootMemID);
             node0.Name = "node" + rootMemID.ToString();
 
-            // Lấy toạ độ của nút gốc
-
-            Point parentPoint = new Point(1, 1);
-
-
-            //
-
             FlowLayoutPanel gen0 = new FlowLayoutPanel();
-
-
-
 
             int[] MemIDToGen = Enumerable.Repeat(0, member.getMaxMemberID() + 1).ToArray();
 
@@ -78,9 +68,7 @@ namespace WinformFamilyTree
             gen0.AutoSize = true;
             gen0.FlowDirection = FlowDirection.TopDown;
             gen0.Location = new Point(x_layout, gen0.Location.Y);
-            //gen0.BackColor = Color.Red;
             x_layout += 250;
-
 
             Gen.Add(gen0);
 
@@ -97,14 +85,15 @@ namespace WinformFamilyTree
                 Gen[0].Controls.Add(SpouseNode);
             }
 
-            DFS(ref Gen, rootMemID, x_layout, 0, member.getSpouseID(member.getMinMemberID()), parentPoint);
+            DFS(ref Gen, rootMemID, x_layout, 0, member.getSpouseID(member.getMinMemberID()));
             // Add the list of panel to screen
             this.mainPanel.Refresh();
             this.mainPanel.Controls.AddRange(Gen.ToArray());
 
         }
-        private int DFS(ref List<FlowLayoutPanel> Gen, int nodeID, int x_layout, int cur_y, int SpouseID, Point parentPoint)
+        private int DFS(ref List<FlowLayoutPanel> Gen, int nodeID, int x_layout, int cur_y, int SpouseID)
         {
+            Point parentPoint = new Point(x_layout, cur_y);
             MemberClass member = new MemberClass();
             FlowLayoutPanel childFlowPannel = new FlowLayoutPanel();
             childFlowPannel.AutoSize = true;
@@ -116,16 +105,6 @@ namespace WinformFamilyTree
             foreach (int childID in ChildList)
             {
                 memberNode ChildNode = new memberNode(childID);
-                // Lấy toạ độ con 
-
-                Point childPoint = new Point(300, 200);
-
-
-
-                //
-                this.lines.Add(new Line(
-                    childPoint,
-                    parentPoint));
                 ChildNode.Name = "node" + childID.ToString();
                 curIdx++;
                 curNodeY += 150;
@@ -133,7 +112,7 @@ namespace WinformFamilyTree
                 int ChildSpouseID = member.getSpouseID(childID);
                 if (ChildSpouseID >= 0)
                 {
-                    int offset = DFS(ref Gen, childID, x_layout + 250, curNodeY, ChildSpouseID, childPoint) - curNodeY - 150;
+                    int offset = DFS(ref Gen, childID, x_layout + 250, curNodeY, ChildSpouseID) - curNodeY - 150;
                     int ChildPartnerID = member.getMemberPartner(ChildSpouseID, childID);
                     if (ChildPartnerID >= 0)
                     {
